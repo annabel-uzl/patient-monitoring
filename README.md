@@ -69,3 +69,4 @@ To propose a new **carepath** for inclusion in this Implementation Guide:
    Agenda and details: [https://wiki.hl7belgium.org/index.php?title=Patient_Monitoring_Outcome_Workgroup](https://wiki.hl7belgium.org/index.php?title=Patient_Monitoring_Outcome_Workgroup)
 
 Once approved, your carepath can be merged and included in future IG publications.
+
