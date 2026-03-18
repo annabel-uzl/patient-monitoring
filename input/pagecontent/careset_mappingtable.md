@@ -4,9 +4,9 @@ This FHIR implementation content is currently under development and may be subje
 
 **DRAFT: 2026-03-18**
 
-### Mappingtables
+### Careset Mapping Tables
 
-There is a lot of overlap between the different caresets but also between the caresets and carepaths. We try to align as much as possible and note here the mappings used in the caresets with connection to the carepaths.
+There is a lot of overlap between the different Caresets, but also between the Caresets and Carepaths. Caresets build upon the basic semantic foundation of Carepaths, intentionally re-using the SNOMED CT and LOINC codes defined for standalone parameters (for example, Heart Rate or Body Weight as seen in the Carepaths). However, because Caresets also track Encounters, advanced Questionnaires, and procedural outcomes, they expand upon that core set. We list here the expanded mappings used in the Caresets and their connection to the base Carepath parameters.
 
 #### General mappings
 
@@ -98,7 +98,7 @@ If there is a distinction between OPAT and ONCO (Antitumoral therapy) this is no
 | Catheter type | SNOMED 246138005 | SNOMED OPAT: 52124006 (Central venous), 445085009 (Tunneled central venous), 1344705000 (Midline), 398176008 (Peripherally inserted central) |
 | Catheter stabilization type | SNOMED 448439004 | SNOMED OPAT: 398013009 (Implantable venous access port), 84756000 (Adhesive tape) |
 | Was there a reaction during the home observation period? | SNOMED 281647001 | SNOMED: 373066001 (yes), 373067005 (no) |
-| > If yes: (one question per possible reaction – ONCO only) |  | 386661006 (fever), 422587007 (nausea), 255365009 (tightness), 43724002 (chill), 95891005 (influenza-like illness) |
+| > If yes: (one question per possible reaction ï¿½ ONCO only) |  | 386661006 (fever), 422587007 (nausea), 255365009 (tightness), 43724002 (chill), 95891005 (influenza-like illness) |
 | > If yes (on reaction): specify | SNOMED 62014003 | Not applicable |
 | Any remarks or concerns regarding patient registration, data sharing, communication with hospital, material availability, or other aspects of oncology home hospitalization? | SNOMED 276238005 | Not applicable |
 | *Other: (if applicable) during catheter observation* | SNOMED 406148008 | Not applicable |
@@ -107,7 +107,7 @@ If there is a distinction between OPAT and ONCO (Antitumoral therapy) this is no
 
 #### Note on parameters with units
 
-Parameters with a unit (such as temperature, weight, etc.) are atm being exchanged as valueDecimal (so simply a number without a unit). The unit is in the question (Questionnaire), but it is actually logical that it is also in the answer (QuestionnaireResponse). So that, for example, you get “weight: 56kg” instead of “weight:56”.
+Parameters with a unit (such as temperature, weight, etc.) are atm being exchanged as valueDecimal (so simply a number without a unit). The unit is in the question (Questionnaire), but it is actually logical that it is also in the answer (QuestionnaireResponse). So that, for example, you get ï¿½weight: 56kgï¿½ instead of ï¿½weight:56ï¿½.
 
 This was not noticed until enrolling the POC because the examples from hl7 also include the unit in the questionnaire and then do not repeat it in the questionnaire response, e.g. birthWeight https://hl7.org/fhir/R4/questionnaireresponse-example-bluebook.json.html
 
@@ -130,7 +130,7 @@ This should be looked at in the future.
 For OPAT questionnaires, we also want to include the catheter type in a structured manner. This actually consists of two parts:
 1. the type (central venous, tunneled central venous, midline, peripherally inserted central, and peripheral)
 2. the number of lumens (single, double, triple).
-   However, because we do not want home nurses to perform an unnecessary amount of registration work, we attempted to provide a 1-to-1 mapping—being one question about catheter type and one answer—even though no pre-coordinated SNOMED concepts exist that take both catheter type and number of lumens into account. This led us to the following mapping:
+   However, because we do not want home nurses to perform an unnecessary amount of registration work, we attempted to provide a 1-to-1 mappingï¿½being one question about catheter type and one answerï¿½even though no pre-coordinated SNOMED concepts exist that take both catheter type and number of lumens into account. This led us to the following mapping:
 
 | Catheter Description | SNOMED Mapping |
 |---------------------|----------------|

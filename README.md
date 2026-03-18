@@ -15,7 +15,7 @@ This IG contains two distinct concepts that are important to distinguish:
 The **Carepath** definitions describe how telemonitoring data is exchanged between systems. This exchange typically happens between **providers of patient monitoring data** (e.g., vital signs monitors, home devices) and **consumers** (e.g., EHRs, dashboards). It defines the specific data points that need to be collected from the patient as part of their pathway.
 
 ### Careset
-The **Careset** definitions describe how data is collected in a structured report that can be shared between Electronic Patient Dossiers (EPDs) or specific healthcare actors. A Careset report may include data from Carepath definitions, but it can also include extra information such as Encounters, PatientQuestionnaires, or mappings between observations and other concepts. 
+The **Careset** definitions describe how data is collected in a structured report that can be shared between Electronic Patient Dossiers (EPDs) or specific healthcare actors. A Careset report actively re-uses the semantic foundation (SNOMED CT and LOINC codes) from Carepath definitions to ensure a uniform baseline, but it extends this foundation with extra information capturing a holistic overview, such as hospital instructions, Encounters, advanced PatientQuestionnaires, and procedural outcomes.
 *Example: A patient is home hospitalized and a nurse is scheduled to come by and take care of the patient. The communication (e.g., the Careset report) happens between the care team in the hospital (e.g., the OPAT team) and the home nurse or home nursing organization.*
 
 ---
