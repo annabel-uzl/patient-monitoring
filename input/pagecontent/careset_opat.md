@@ -6,7 +6,7 @@ This FHIR implementation content is currently under development and may be subje
 
 ### Careset Overview
 
-*Note: This page describes the **Careset** for OPAT, detailing the holistic structured report used to communicate
+> **_NOTE:_** This page describes the **Careset** for OPAT, detailing the holistic structured report used to communicate
 patient status, Questionnaires, Encounters, and monitoring data between Electronic Patient Dossiers (EPDs) and care
 teams (e.g., between the hospital OPAT team and home nursing organizations). For the specification mapping out the
 direct exchange of individual parameters from telemonitoring providers, see the [OPAT Carepath](./carepath_opat.html).*
@@ -14,6 +14,19 @@ direct exchange of individual parameters from telemonitoring providers, see the 
 Home hospitalization allows patients to leave the hospital while continuing specialized treatments at home.
 OPAT (Outpatient Parenteral Antimicrobial Therapy) focuses on the home administration of intravenous antibiotics and the
 associated catheter care.
+
+For this careset, there were **four necessary layers of agreements**:
+
+1. Substantive consensus via working group (VZA, NPTV) on the content of the questionnaires and the overall workflow.
+2. Semantics (SNOMED CT): The uniformity of language within the resources - herefore we try to allign as much as
+   possible with the [OPAT Carepath](./carepath_opat.html).
+3. Structure (FHIR Profiling): more below, we use a combination of FHIR resources (Questionnaire, QuestionnaireResponse,
+   Encounter) to capture the necessary information and structure it in a way that can be easily processed and
+   implemented by the receiving and sending systems.
+4. Interaction & Transport: The agreements on how the packet travels. This could be project dependent.
+
+This careset has been successfully implemented in nexuzhealth hospitals and WGK Vlaams Brabant and is currently being
+implemented in other WGK departments and Corilus CareConnect Nurse.
 
 ### Workflow
 
@@ -37,6 +50,7 @@ associated catheter care.
    patient's medical record for physician review.
 
 ### Questionnaire Content
+
 <div class="stu-note">
 The content of these questionnaires was drafted within working groups with representation at the level of the VZA (
 Flemish Association of Hospital Pharmacists) and NPTV (Dutch-speaking Platform for Home Nursing). Changes to the content
@@ -178,6 +192,36 @@ The OPAT questionnaires focus heavily on the technical aspects of intravenous ac
 |                    |                                          | Swelling of face/tongue                                                                                                                                                                                                                                                                                                        | Choice        | None, mild, moderate, severe                                                                                                                                                                                                                                                                                                                                                                               |           |
 |                    |                                          | Are there other symptoms or relevant clinical and/or psychosocial observations? (please contact the hospital care team in case of clinical concern)                                                                                                                                                                            | Text          |                                                                                                                                                                                                                                                                                                                                                                                                            |           |
 |                    | (Quality) follow-up                      | Are there any remarks or concerns regarding the registration of this patient, data sharing from the hospital, communication with and contact with the hospital, availability of medication and materials, or other aspects of transmural collaboration around home hospitalization OPAT? Please share them with us. Thank you. | Text          |                                                                                                                                                                                                                                                                                                                                                                                                            |           |
+
+### Encounter
+
+The FHIR Encounter resource is twofold:
+
+1. Note on the status of the visit: did the visit even happen? Was the patient home?
+2. Note on the status of the care that was asked. E.g. for OPAT medication administration was ordered but also the care
+   of the catheter. Care of the catheter was done but not the medication administration (e.g. medication could not be
+   properly prepared) then caregivers at the hospital want to know for each order/procedure what the status was.
+   It is possible that different nurses are involved in the care of the patient and that they have different
+   observations to share with the hospital. For example, one nurse could be responsible for the care of the catheter and
+   another nurse could be responsible for the medication administration. Both nurses can share their carestatus with the
+   hospital using the FHIR Encounter resource.
+
+> **_NOTE:_** The FHIR Encounter resource is only used for the orders given by the hospital. Other 'procedures' should not be communicated back to the hospital.
+
+Some possible **reasonCodes** for the FHIR Encounter resource (with link to tarfac) are the following:
+* 82078001 Collection of blood specimen for laboratory (procedure) Bloedname (niet terugbetaalbare zorg)
+* 705995006  Needleless valve-connector (physical object) Vervangen naaldloze connector (niet terugbetaalbare zorg)
+* 448439004 Catheter stabilization device (physical object) Vervangen statlock (niet terugbetaalbare zorg)
+* 103715008 Removal of catheter (procedure) Permanent verwijderen centrale katheter (idem perfusieforfait)
+* 18949003 Change of dressing (procedure) Vervangen katheterverband 424336
+* 302358004 Vascular cannula adjustment (procedure) Vervangen grippernaald 423113
+* 233553003 Vascular cannula removal (procedure) Verwijderen grippernaald 421072
+* 18629005 Administration of drug or medicament (procedure) (+ one of the following codes for extra information)
+    * 14152002 Intravenous infusion (procedure) Perfusie 425375
+    * 386358000 Administration of drug or medicament via intravenous route (procedure) Intraveneuze toediening 423054
+    * 76601001 Intramuscular injection (procedure) Intramusculaire toediening 423076
+    * 276844002 Injection to subcutaneous drug delivery port (procedure) Subcutane toediening 423076
+    * 243132000 Inhaled drug administration (procedure) Inhalatie
 
 ### Examples
 
