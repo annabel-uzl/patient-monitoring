@@ -4,7 +4,9 @@ This FHIR implementation content is currently under development and may be subje
 
 **DRAFT: 2025-07-09**
 
-### Care Pathway Overview
+### Carepath Overview
+
+*Note: This page focuses on the **Carepath** for antitumoral therapy, which details how individual data points and symptoms are exchanged between patient monitoring providers and consumers. For the structured report defining how this data, along with encounters and questionnaires, is shared between EPDs/care-teams, please see the [Antitumoral Careset](./careset_antitumoral.html).*
 
 The goal of antitumor therapy is the implementation of home hospitalization which increases the efficiency of the oncology day hospital as well as increasing patient and caregiver satisfaction. Patients will be included based on inclusion criteria and their own choice.
 Specifically, subcutaneous or intramuscular administration will be done at the patient's home by a home nurse. On the day of administration, the home nurse will visit the patient and record a number of parameters and if they fall within certain limits, the medication will be administered. If one or more parameters are abnormal, the home nurse should first consult with the treating oncologist by telephone whether or not the administration can be done.

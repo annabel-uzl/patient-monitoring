@@ -2,59 +2,243 @@
 This FHIR implementation content is currently under development and may be subject to significant changes. Use this information with caution, as it may not yet reflect finalized or fully validated guidance. Always verify details before relying on them for production use.
 </div>
 
-**DRAFT: 2025-02-07**
+**DRAFT: 2025-03-18**
 
-### Care Pathway Overview
+### Careset Overview
 
-The goal of antitumor therapy is the implementation of home hospitalization which increases the efficiency of the oncology day hospital as well as increasing patient and caregiver satisfaction. Patients will be included based on inclusion criteria and their own choice.
-Specifically, subcutaneous or intramuscular administration will be done at the patient's home by a home nurse. On the day of administration, the home nurse will visit the patient and record a number of parameters and if they fall within certain limits, the medication will be administered. If one or more parameters are abnormal, the home nurse should first consult with the treating oncologist by telephone whether or not the administration can be done.
+*Note: This page describes the **Careset** for antitumoral therapy, detailing the holistic structured report used to communicate patient status, Questionnaires, Encounters, and monitoring data between Electronic Patient Dossiers (EPDs) and care teams (e.g., between hospital care teams and home nursing organizations). For the specification mapping out the direct exchange of individual parameters from telemonitoring providers, see the [Antitumoral Carepath](./carepath_antitumoral.html).*
 
-### Process and Workflow Description
+Home hospitalization allows patients to leave the hospital while continuing specialized treatments at home.
+Antitumoral Therapy focuses on the home administration of specific antitumoral drugs (e.g., Trastuzumab, Daratumumab) and the monitoring of symptom burden.
 
-#### Start-Up
+### Workflow
 
-- **Parameters Monitored**:
+#### Hospital to Home
+1. Registration: The patient is registered in a virtual home hospitalization unit.
+2. Report & Instructions: A specific medical report is created containing medical history, future appointments and certain parameters.
+3. Order: A doctor generates an order in the hospitals EHR, which contains the medication order and specific tasks for the home nurse.
+4. Communication: The hospital exchanges this information (the order and patient info) as a FHIR document with the home nursing organization.
 
-  - Heart Rate
-  - Blood Pressure
-  - Body weight
-  - Body temperature
-  - Swelling of bilateral feet
-  - Orthopneu
-  - Injection site pain 
+#### Home to Hospital
+1. Home Visit: The home nurse performs the requested tasks and records data using their own software.
+2. Feedback: The home nursing system generates digital feedback in the form of FHIR resources (Questionnaire, QuestionnaireResponse, and Encounter).
+3. Communication: This data is exchanged with the hospital.
+4. Processing: The hospital can use automated "batch jobs" to process these responses and write the data back into the patient's medical record for physician review.
 
-#### Data Collection
+### Questionnaire Content
+<div class="stu-note">
+The content of these questionnaires was drafted within the transmural working group NPTV/VVRO along with the hospitals. Changes to the content
+must be approved by the working group.
+</div>
 
-- Technology is CE-certified, with end-to-end encryption and GDPR compliance.
+#### Overview
+The antitumoral questionnaires are drug-specific (e.g., for Azacitidine, Bortezomib, Fulvestrant, etc.) and go deeper into symptom burden and adverse reactions:
+* Symptom burden (Graded): Many symptoms are recorded on a scale (None, Mild, Moderate, Severe):
+  * Gastrointestinal: Diarrhea, constipation, and decreased appetite
+  * Physical: Fatigue, chills, muscle/joint pain, and general pain
+  * Respiratory: Shortness of breath and swelling of the face/tongue
+* Observation period: Monitoring for immediate adverse reactions during the home observation period following administration (e.g., fever, nausea, or "flu-like" symptoms).
+* Quality & coordination: Nurses can note concerns regarding the patient's registration, data sharing from the hospital, or the availability of materials.
 
-### Integration Modules for EPD
+#### Specific Antitumoral Questionnaires
 
-#### Outcome Module - FHIR Integration
+##### Trastuzumab
+| Section | Subsection | Question | Question Type | Possible Choices | Unit |
+|--------|------------|----------|---------------|------------------|------|
+| Nursing assessment | Storage | Are there any remarks or concerns regarding the (proper) storage of medication at home? | Choice | Medication is stored correctly, concern about proper home storage | |
+| | | > If remarks or concerns: specify | Text | | |
+| | Observation parameters | Body temperature | Numeric | | °C |
+| | | Pulse | Numeric | | beats/min |
+| | | Blood pressure systolic | Numeric | | mmHg |
+| | | Blood pressure diastolic | Numeric | | mmHg |
+| | | Body weight | Numeric | | kg |
+| | Contraindications | Are there contraindications for administration? | Choice | Yes, No | |
+| | | Fever, chills, feeling unwell | Choice | Yes, No | |
+| | | Repeated blood pressure lower than 100/60 mmHg | Choice | Yes, No | |
+| | | Heart rate above 100 bpm at rest or irregular heart rhythm, unless chronically known | Choice | Yes, No | |
+| | | Increase in body weight of 3 kg / 3 weeks or 5 kg / 6 weeks, especially with increased edema | Choice | Yes, No | |
+| | | Increased edema in hands and/or feet | Choice | Yes, No | |
+| | | Increased shortness of breath and/or severe shortness of breath (i.e., at rest or interfering with daily activities) (Trastuzumab, Azacitidine) | Choice | Yes, No | |
+| | | > If yes | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | | Decision after consultation with hospital | Choice | Administration, no administration, other | |
+| | | > If other: specify | Text | | |
+| | Symptom burden | Nausea | Choice | None; Patient is nauseous but can eat and drink normally; Due to nausea patient eats/drinks less but does not lose weight; Due to nausea patient cannot eat or drink sufficiently | |
+| | | Vomiting | Choice | None; No more than 2 times; 3–5 times; 6 or more times | |
+| | | Reduced appetite or taste changes | Choice | None; Taste changed or reduced appetite but no need to change eating habits; Eats less but no weight loss; Cannot eat sufficiently due to appetite/taste changes | |
+| | | Diarrhea | Choice | No more than normal; 1–3 times more than normal; 4–6 times more than normal; More than 6 times more or impacting daily life | |
+| | | Constipation | Choice | None; Bowel movement possible with occasional aid; Only possible with daily laxatives/enemas; Severe constipation affecting daily activities and not relieved by laxatives | |
+| | | Fatigue / lack of energy | Choice | Not more than normal; Mild fatigue but daily activities possible; Moderate fatigue making activities harder; Severe fatigue preventing daily activities | |
+| | | Pain | Choice | None; Mild pain not affecting activities; Moderate pain with reduced functioning; Severe pain preventing daily activities | |
+| | | Skin rash | Choice | None; Limited redness; Moderate redness; Severe redness or peeling over most of body | |
+| | | Psychosocial burden | Choice | Feels well; Slight distress without impact; Significant distress affecting daily life; Severe distress preventing normal functioning | |
+| | | Shortness of breath | Choice | None; Only with moderate exertion; With light exertion affecting daily activities; At rest, preventing activities | |
+| | | Edema | Choice | None; Mild, only visible on close inspection; Moderate, clearly visible affecting activities; Severe, clearly visible preventing activities | |
+| | Other relevant observations | Other side effects or relevant clinical and psychosocial observations (please contact the hospital in case of clinical concern) | Text | | |
+| | Task | Could the medication be prepared according to the procedure? | Choice | Yes, No | |
+| | | Could the medication be administered exactly according to the procedure (no deviations)? | Choice | Yes, No | |
+| | | > If no | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | Aftercare | Was there a reaction during the home observation period? | Choice | No, Yes | |
+| | | > If yes: specify | | | |
+| | | Fever | Choice | Yes, No | |
+| | | Nausea | Choice | Yes, No | |
+| | | Shortness of breath | Choice | Yes, No | |
+| | | Chills | Choice | Yes, No | |
+| | | Flu-like symptoms | Choice | Yes, No | |
+| | (Quality) follow-up | Are there any remarks or concerns regarding patient registration, data sharing from the hospital, communication/contact with the hospital, availability of materials, or other aspects of transmural collaboration in home hospitalization oncology? Please share them here. Thank you. | Text | | |
 
-##### Vital Signs & symptoms
+##### Daratumumab
+| Section | Subsection | Question | Question Type | Possible Choices | Unit |
+|--------|------------|----------|---------------|------------------|------|
+| Nursing assessment | Storage | Are there any remarks or concerns regarding the (proper) storage of medication at home? | Choice | Medication is stored correctly, concern about proper home storage | |
+| | | > If remarks or concerns: specify | Text | | |
+| | Observation parameters | Body temperature | Numeric | | °C |
+| | | Pulse | Numeric | | beats/min |
+| | | Blood pressure systolic | Numeric | | mmHg |
+| | | Blood pressure diastolic | Numeric | | mmHg |
+| | Pre-medication intake | Was pre-medication taken correctly (dexamethasone, H1 antihistamine, paracetamol before administration)? | Choice | Yes, No | |
+| | Contraindications | Are there contraindications for administration? | Choice | Yes, No | |
+| | | Fever, chills, feeling unwell | Choice | Yes, No | |
+| | | Pre-medication not taken | Choice | Yes, No | |
+| | | > If yes | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | | Decision after consultation with hospital | Choice | Administration, no administration, other | |
+| | | > If other: specify | Text | | |
+| | Symptom burden | Nausea | Choice | None; Patient is nauseous but can eat and drink normally; Eats/drinks less due to nausea but no weight loss; Cannot eat or drink sufficiently due to nausea | |
+| | | Vomiting | Choice | None; No more than 2 times; 3–5 times; 6 or more times | |
+| | | Reduced appetite or taste changes | Choice | None; Taste/appetite changed but no dietary adjustment needed; Eats less but no weight loss; Cannot eat sufficiently | |
+| | | Diarrhea | Choice | No more than normal; 1–3 times more; 4–6 times more; >6 times or impacting daily life | |
+| | | Constipation | Choice | None; Occasional aid needed; Requires daily laxatives/enemas; Severe despite treatment | |
+| | | Fatigue / lack of energy | Choice | Not more than normal; Mild; Moderate; Severe (limits daily activities) | |
+| | | Pain | Choice | None; Mild; Moderate; Severe (limits daily activities) | |
+| | | Skin rash | Choice | None; Mild redness; Moderate; Severe/extensive peeling | |
+| | | Psychosocial burden | Choice | Feels well; Mild distress; Moderate impact; Severe impact preventing functioning | |
+| | | Shortness of breath | Choice | None; With moderate exertion; With light exertion; At rest | |
+| | | Cough | Choice | None; Mild; Moderate; Severe (limits daily activities) | |
+| | | Muscle and joint pain | Choice | None; Mild; Moderate; Severe (limits daily activities) | |
+| | Other relevant observations | Other side effects or relevant clinical and psychosocial observations (please contact the hospital in case of clinical concern) | Text | | |
+| | Task | Could the medication be prepared according to the procedure? | Choice | Yes, No | |
+| | | Could the medication be administered exactly according to the procedure (no deviations)? | Choice | Yes, No | |
+| | | > If no | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | (Quality) follow-up | Are there any remarks or concerns regarding patient registration, data sharing from the hospital, communication/contact with the hospital, availability of materials, or other aspects of transmural collaboration in home hospitalization oncology? Please share them here. Thank you. | Text | | |
 
-- **Frequency**: Ad hoc registrations by patients and healthcare providers.
-- **LOINC & SNOMED Codes**:
+##### Bortezomib
+| Section | Subsection | Question | Question Type | Possible Choices | Unit |
+|--------|------------|----------|---------------|------------------|------|
+| Nursing assessment | Storage | Are there any remarks or concerns regarding the (proper) storage of medication at home? | Choice | Medication is stored correctly, concern about proper home storage | |
+| | | > If remarks or concerns: specify | Text | | |
+| | Observation parameters | Body temperature | Numeric | | °C |
+| | | Pulse | Numeric | | beats/min |
+| | | Blood pressure systolic | Numeric | | mmHg |
+| | | Blood pressure diastolic | Numeric | | mmHg |
+| | Contraindications | Are there contraindications for administration? | Choice | Yes, No | |
+| | | Fever, chills, feeling unwell | Choice | Yes, No | |
+| | | Repeated blood pressure lower than 100/60 mmHg | Choice | Yes, No | |
+| | | Heart rate above 100 bpm at rest or irregular heart rhythm (unless chronically known) | Choice | Yes, No | |
+| | | Severe sensory neuropathy (e.g. numbness, tingling, burning or cold sensation in hands/feet with pain and/or impact on daily activities) | Choice | Yes, No | |
+| | | Severe motor neuropathy (e.g. severe muscle weakness, general weakness or tremor impacting activities such as walking or writing) | Choice | Yes, No | |
+| | | > If yes | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | | Decision after consultation with hospital | Choice | Administration, no administration, other | |
+| | | > If other: specify | Text | | |
+| | Symptom burden | Nausea | Choice | None; Patient is nauseous but can eat and drink normally; Eats/drinks less due to nausea but no weight loss; Cannot eat or drink sufficiently due to nausea | |
+| | | Vomiting | Choice | None; No more than 2 times; 3–5 times; 6 or more times | |
+| | | Reduced appetite or taste changes | Choice | None; Taste/appetite changed but no dietary adjustment needed; Eats less but no weight loss; Cannot eat sufficiently | |
+| | | Diarrhea | Choice | No more than normal; 1–3 times more; 4–6 times more; >6 times or impacting daily life | |
+| | | Constipation | Choice | None; Occasional aid needed; Requires daily laxatives/enemas; Severe despite treatment | |
+| | | Fatigue / lack of energy | Choice | Not more than normal; Mild; Moderate; Severe (limits daily activities) | |
+| | | Pain | Choice | None; Mild; Moderate; Severe (limits daily activities) | |
+| | | Skin rash | Choice | None; Limited redness; Moderate redness; Severe redness or peeling over most of body | |
+| | | Psychosocial burden | Choice | Feels well; Mild distress without impact; Significant distress affecting daily life; Severe distress preventing normal functioning | |
+| | | Shortness of breath | Choice | None; With moderate exertion; With light exertion affecting daily activities; At rest preventing activities | |
+| | | Tingling or numbness in fingers or toes | Choice | None; Present but no functional impact; Some activities more difficult; Activities no longer possible | |
+| | | Motor neuropathy | Choice | None; Weakness/tremor without functional impact; Impacts functioning but not ADL; Impacts ADL (e.g. washing, dressing, eating) | |
+| | | Cough | Choice | None; Mild; Moderate; Severe (limits daily activities) | |
+| | Other relevant observations | Other side effects or relevant clinical and psychosocial observations (please contact the hospital in case of clinical concern) | Text | | |
+| | Task | Could the medication be administered exactly according to the procedure (no deviations)? | Choice | Yes, No | |
+| | | > If no | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | (Quality) follow-up | Are there any remarks or concerns regarding patient registration, data sharing from the hospital, communication/contact with the hospital, availability of materials, or other aspects of transmural collaboration in home hospitalization oncology? Please share them here. Thank you. | Text | | |
 
-###### General
+##### Azacitidine
+| Section | Subsection | Question | Question Type | Possible Choices | Unit |
+|--------|------------|----------|---------------|-----------------|------|
+| Nursing assessment | Storage | Are there any remarks or concerns regarding the (proper) home storage of medication? | Choice | Medication is stored correctly, concern about proper home storage | |
+| | | > If remarks or concerns: specify | Text | | |
+| | Observation parameters | Body temperature | Numeric | | °C |
+| | | Pulse | Numeric | | beats/min |
+| | | Blood pressure systolic | Numeric | | mmHg |
+| | | Blood pressure diastolic | Numeric | | mmHg |
+| | | Oxygen saturation (only if cough or shortness of breath) | Numeric | | % |
+| | Contraindications | Are there contraindications for administration? | Choice | Yes, No | |
+| | | Fever, chills, feeling unwell | Choice | Yes, No | |
+| | | No oral intake (due to reduced appetite or taste changes) | Choice | Yes, No | |
+| | | Severe nausea (i.e., nausea with insufficient oral intake) | Choice | Yes, No | |
+| | | Increased or severe shortness of breath (at rest or impacting daily activities) (Trastuzumab, Azacitidine) | Choice | Yes, No | |
+| | | New or increased productive/dry cough, with or without dyspnea | Choice | Yes, No | |
+| | | General deterioration | Choice | Yes, No | |
+| | | > If yes | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | | Decision after consultation with hospital | Choice | Administration, no administration, other | |
+| | | > If other: specify | Text | | |
+| | Symptom burden | Nausea | Choice | None; Patient is nauseous but can eat and drink normally; Eats/drinks less due to nausea but no weight loss; Cannot eat or drink sufficiently due to nausea | |
+| | | Vomiting | Choice | None; No more than 2 times; 3–5 times; 6 or more times | |
+| | | Reduced appetite or taste changes | Choice | None; Taste/appetite changed but no dietary adjustment needed; Eats less but no weight loss; Cannot eat sufficiently | |
+| | | Diarrhea | Choice | Normal; 1–3 times more; 4–6 times more; >6 times or impacting daily life | |
+| | | Constipation | Choice | None; Occasional aid needed; Requires daily laxatives/enemas; Severe despite treatment | |
+| | | Fatigue / lack of energy | Choice | Not more than normal; Mild; Moderate; Severe (limits daily activities) | |
+| | | Pain | Choice | None; Mild; Moderate; Severe (limits daily activities) | |
+| | | Skin rash | Choice | None; Limited redness; Moderate redness; Severe/extensive redness or peeling | |
+| | | Psychosocial burden | Choice | Feels well; Mild distress; Moderate impact on daily life; Severe impact preventing normal functioning | |
+| | | Shortness of breath | Choice | None; Only with moderate exertion; With light exertion affecting daily activities; At rest affecting daily activities | |
+| | | Cough | Choice | None; Mild; Moderate; Severe (limits daily activities) | |
+| | Other relevant observations | Other side effects or relevant clinical and psychosocial observations (please contact the hospital in case of clinical concern) | Text | | |
+| | Task | Medication was completely dissolved into a clear solution without visible particles | Choice | Yes, No | |
+| | | Could the medication be administered exactly according to the procedure (no deviations)? | Choice | Yes, No | |
+| | | > If no | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | (Quality) follow-up | Are there any remarks or concerns regarding patient registration, data sharing from the hospital, communication/contact with the hospital, availability of materials, or other aspects of transmural collaboration in home hospitalization oncology? Please share them here. Thank you. | Text | | |
 
-<div class="table-md"></div>
+##### Fulvestrant
+| Section | Subsection | Question | Question Type | Possible Choices | Unit |
+|--------|------------|----------|---------------|-----------------|------|
+| Nursing assessment | Storage | Are there any remarks or concerns regarding the (proper) home storage of medication? | Choice | Medication is stored correctly, concern about proper home storage | |
+| | | > If remarks or concerns: specify | Text | | |
+| | Observation parameters | Body temperature | Numeric | | °C |
+| | | Pulse | Numeric | | beats/min |
+| | | Blood pressure systolic | Numeric | | mmHg |
+| | | Blood pressure diastolic | Numeric | | mmHg |
+| | Contraindications | Are there contraindications for administration? | Choice | Yes, No | |
+| | | Fever, chills, feeling unwell | Choice | Yes, No | |
+| | | > If yes | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | | Decision after consultation with hospital | Choice | Administration, no administration, other | |
+| | | > If other: specify | Text | | |
+| | Side effects | Nausea | Choice | None; Patient is nauseous but can eat and drink normally; Eats/drinks less due to nausea but no weight loss; Cannot eat or drink sufficiently due to nausea | |
+| | | Vomiting | Choice | None; No more than 2 times; 3–5 times; 6 or more times | |
+| | | Reduced appetite or taste changes | Choice | None; Taste/appetite changed but no dietary adjustment needed; Eats less but no weight loss; Cannot eat sufficiently | |
+| | | Diarrhea | Choice | Normal; 1–3 times more than normal; 4–6 times more than normal; >6 times or interfering with daily life | |
+| | | Constipation | Choice | None; Occasional aid (laxative, fruit, etc.); Daily laxatives/enemas required; Severe, impacting daily activities and not helped by laxatives | |
+| | | Fatigue / lack of energy | Choice | Not more than normal; Mild; Moderate; Severe (limits daily activities) | |
+| | | Pain | Choice | None; Mild, does not disturb daily activities; Moderate, daily activities more difficult; Severe, daily activities hardly possible | |
+| | | Skin rash | Choice | None; Limited redness; Moderate redness; Severe/extensive redness or peeling | |
+| | | Psychosocial burden | Choice | Feels well; Mild distress, does not disturb daily life; Moderate impact affecting daily tasks, social contacts, relaxation, or sleep; Severe impact preventing daily tasks, social contacts, relaxation, or sleep | |
+| | | Shortness of breath | Choice | None; Only with moderate exertion; With light exertion affecting daily life; At rest affecting daily activities | |
+| | | Muscle and joint pain | Choice | None; Mild, does not disturb daily life; Moderate, daily activities more difficult; Severe, daily activities hardly possible | |
+| | Other relevant observations | Other side effects or relevant clinical and psychosocial observations (please contact the hospital for clinical concerns) | Text | | |
+| | Task | Medication administration | | | |
+| | | Could the medication be administered exactly according to the procedure (no deviations)? | Choice | Yes, No | |
+| | | > If no | | | |
+| | | ? Please contact the hospital care team (click here for contact details) | | | |
+| | (Quality) follow-up | Are there any remarks or concerns regarding patient registration, data sharing from the hospital, communication/contact with the hospital, availability of materials, or other aspects of transmural collaboration in home hospitalization oncology? Please note them here. Thank you. | Text | | |
 
-| Description                | Code(s)               | Possible answers                                           |
-| -------------------------- | --------------------- | ---------------------------------------------------------- |
-| Heart rate                 | LOINC 8867-4          | Not applicable                                             |
-| Blood pressure             | LOINC 8480-6 / 8462-4 | Not applicable                                             |
-| Body weight                | LOINC 29463-7         | Not applicable                                             |
-| Body temperature           | LOINC 8310-5          | Not applicable                                             |
-| Swelling of bilateral feet | SNOMED 762917000      | SNOMED  <br> - 2667000 (Absent) <br> - 255604002 (Mild) <br> - 6736007 (Moderate severity) <br> - 24484000 (Severe) |
-| Orthopneu                  | SNOMED 62744007       | SNOMED  <br> - 2667000 (Absent) <br> - 255604002 (Mild) <br> - 6736007 (Moderate severity) <br> - 24484000 (Severe) |
-| Injection site pain        | SNOMED 95388000       | SNOMED  <br> - 2667000 (Absent) <br> - 255604002 (Mild) <br> - 6736007 (Moderate severity) <br> - 24484000 (Severe) |
+### Examples
 
-##### Specification:
+- [FHIR Document with patient information from hospital](./Composition-OPAT-Document.html)
+- [FHIR Encounter](./Encounter-Encounter-3441.html)
+- [FHIR Questionnaire Azacitidine](./Questionnaire-AzacitidineV1.html)
+- [FHIR QuestionnaireResponse Azacitidine](./QuestionnaireResponse-AzacitidineV1response.html)
 
-For detailed specifications, refer to the
 
-- [Heart Rate Example](./Observation-HeartRateExample2.html)
-- [Blood Pressure Example](./Observation-BloodPressureExample2.html)
-- [Weight Example](./Observation-BodyWeightExample2.html)
-- [Orthopneu Example](./Observation-OrthopneuExample.html)

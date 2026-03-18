@@ -17,7 +17,9 @@ The Telemonitoring Prescription focuses on integrating patient monitoring data i
 ### Topics Covered
 
 - **Use Cases and Scenarios**: Practical examples to demonstrate the implementation of Telemonitoring in real-world settings.
-- **Key Concepts and Definitions**: Clear explanations of core terms and concepts relevant to the Telemonitoring Prescription.
+- **Key Concepts and Definitions**: 
+  - Clear explanations of core terms and concepts relevant to the Telemonitoring Prescription. 
+  - Key structural difference between **Carepaths** (describing the individual data exchange from patient/device to consumer) and **Caresets** (describing structured reports shared between EPDs/care teams, e.g., between an OPAT hospital team and a home nursing organization).
 - **Interoperability**: Guidelines for achieving seamless data exchange between EHRs and TM Providers.
 - **FHIR Profiles and Terminology Bindings**: Detailed specifications for consistent use of FHIR standards.
 - **Sample Resources**: Examples of FHIR resources to facilitate implementation.
