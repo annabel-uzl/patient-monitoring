@@ -125,7 +125,7 @@ dependencies:
 pages:
   index.md:
     title: Patient Monitoring Outcome Home Page
-  overview.md:
+  carepath_overview.md:
     title: Overview
   recommendations.md:
     title: General Recommendations
@@ -137,22 +137,30 @@ pages:
     title: Acknowledgments, licenses and copyrights
   changes.md:
     title: IG Change History
-  heartfailure.md:
+  carepath_heartfailure.md:
     title: Heart failure
-  holter.md:
-    title: Holter Monitoring
-  ews.md:
+  carepath_holter.md:
+     title: Holter Monitoring
+  carepath_ews.md:
     title: NEWS (National Early Warning Score)
-  overview-loinc.md:
+  carepath_overview-loinc.md:
     title: Overview LOINC
-  totem.md:
+  carepath_totem.md:
     title: TOTeM
-  opat.md:
+  carepath_opat.md:
     title: OPAT
-  antitumoral.md:
+  carepath_antitumoral.md:
     title: Antitumoral therapy
   perioperative-abdominal.md:
     title: Perioperative care - abdominal
+  careset_opat.md:
+    title: OPAT
+  careset_antitumoral.md:
+    title: Antitumoral therapy
+  careset_overview.md:
+    title: Overview
+  careset_mappingtable.md:
+    title: Mappingtables
 
 # The ImplementationGuide resource defines several other properties
 # not represented above. These properties can be used as-is and
@@ -191,6 +199,11 @@ menu:
     Diabetes: https://build.fhir.org/ig/hl7-be/core-clinical/branches/issue-48/StructureDefinition-be-observation-diabetes.html
     Perioperative Care - abdominal: perioperative-abdominal.html
     Overview LOINC: overview-loinc.html
+  Caresets:
+    Overview: overview.html
+    OPAT: opat.html
+    Antitumoral: antitumoral.html
+    Mappingtables: careset-mappingtables.html
   Artifact Index: artifacts.html
   History: changes.html
   Support:
