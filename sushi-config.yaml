@@ -140,7 +140,7 @@ pages:
   carepath_heartfailure.md:
     title: Heart failure
   carepath_holter.md:
-     title: Holter Monitoring
+    title: Holter Monitoring
   carepath_ews.md:
     title: NEWS (National Early Warning Score)
   carepath_overview-loinc.md:
@@ -151,7 +151,7 @@ pages:
     title: OPAT
   carepath_antitumoral.md:
     title: Antitumoral therapy
-  perioperative-abdominal.md:
+  carepath_perioperative-abdominal.md:
     title: Perioperative care - abdominal
   careset_opat.md:
     title: OPAT
@@ -189,20 +189,20 @@ menu:
     General Recommendations: recommendations.html
     Terminologies: terminology.html
   Carepaths:
-    Overview: overview.html
-    Heart failure: heartfailure.html
-    NEWS: ews.html
-    TOTeM: totem.html
-    OPAT: opat.html
-    Holter Monitoring: holter.html
-    Antitumoral: antitumoral.html
+    Overview: carepath_overview.html
+    Heart failure: carepath_heartfailure.html
+    NEWS: carepath_ews.html
+    TOTeM: carepath_totem.html
+    OPAT: carepath_opat.html
+    Holter Monitoring: carepath_holter.html
+    Antitumoral: carepath_antitumoral.html
     Diabetes: https://build.fhir.org/ig/hl7-be/core-clinical/branches/issue-48/StructureDefinition-be-observation-diabetes.html
-    Perioperative Care - abdominal: perioperative-abdominal.html
-    Overview LOINC: overview-loinc.html
+    Perioperative Care - abdominal: carepath_perioperative-abdominal.html
+    Overview LOINC: carepath_overview-loinc.html
   Caresets:
-    Overview: overview.html
-    OPAT: opat.html
-    Antitumoral: antitumoral.html
+    Overview: careset_overview.html
+    OPAT: careset_opat.html
+    Antitumoral: careset_antitumoral.html
     Mappingtables: careset_mappingtable.html
   Artifact Index: artifacts.html
   History: changes.html

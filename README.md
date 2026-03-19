@@ -1,9 +1,9 @@
 # HL7 Belgium – Patient Monitoring Outcome
 
-This **FHIR Implementation Guide (IG)** provides standardized guidance for integrating data between **Electronic Health Record (EHR)** systems and **Telemonitoring (TM) Providers** in Belgium.  
-It is fully aligned with the national **Telemonitoring Prescription initiative**, ensuring seamless and interoperable care coordination.
+This **FHIR Implementation Guide (IG)** provides standardized guidance for integrating data related to patient monitoring.
+The main stakeholders are **Electronic Health Record (EHR)** systems, **Transmural Data Providers** (ex. remote monitoring) and HomeCare.
 
-For more background information, visit: [https://telemonitoring-prescription.com](https://telemonitoring-prescription.com)
+For more background information, visit: [https://transmuralplatform.eu](https://www.transmuralplatform.eu)
 
 ---
 
@@ -12,11 +12,13 @@ For more background information, visit: [https://telemonitoring-prescription.com
 This IG contains two distinct concepts that are important to distinguish:
 
 ### Carepath
-The **Carepath** definitions describe how telemonitoring data is exchanged between systems. This exchange typically happens between **providers of patient monitoring data** (e.g., vital signs monitors, home devices) and **consumers** (e.g., EHRs, dashboards). It defines the specific data points that need to be collected from the patient as part of their pathway.
+
+The **Carepath** definitions describe how transmural care data is exchanged between systems. This exchange typically happens between **Transmural Data Providers** (e.g., vital signs monitors, home devices) and **Care Systems** (e.g., EHRs, Clinical Command Centers, Virtual Wards, ...). It defines the specific data points that need to be collected from the patient as part of their pathway.
 
 ### Careset
-The **Careset** definitions describe how data is collected in a structured report that can be shared between Electronic Patient Dossiers (EPDs) or specific healthcare actors. A Careset report actively re-uses the semantic foundation (SNOMED CT and LOINC codes) from Carepath definitions to ensure a uniform baseline, but it extends this foundation with extra information capturing a holistic overview, such as hospital instructions, Encounters, advanced PatientQuestionnaires, and procedural outcomes.
-*Example: A patient is home hospitalized and a nurse is scheduled to come by and take care of the patient. The communication (e.g., the Careset report) happens between the care team in the hospital (e.g., the OPAT team) and the home nurse or home nursing organization.*
+
+The **Careset** definitions describe how data is collected in a structured report that can be shared between Electronic Patient Dossiers (EPDs) or specific healthcare actors. A Careset report actively re-uses the semantic foundation (SNOMED-CT and LOINC codes) from Carepath definitions to ensure a uniform baseline, but it extends this foundation with extra information capturing a holistic overview, such as hospital instructions, Encounters, advanced PatientQuestionnaires, and procedural outcomes.
+_Example: A patient is home hospitalized and a nurse is scheduled to come by and take care of the patient. The communication (e.g., the Careset report) happens between the care team in the hospital (e.g., the OPAT team) and the home nurse or home nursing organization._
 
 ---
 
@@ -68,7 +70,6 @@ To propose a new **carepath** or **careset** for inclusion in this Implementatio
 
 2. **Propose a Pull Request (PR)**  
    Fork the repo, create a branch, and add:
-
    - Relevant FHIR profiles
    - Any ValueSets or CodeSystems
    - Documentation (markdown pages)
@@ -82,4 +83,3 @@ To propose a new **carepath** or **careset** for inclusion in this Implementatio
    Agenda and details: [https://wiki.hl7belgium.org/index.php?title=Patient_Monitoring_Outcome_Workgroup](https://wiki.hl7belgium.org/index.php?title=Patient_Monitoring_Outcome_Workgroup)
 
 Once approved, your carepath or careset can be merged and included in future IG publications.
-
