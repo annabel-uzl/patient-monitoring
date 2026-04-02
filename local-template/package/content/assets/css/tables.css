@@ -4,6 +4,10 @@ div.table-md + table{
     margin-bottom: 10px;
     margin-right: auto;
   }
+
+.cell-info {
+  background-color: #efd06d;
+}
   
   div.table-md + table th {
     border:1px solid silver;

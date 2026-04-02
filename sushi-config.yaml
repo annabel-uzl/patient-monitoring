@@ -125,42 +125,44 @@ dependencies:
 pages:
   index.md:
     title: Patient Monitoring Outcome Home Page
-  carepath_overview.md:
-    title: Overview
   recommendations.md:
     title: General Recommendations
   terminology.md:
     title: Terminologies
+  carepath-overview.md:
+    title: Overview Carepaths
+  carepath-heartfailure.md:
+    title: Carepath Heart failure
+  carepath-holter.md:
+    title: Carepath Holter Monitoring
+  carepath-ews.md:
+    title: Carepath NEWS (National Early Warning Score)
+  carepath-totem.md:
+    title: Carepath TOTeM
+  carepath-opat.md:
+    title: Carepath OPAT
+  carepath-antitumoral.md:
+    title: Carepath Antitumoral therapy
+  carepath-perioperative-abdominal.md:
+    title: Carepath Perioperative care - abdominal
+  carepath-overview-loinc.md:
+    title: Overview carepath LOINC
+  careset-overview.md:
+    title: Overview caresets
+  legal-guidelines-home-hospitalization.md:
+    title: Legal guidelines home hospitalization
+  home-hospitalization-opat.md:
+    title: Home hosp - OPAT
+  home-hospitalization-antitumoral.md:
+    title: Home hosp - Antitumoral therapy
+  home-hospitalization-mappingtable.md:
+    title: Home hosp - Mappingtables
   downloads.md:
     title: Useful Downloads
   copyrights.md:
     title: Acknowledgments, licenses and copyrights
   changes.md:
     title: IG Change History
-  carepath_heartfailure.md:
-    title: Heart failure
-  carepath_holter.md:
-    title: Holter Monitoring
-  carepath_ews.md:
-    title: NEWS (National Early Warning Score)
-  carepath_overview-loinc.md:
-    title: Overview LOINC
-  carepath_totem.md:
-    title: TOTeM
-  carepath_opat.md:
-    title: OPAT
-  carepath_antitumoral.md:
-    title: Antitumoral therapy
-  carepath_perioperative-abdominal.md:
-    title: Perioperative care - abdominal
-  careset_opat.md:
-    title: OPAT
-  careset_antitumoral.md:
-    title: Antitumoral therapy
-  careset_overview.md:
-    title: Overview
-  careset_mappingtable.md:
-    title: Mappingtables
 
 # The ImplementationGuide resource defines several other properties
 # not represented above. These properties can be used as-is and
@@ -189,21 +191,22 @@ menu:
     General Recommendations: recommendations.html
     Terminologies: terminology.html
   Carepaths:
-    Overview: carepath_overview.html
-    Heart failure: carepath_heartfailure.html
-    NEWS: carepath_ews.html
-    TOTeM: carepath_totem.html
-    OPAT: carepath_opat.html
-    Holter Monitoring: carepath_holter.html
-    Antitumoral: carepath_antitumoral.html
+    Overview: carepath-overview.html
+    Heart failure: carepath-heartfailure.html
+    NEWS: carepath-ews.html
+    TOTeM: carepath-totem.html
+    OPAT: carepath-opat.html
+    Holter Monitoring: carepath-holter.html
+    Antitumoral: carepath-antitumoral.html
     Diabetes: https://build.fhir.org/ig/hl7-be/core-clinical/branches/issue-48/StructureDefinition-be-observation-diabetes.html
-    Perioperative Care - abdominal: carepath_perioperative-abdominal.html
-    Overview LOINC: carepath_overview-loinc.html
+    Perioperative Care - abdominal: carepath-perioperative-abdominal.html
+    Overview LOINC: carepath-overview-loinc.html
   Caresets:
-    Overview: careset_overview.html
-    OPAT: careset_opat.html
-    Antitumoral: careset_antitumoral.html
-    Mappingtables: careset_mappingtable.html
+    Overview: careset-overview.html
+    Legal guidelines home hospitalization: legal-guidelines-home-hospitalization.html
+    Home hosp - OPAT: home-hospitalization-opat.html
+    Home hosp - Antitumoral Therapy: home-hospitalization-antitumoral.html
+    Home hosp - Mappingtables: home-hospitalization-mappingtable.html
   Artifact Index: artifacts.html
   History: changes.html
   Support:

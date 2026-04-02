@@ -52,6 +52,7 @@ Make sure the following tools are installed:
 - **Java** – required to run the IG Publisher
 - **Node.js + npm** – optional, for IGs using Node-based tooling
 - **FHIR IG Publisher** – download the latest `publisher.jar` from the [official HL7 release page](https://github.com/HL7/fhir-ig-publisher/releases) and place it in: `input-cache/publisher.jar``
+- **Jekyll** – Download and install Ruby from rubyinstaller.org (pick the version with DevKit), then run `gem install jekyll bundler` to set up Jekyll.
 
 ### Run the IG Publisher
 

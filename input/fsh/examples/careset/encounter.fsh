@@ -1,7 +1,8 @@
 Instance: Encounter-3441
 InstanceOf: Encounter
+Title: "Home hospitalization encounter for subcutaneous injection"
 Usage: #example
-Description: "Home health encounter for subcutaneous injection"
+Description: "First line encounter"
 
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#HH "home health"
@@ -23,5 +24,5 @@ Description: "Home health encounter for subcutaneous injection"
 * reasonCode[0].text = "subcutane inspuiting"
 
 // Service Provider Reference
-* serviceProvider = Reference(Organization/094093067001)
+// * serviceProvider = Reference(Organization/094093067001)
 * serviceProvider.display = "Wit-Gele Kruis Vlaams-Brabant"

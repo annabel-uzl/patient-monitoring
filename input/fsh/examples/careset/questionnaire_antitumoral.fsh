@@ -4,6 +4,8 @@ Alias: $unitsofmeasure = http://unitsofmeasure.org
 
 Instance: AzacitidineV1
 InstanceOf: Questionnaire
+Title: "Azacitidine questionnaire home hospitalization"
+Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Azacitidine."
 Usage: #example
 * title = "Azacitidine"
 * status = #active

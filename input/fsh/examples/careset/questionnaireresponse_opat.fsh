@@ -2,6 +2,8 @@ Alias: $sct = http://snomed.info/sct
 
 Instance: OPATContinuInfuusV1response
 InstanceOf: QuestionnaireResponse
+Title: "OPAT questionnaireresponse home hospitalization"
+Description: "Response to questionnaire containing the necessary information for the home hospitalization of a patient treated with a continuous infusion in the context of an OPAT treatment"
 Usage: #example
 * questionnaire = "Questionnaire/OPATContinuInfuusV1"
 * status = #completed
@@ -11,12 +13,12 @@ Usage: #example
 * item.text = "Verpleegkundig assessment"
 * item.item[0].linkId = "Bewaring"
 * item.item[=].text = "Bewaring"
-* item.item[=].item.linkId = "87Zijneropmerkingenofbezorgdhedenomtrentdecorrectethuisbewaringvandemedicatie"
+* item.item[=].item.linkId = "87bezorgdmed"
 * item.item[=].item.text = "Zijn er opmerkingen of bezorgdheden omtrent de (correcte) thuisbewaring van de medicatie?"
 * item.item[=].item.answer.valueCoding = $sct#710977001 "Safe storage of medication"
 * item.item[+].linkId = "Voorbereidingmedicatietoediening"
 * item.item[=].text = "Voorbereiding medicatietoediening"
-* item.item[=].item[0].linkId = "52Demedicatiewerdvolledigopgelosttoteenheldereoplossingzonderzichtbaredeeltjes"
+* item.item[=].item[0].linkId = "52medoplossing"
 * item.item[=].item[=].text = "De medicatie werd volledig opgelost tot een heldere oplossing zonder zichtbare deeltjes"
 * item.item[=].item[=].answer.valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item.item[=].item[+].linkId = "24GewichtvanvolleInfusornetvoornieuwetoediening"
