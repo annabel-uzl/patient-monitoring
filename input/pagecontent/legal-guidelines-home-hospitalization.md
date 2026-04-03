@@ -29,7 +29,8 @@ coordination between the hospital and the patient must be structured.
 
 * **Key Requirement:** The hospital medical specialist remains legally responsible for the treatment plan and must
   coordinate with the patient's GP.
-* **Source:** [RIZIV - Home Hospitalization for Oncology and Antimicrobial Treatment](https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/wat-het-ziekenfonds-terugbetaalt/thuishospitalisatie-voor-oncologie-en-antimicrobiele-behandeling)
+* **Source (web):** [RIZIV - Home Hospitalization for Oncology and Antimicrobial Treatment](https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/wat-het-ziekenfonds-terugbetaalt/thuishospitalisatie-voor-oncologie-en-antimicrobiele-behandeling)
+* **Reference (PDF):** [Fourth amendment to the 2019 national agreement between Belgian hospitals and insurance institutions, which establishes the regulatory and financial framework for home hospitalization (NL)](2023-03-07_ZH_2020_quinquies_voorOCZH.pdf)
 
 #### Medication Safety and Logistics (FAGG/AFMPS)
 
