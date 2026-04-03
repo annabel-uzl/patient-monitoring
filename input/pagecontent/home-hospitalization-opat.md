@@ -204,6 +204,51 @@ Changes to the content must be approved by the working group.
 |                    |                                          | Are there other symptoms or relevant clinical and/or psychosocial observations? (please contact the hospital care team in case of clinical concern)                                                                                                                                                                            | Text          |                                                                                                                                                                                                                                                                                                                                                                                                            |           |
 |                    | (Quality) follow-up                      | Are there any remarks or concerns regarding the registration of this patient, data sharing from the hospital, communication with and contact with the hospital, availability of medication and materials, or other aspects of transmural collaboration around home hospitalization OPAT? Please share them with us. Thank you. | Text          |                                                                                                                                                                                                                                                                                                                                                                                                            |           |
 
+### Justification for using Questionnaires
+
+The OPAT careset uses FHIR Questionnaire and QuestionnaireResponse as its primary mechanism for structured data capture
+from home nurses. This is a deliberate design choice, justified on several grounds.
+
+**It reflects the actual clinical workflow.** A questionnaire is literally what a home nurse fills in during or after a
+visit. The data capture model therefore mirrors reality: each home visit produces one completed QuestionnaireResponse,
+which corresponds to one discrete nursing encounter. Rather than asking implementers to map nursing observations to a
+collection of loosely related FHIR resources (Observation, Condition, Procedure, etc.) during data entry, the
+nurse-facing system can present the questionnaire directly, and the FHIR representation follows naturally.
+
+**It preserves context.** Individual FHIR resources such as Observations are powerful for querying and analytics, but they
+are inherently atomic. A standalone Observation for a temperature of 38.9°C carries no information about whether the
+dressing at the insertion site was normal, whether the medication was correctly prepared, or whether the nurse noted
+swelling of the face. Grouping observations under a QuestionnaireResponse preserves the full clinical context of a
+single visit as a coherent unit, which is essential when a physician reviews the data.
+
+**Loose resources can still be extracted via SDC Definition-based Extraction.** For systems that need individual FHIR
+resources (e.g., for populating a patient's Observation timeline or triggering CDS alerts), the [SDC Definition Extract](https://build.fhir.org/ig/HL7/sdc/en/StructureDefinition-sdc-questionnaire-definitionExtract.html)
+mechanism allows individual resources to be derived automatically from a QuestionnaireResponse. Each question item can
+be annotated with a definition extension that maps it to a target resource and element path. This means a single
+QuestionnaireResponse can be both the source of truth and the input to an automated extraction pipeline that produces
+discrete Observations, Conditions, or other resources — without requiring the sending system to produce all of them
+independently. The questionnaire is therefore not a barrier to interoperability; it is the entry point.
+
+**It enforces structural completeness.** A Questionnaire defines exactly which items are required, which are conditional (
+e.g., "if abnormal: specify"), and which follow a controlled vocabulary. This makes validation straightforward and
+reduces the risk of partial or ambiguous submissions. Compared to accepting a bundle of arbitrary Observations, a
+QuestionnaireResponse validated against its Questionnaire gives the receiving system strong guarantees about what data
+is present and how it is structured.
+
+**It simplifies versioning and governance.** The questionnaire content in this careset was established through a formal
+working group process (VZA, NPTV) and is subject to controlled change management. Encoding that content in a FHIR
+Questionnaire resource means the definition, its version, and its approved answer sets are all machine-readable and can
+be referenced explicitly by every QuestionnaireResponse. When the working group approves a change to the questionnaire,
+implementers can unambiguously distinguish responses that were captured under version N from those captured under
+version N+1.
+
+**It lowers the implementation bar for home nursing systems.** Home nursing software is often less technically mature than
+hospital EPDs. Requiring these systems to produce a semantically correct bundle of typed FHIR resources (with proper
+codes, units, and references) places a significant implementation burden on them. Producing a QuestionnaireResponse -
+essentially a structured form submission - is a substantially simpler task. The complexity of mapping to fine-grained
+FHIR resources can then be handled centrally, either at the receiving hospital system or via an intermediary extraction
+service.
+
 ### Encounter
 
 The **purpose of the FHIR Encounter resource is twofold**:
@@ -219,39 +264,28 @@ The **purpose of the FHIR Encounter resource is twofold**:
 
 <div class="dragon">
 
-<p>
 The FHIR Encounter resource is only used for the orders given by the hospital. Other 'procedures' should
 not be communicated back to the hospital.
-</p>
-
-<p>
-Some possible <strong>reasonCodes</strong> for the FHIR Encounter resource (with link to <strong>tarfac</strong>) are the following:
-</p>
-
-<ul>
-<li>82078001 | Collection of blood specimen for laboratory (procedure) | >> Bloedname (niet terugbetaalbare zorg)</li>
-<li>705995006 | Needleless valve-connector (physical object) | >> Vervangen naaldloze connector (niet terugbetaalbare zorg)</li>
-<li>448439004 | Catheter stabilization device (physical object) | >> Vervangen statlock (niet terugbetaalbare zorg)</li>
-<li>103715008 | Removal of catheter (procedure) | >> Permanent verwijderen centrale katheter (idem perfusieforfait)</li>
-<li>18949003 | Change of dressing (procedure) | >> Vervangen katheterverband 424336</li>
-<li>302358004 | Vascular cannula adjustment (procedure) | >> Vervangen grippernaald 423113</li>
-<li>233553003 | Vascular cannula removal (procedure) | >> Verwijderen grippernaald 421072</li>
-
-<li>
-18629005 | Administration of drug or medicament (procedure) | (+ one of the following codes for extra information)
-  <ul>
-    <li>14152002 | Intravenous infusion (procedure) | >> Perfusie 425375</li>
-    <li>386358000 | Administration of drug or medicament via intravenous route (procedure) | >> Intraveneuze toediening 423054</li>
-    <li>76601001 | Intramuscular injection (procedure) | >> Intramusculaire toediening 423076</li>
-    <li>276844002 | Injection to subcutaneous drug delivery port (procedure) | >> Subcutane toediening 423076</li>
-    <li>243132000 | Inhaled drug administration (procedure) | >> Inhalatie</li>
-  </ul>
-</li>
-
-</ul>
-
 </div>
+<br>
 
+Possible **reasonCodes** for the FHIR Encounter resource (with link to **tarfac**) are the following:
+
+* 82078001 \|Collection of blood specimen for laboratory (procedure)\| >> Bloedname (niet terugbetaalbare zorg)
+* 705995006 \|Needleless valve-connector (physical object)\| >> Vervangen naaldloze connector (niet terugbetaalbare
+  zorg)
+* 448439004 \|Catheter stabilization device (physical object)\| >> Vervangen statlock (niet terugbetaalbare zorg)
+* 103715008 \|Removal of catheter (procedure)\| >> Permanent verwijderen centrale katheter (idem perfusieforfait)
+* 18949003 \|Change of dressing (procedure)\| >> Vervangen katheterverband 424336
+* 302358004 \|Vascular cannula adjustment (procedure)\| >> Vervangen grippernaald 423113
+* 233553003 \|Vascular cannula removal (procedure)\| >> Verwijderen grippernaald 421072
+* 18629005 \|Administration of drug or medicament (procedure)\| (+ one of the following codes for extra information)
+    * 14152002 \|Intravenous infusion (procedure)\| >> Perfusie 425375
+    * 386358000 \|Administration of drug or medicament via intravenous route (procedure)\| >> Intraveneuze toediening
+      423054
+    * 76601001 \|Intramuscular injection (procedure)\| >> Intramusculaire toediening 423076
+    * 276844002 \|Injection to subcutaneous drug delivery port (procedure)\| >> Subcutane toediening 423076
+    * 243132000 \|Inhaled drug administration (procedure)\| >> Inhalatie
 
 ### Examples
 
