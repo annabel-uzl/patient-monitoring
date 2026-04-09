@@ -293,11 +293,57 @@ Usage: #example
 * item[0].item[=].item[=].text = "Kies kathetertype"
 * item[0].item[=].item[=].type = #choice
 * item[0].item[=].item[=].code = $sct#246138005 "Type of catheter (attribute)"
-* item[0].item[=].item[=].answerOption[0].valueCoding = $sct#52124006 "Central venous catheter"
-* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#445085009 "Tunneled central venous catheter"
-* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#1344705000 "Midline catheter"
-* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#398176008 "Peripherally inserted central catheter"
-* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#423954007 "Peripheral catheter"
+
+// Optie 1: Poortkatheter
+* item[0].item[=].item[=].answerOption[0].valueCoding = $sct#52124006 "Poortkatheter"
+
+// Optie 2: Getunnelde katheter met 1 lumen
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#445085009 "Getunnelde katheter met 1 lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#257279004 "Single lumen catheter"
+
+// Optie 3: Getunnelde katheter met 2 lumen
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#445085009 "Getunnelde katheter met 2 lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#257280001 "Double lumen catheter"
+
+// Optie 4: Getunnelde katheter met 3 lumen
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#445085009 "Getunnelde katheter met 3 lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#397970004 "Triple lumen catheter"
+
+// Optie 5: Midline 1-lumen
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#1344705000 "Single lumen Midline met statlock fixatie"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#257279004 "Single lumen catheter"
+
+// Optie 6: Midline 2-lumen
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#1344705000 "Dubbel lumen Midline met statlock fixatie"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#257280001 "Double lumen catheter"
+
+// Optie 7: PICC 1-lumen Statlock
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#398176008 "Single lumen PICK met statlock fixatie"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#257279004 "Single lumen catheter"
+
+// Optie 8: PICC 1-lumen Securacath
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#398176008 "Single lumen PICK met securacath fixatie"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#257279004 "Single lumen catheter"
+
+// Optie 9: PICC 2-lumen Statlock
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#398176008 "Dubbel lumen PICK met statlock fixatie"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#257280001 "Double lumen catheter"
+
+// Optie 10: PICC 2-lumen Securacath
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#398176008 "Dubbel lumen PICK met securacath fixatie"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
+* item[0].item[=].item[=].answerOption[=].valueCoding.extension[0].valueCoding = $sct#257280001 "Double lumen catheter"
+
+// Optie 11: Perifeer
+* item[0].item[=].item[=].answerOption[+].valueCoding = $sct#423954007 "Perifere katheter"
 
 * item[0].item[=].item[+].linkId = "59Bloedaspiratie"
 * item[0].item[=].item[=].text = "Bloedaspiratie"
