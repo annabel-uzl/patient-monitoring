@@ -7,7 +7,7 @@ Description: "Response to questionnaire containing the necessary information for
 Usage: #example
 * questionnaire = "Questionnaire/AzacitidineV1"
 * status = #completed
-* subject = Reference(Patient/7d95006c-f858-47e4-95f1-a90e9836251e)
+* subject = Reference(Patient/Patient-123)
 * authored = "2025-11-19T11:08:00.5813903+01:00"
 * item[0].linkId = "Verpleegkundigassessment"
 * item[=].text = "Verpleegkundig assessment"

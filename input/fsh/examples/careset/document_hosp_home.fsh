@@ -438,7 +438,7 @@ Instance: ClinicalImpression-OBS-Diarree
 InstanceOf: ClinicalImpression
 Title: "Symptoom: Diarree"
 * status = #completed
-* subject = Reference(Patient-123)
+* subject = Reference(Patient/Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
 * description = "OPAT 3.0"
