@@ -64,4 +64,4 @@ This ensures real-time data exchange between the hospital and 1st-line providers
 See [OPAT Careset](./home-hospitalization-opat.html) and [Antitumoral Careset](./home-hospitalization-antitumoral.html) for more information about
 this technical implementation.
 
-![home_hosp_interaction_diagram.png](home_hosp_interaction_diagram.png)
+<img src="home_hosp_interaction_diagram.png" alt="home_hosp_interaction_diagram.png" style="max-width: 100%; height: auto;">
