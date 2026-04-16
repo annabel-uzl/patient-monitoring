@@ -48,8 +48,11 @@ specifically regarding the partnership with home nurses.
 
 * **Key Requirement:** A written agreement must exist between the hospital and external providers. The hospital must
   provide a 24/7 point of contact for the home nurse.
-* **Source:** [RIZIV Circular - Administrative and Operational Conditions (Docx)](https://www.riziv.fgov.be/SiteCollectionDocuments/omzendbrief_ziekenhuizen_2023_09.docx)
+* **Source:** [RIZIV Circular - Administrative and Operational Conditions (docx)](https://www.riziv.fgov.be/SiteCollectionDocuments/omzendbrief_ziekenhuizen_2023_09.docx)
 
+> **Legal Disclaimer:** This template serves as an informative guide. For specific medical-legal disputes, always
+> consult the full text of the **Royal Decree of June 22, 2023**, published in the Belgian Official Gazette.
+ 
 ### Specific care paths & automated EHR integration
 
 In multiple hospitals and 1st line organizations this home hospitalization framework has been technically implemented
@@ -61,5 +64,4 @@ This ensures real-time data exchange between the hospital and 1st-line providers
 See [OPAT Careset](./home-hospitalization-opat.html) and [Antitumoral Careset](./home-hospitalization-antitumoral.html) for more information about
 this technical implementation.
 
-> **Legal Disclaimer:** This template serves as an informative guide. For specific medical-legal disputes, always
-> consult the full text of the **Royal Decree of June 22, 2023**, published in the Belgian Official Gazette.
+![home_hosp_interaction_diagram.png](home_hosp_interaction_diagram.png)

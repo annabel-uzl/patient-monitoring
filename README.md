@@ -56,7 +56,7 @@ Make sure the following tools are installed:
 
 ### Run the IG Publisher
 
-`java -jar input-cache/publisher.jar -ig ig.ini`
+`java -Dfile.encoding=UTF-8 -jar input-cache/publisher.jar -ig ig.ini`
 
 The output will be generated at: `output/index.html`
 

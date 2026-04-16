@@ -112,7 +112,7 @@ Usage: #example
 * item[0].item[=].item[0].required = true
 * item[0].item[=].item[0].code = $loinc#8310-5 "Body temperature"
 * item[0].item[=].item[0].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-* item[0].item[=].item[0].extension.valueCoding = $unitsofmeasure#Cel "\u00b0C"
+* item[0].item[=].item[0].extension.valueCoding = $unitsofmeasure#Cel "Cel"
 
 * item[0].item[=].item[+].linkId = "D2_Pols"
 * item[0].item[=].item[=].text = "Pols:"

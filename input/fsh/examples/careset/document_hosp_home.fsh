@@ -90,8 +90,8 @@ Usage: #example
 * author = Reference(Organization-UZL)
 * custodian = Reference(Organization-UZL)
 
-// Section 0: Patiëntgegevens
-* section[0].title = "Patiëntgegevens"
+// Section 0: Patientgegevens
+* section[0].title = "Patientgegevens"
 * section[0].author = Reference(Organization-UZL)
 * section[0].entry[0] = Reference(Patient-123)
 
@@ -229,7 +229,7 @@ Description: "Emergency reception with contact details"
 // 5. CLINICAL OBSERVATIONS
 // ==========================================
 
-// Temperature observation (placeholder — referenced by Composition section "Temperatuur")
+// Temperature observation (placeholder - referenced by Composition section "Temperatuur")
 Instance: Observation-Temperatuur
 InstanceOf: Observation
 Title: "Temperature observation for OPAT patient"
@@ -252,7 +252,7 @@ Description: "Home hospitalization catheter observation example"
 * component[1].valueCodeableConcept = http://snomed.info/sct#84756000 "Adhesive tape, device (physical object)"
 
 // ==========================================
-// 6. CLINICAL IMPRESSIONS — MEDICAL HISTORY
+// 6. CLINICAL IMPRESSIONS - MEDICAL HISTORY
 // ==========================================
 Instance: ClinicalImpression-MED-medischeVG
 InstanceOf: ClinicalImpression
@@ -266,7 +266,7 @@ Description: "Relevant medical history (OPAT 3.0 template field MED_medischeVG)"
 * summary = "TEST KWS"
 
 // ==========================================
-// 7. CLINICAL IMPRESSIONS — SYMPTOMS / SIDE EFFECTS
+// 7. CLINICAL IMPRESSIONS - SYMPTOMS / SIDE EFFECTS
 // ==========================================
 
 // Obstipatie
@@ -346,10 +346,10 @@ Title: "Symptoom: Andere"
 * description = "OPAT 3.0"
 * summary = "no"
 
-// Observatie andere — specifieer (no summary in source)
+// Observatie andere - specifieer (no summary in source)
 Instance: ClinicalImpression-OBS-Observatie-andere-specifieer
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Observatie andere — specifieer"
+Title: "Symptoom: Observatie andere - specifieer"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
@@ -461,5 +461,5 @@ Title: "Symptoom: Candidiase"
 Instance: Organization-UZL
 InstanceOf: Organization
 Title: "Organization example for OPAT document"
-Description: "UZ Leuven — authoring and custodian organization"
+Description: "UZ Leuven - authoring and custodian organization"
 * name = "UZ Leuven"

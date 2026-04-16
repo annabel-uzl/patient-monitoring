@@ -150,7 +150,7 @@ pages:
   careset-overview.md:
     title: Overview caresets
   legal-guidelines-home-hospitalization.md:
-    title: Legal guidelines home hospitalization
+    title: Special careset - home hospitalization
   home-hospitalization-opat.md:
     title: Home hosp - OPAT
   home-hospitalization-antitumoral.md:
@@ -203,7 +203,7 @@ menu:
     Overview LOINC: carepath-overview-loinc.html
   Caresets:
     Overview: careset-overview.html
-    Legal guidelines home hospitalization: legal-guidelines-home-hospitalization.html
+    Special careset - home hospitalization: legal-guidelines-home-hospitalization.html
     Home hosp - OPAT: home-hospitalization-opat.html
     Home hosp - Antitumoral Therapy: home-hospitalization-antitumoral.html
     Home hosp - Mappingtables: home-hospitalization-mappingtable.html
