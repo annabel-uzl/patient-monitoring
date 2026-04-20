@@ -7,6 +7,9 @@ InstanceOf: Questionnaire
 Title: "OPAT questionnaire home hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with a continuous infusion in the context of an OPAT treatment"
 Usage: #example
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/OPATContinuInfuusV1"
+* name = "OPATContinuInfuusV1"
+* language = #nl
 * title = "OPAT - continu infuus"
 * status = #active
 

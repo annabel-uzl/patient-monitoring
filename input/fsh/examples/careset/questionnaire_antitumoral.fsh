@@ -7,6 +7,9 @@ InstanceOf: Questionnaire
 Title: "Azacitidine questionnaire home hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Azacitidine."
 Usage: #example
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/AzacitidineV1"
+* name = "AzacitidineV1"
+* language = #nl
 * title = "Azacitidine"
 * status = #active
 

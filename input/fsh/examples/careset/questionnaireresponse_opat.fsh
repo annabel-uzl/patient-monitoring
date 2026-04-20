@@ -6,7 +6,7 @@ Title: "OPAT questionnaireresponse home hospitalization"
 Description: "Response to questionnaire containing the necessary information for the home hospitalization of a patient treated with a continuous infusion in the context of an OPAT treatment"
 Usage: #example
 
-* questionnaire = "Questionnaire/OPATContinuInfuusV1"
+* questionnaire = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/OPATContinuInfuusV1"
 * status = #completed
 * subject = Reference(Patient/Patient-123)
 * authored = "2025-11-21T11:49:11.8445723+01:00"
