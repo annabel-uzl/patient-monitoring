@@ -77,13 +77,33 @@ Usage: #example
 // --- Subgroup 6: Observatie katheter ---
 * item[0].item[6].linkId = "Observatiekatheter"
 * item[0].item[6].text = "Observatie katheter"
+
 * item[0].item[6].item[0].linkId = "G1_KatheterObservatie"
+* item[0].item[6].item[0].text = "Observatie katheter"
 * item[0].item[6].item[0].answer.valueCoding = $sct#17621005 "Normal (qualifier value)"
 
-* item[0].item[6].item[+].linkId = "catheter-type"
-* item[0].item[6].item[=].answer.valueCoding = $sct#445085009 "Tunneled central venous catheter"
-* item[0].item[6].item[=].answer.extension[0].url = "http://example.org/fhir/StructureDefinition/lumen"
-* item[0].item[6].item[=].answer.extension[=].valueCoding = $sct#257279004 "Single lumen catheter"
+* item[0].item[6].item[1].linkId = "catheter-type"
+* item[0].item[6].item[1].text = "Kies kathetertype"
+* item[0].item[6].item[1].answer.valueCoding = $sct#1396546006 "Tunneled catheter with 1 lumen"
+
+* item[0].item[6].item[2].linkId = "G20_Kleurlumen"
+* item[0].item[6].item[2].text = "Kleur lumen"
+* item[0].item[6].item[2].answer.valueCoding = $sct#371253002 "Gray"
+
+* item[0].item[6].item[3].linkId = "G3_Bloedaspiratie"
+* item[0].item[6].item[3].text = "Bloedaspiratie"
+* item[0].item[6].item[3].answer.valueCoding = $sct#36203004 "Easy"
+
+* item[0].item[6].item[4].linkId = "G4_Infusie"
+* item[0].item[6].item[4].text = "Infusie"
+* item[0].item[6].item[4].answer.valueCoding = $sct#36203004 "Easy"
+
+* item[0].item[6].item[5].linkId = "G5_BeschadigdeKatheter"
+* item[0].item[6].item[5].text = "Beschadigde katheter"
+* item[0].item[6].item[5].answer.valueCoding = $sct#373067005 "No (qualifier value)"
+
+* item[0].item[6].item[6].linkId = "G6_Andere"
+* item[0].item[6].item[6].text = "Andere: (indien van toepassing)"
 
 // --- Subgroup 7: Nevenwerkingen ---
 * item[0].item[7].linkId = "Nevenwerkingen"
