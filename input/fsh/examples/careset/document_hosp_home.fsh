@@ -72,7 +72,7 @@ Description: "Example patient for the OPAT document"
 * contact[2].telecom[0].value = "+3216622552"
 * contact[2].telecom[0].rank = 9
 // General practitioner
-* generalPractitioner = Reference(PractitionerRole/16500)
+* generalPractitioner = Reference(PractitionerRole-16500)
 
 // ==========================================
 // 2. THE COMPOSITION (DOCUMENT HEADER)

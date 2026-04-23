@@ -7,12 +7,8 @@ Description: "First line encounter"
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#HH "home health"
 
-// Extension for day part (dagdeel)
-* extension[0].url = "https://fhir.wgk.com/standards/fhir/StructureDefinition/wgk-ext-dagdeel"
-* extension[0].valueString = "Voormiddag"
-
 // Participant (The primary performer)
-* participant[0].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PRF "primary performer"
+* participant[0].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PRF "performer"
 * participant[0].individual.display = "John Doe rizivnr"
 
 // Timing
