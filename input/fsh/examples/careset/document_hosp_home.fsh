@@ -114,11 +114,15 @@ Usage: #example
 * section[4].title = "Bloeddruk"
 * section[4].author = Reference(Organization-UZL)
 * section[4].emptyReason = http://terminology.hl7.org/CodeSystem/list-empty-reason#nilknown "Nil Known"
+* section[4].text.status = #empty
+* section[4].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Geen gegevens beschikbaar</div>"
 
 // Section 5: Hartslag (empty)
 * section[5].title = "Hartslag"
 * section[5].author = Reference(Organization-UZL)
 * section[5].emptyReason = http://terminology.hl7.org/CodeSystem/list-empty-reason#nilknown "Nil Known"
+* section[5].text.status = #empty
+* section[5].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Geen gegevens beschikbaar</div>"
 
 // Section 6: Temperatuur
 * section[6].title = "Temperatuur"
@@ -129,6 +133,8 @@ Usage: #example
 * section[7].title = "Gewicht"
 * section[7].author = Reference(Organization-UZL)
 * section[7].emptyReason = http://terminology.hl7.org/CodeSystem/list-empty-reason#nilknown "Nil Known"
+* section[7].text.status = #empty
+* section[7].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Geen gegevens beschikbaar</div>"
 
 // Section 8: Nevenwerkingen/symptoomlast
 * section[8].title = "Nevenwerkingen/symptoomlast"
@@ -159,6 +165,15 @@ Usage: #example
 // ==========================================
 // 3. THE APPOINTMENT
 // ==========================================
+Instance: testloc
+InstanceOf: Location
+Title: "UZL consultation location example"
+Description: "Example hospital consultation location at UZ Leuven for the OPAT appointment"
+* status = #active
+* name = "UZ Leuven - Raadpleging"
+* mode = #instance
+* type[0] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP "Hospital"
+
 Instance: Appointment-testapp
 InstanceOf: Appointment
 Title: "OPAT appointment example"
@@ -252,7 +267,20 @@ Description: "Home hospitalization catheter observation example"
 * component[1].valueCodeableConcept = http://snomed.info/sct#84756000 "Adhesive tape, device (physical object)"
 
 // ==========================================
-// 6. CLINICAL IMPRESSIONS - MEDICAL HISTORY
+// 6. ENCOUNTER
+// ==========================================
+Instance: CT-259690079
+InstanceOf: Encounter
+Title: "OPAT consultation encounter example"
+Description: "Hospital consultation encounter for the OPAT patient at UZ Leuven"
+* status = #finished
+* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
+* subject = Reference(Patient-123)
+* serviceProvider = Reference(Organization-UZL)
+* period.start = "2025-07-11T13:09:50+02:00"
+
+// ==========================================
+// 7. CLINICAL IMPRESSIONS - MEDICAL HISTORY
 // ==========================================
 Instance: ClinicalImpression-MED-medischeVG
 InstanceOf: ClinicalImpression
@@ -266,7 +294,7 @@ Description: "Relevant medical history (OPAT 3.0 template field MED_medischeVG)"
 * summary = "TEST KWS"
 
 // ==========================================
-// 7. CLINICAL IMPRESSIONS - SYMPTOMS / SIDE EFFECTS
+// 8. CLINICAL IMPRESSIONS - SYMPTOMS / SIDE EFFECTS
 // ==========================================
 
 // Obstipatie
@@ -456,7 +484,7 @@ Title: "Symptoom: Candidiase"
 * summary = "no"
 
 // ==========================================
-// 8. SUPPORTING ORGANIZATIONS
+// 9. SUPPORTING ORGANIZATIONS
 // ==========================================
 Instance: Organization-UZL
 InstanceOf: Organization
