@@ -1,7 +1,7 @@
 Invariant: 1-7-int-range
 Description: "valueInteger must be between 1 and 7 inclusive"
 Severity: #error
-Expression: "valueInteger.exists() implies (valueInteger >= 1 and valueInteger <= 7)"
+Expression: "value.ofType(integer).exists() implies (value.ofType(integer) >= 1 and value.ofType(integer) <= 7)"
 
 Profile: StoolObservation
 Parent: Observation

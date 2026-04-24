@@ -11,7 +11,7 @@ Description: "SNOMED CT codes representing common patient-reported symptoms in h
 * include http://snomed.info/sct#267036007 "Shortness of breath"
 * include http://snomed.info/sct#14760008 "Constipation"
 * include http://snomed.info/sct#62315008 "Diarrhea"
-* include http://snomed.info/sct#248548009 "Nocturnal shortness of breath"
+* include http://snomed.info/sct#248548009 "Nocturnal dyspnea"
 * include http://snomed.info/sct#26677001 "Disturbed sleep pattern"
 * include http://snomed.info/sct#422650009 "Social isolation"
 * include http://snomed.info/sct#267038008 "Oedema"

@@ -1,5 +1,8 @@
 ValueSet: FluidDrainVS
-* include $UCUM#mL/24h "mL per 24h"
+Title: "Fluid Drain Value Set"
+Description: "Valid UCUM units for drain fluid measurement"
+* ^experimental = false
+* include $UCUM#mL/d "mL/d"
 
 Profile: DrainFluidObservation
 Parent: Observation

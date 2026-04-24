@@ -6,7 +6,7 @@ Description: "Answer scaled 0 to 10 with steps of 0.5. 0 being being very poor, 
 * status = #final
 * code.coding[0].system = $snomed
 * code.coding[0].code = #709263008
-* code.coding[0].display = "Appetite assessment"
+* code.coding[0].display = "Assessment of appetite"
 * subject.identifier.system = $tmp_patientId
 * subject.identifier.value = "D358D4B4-6007-4C3E-A33B-056773F45DC9"
 * valueCodeableConcept.coding[0].system = $loinc

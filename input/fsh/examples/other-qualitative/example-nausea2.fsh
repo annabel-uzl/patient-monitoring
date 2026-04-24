@@ -1,7 +1,7 @@
 Instance: NauseaExample2
 InstanceOf: Observation
 Usage: #example
-Title: "Nausea example"
+Title: "Nausea example 2"
 Description: "Answers 0-10 scale, 0.5 increments, Very well to Very poor"
 * status = #final
 * code = $snomed#700471003 "Level of nausea"

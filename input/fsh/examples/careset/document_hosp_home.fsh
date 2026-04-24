@@ -250,8 +250,14 @@ InstanceOf: Observation
 Title: "Temperature observation for OPAT patient"
 Description: "Temperature vital sign observation"
 * status = #final
+* category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
 * code = http://loinc.org#8310-5 "Body temperature"
 * subject = Reference(Patient-123)
+* effectiveDateTime = "2025-11-21T11:49:11+01:00"
+* valueQuantity.value = 36.1
+* valueQuantity.unit = "°C"
+* valueQuantity.system = "http://unitsofmeasure.org"
+* valueQuantity.code = #Cel
 
 // Catheter observation
 Instance: Observation-Katheter-7938866
