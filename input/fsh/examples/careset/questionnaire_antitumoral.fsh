@@ -9,7 +9,6 @@ Description: "Questionnaire containing the necessary information for the home ho
 Usage: #example
 * url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/AzacitidineV1"
 * name = "AzacitidineV1"
-* language = #nl
 * title = "Azacitidine"
 * status = #active
 
@@ -46,7 +45,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Lichaamstemperatuur:"
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].code = $loinc#8310-5 "Lichaamstemperatuur [temperatuur]"
+* item[=].item[=].item[=].code = $loinc#8310-5 "Body temperature"
 * item[=].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension.valueCoding = $unitsofmeasure#Cel "Cel"
 
@@ -62,7 +61,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Bloeddruk systolisch:"
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].code = $loinc#8480-6 "Intravasculaire systolische bloeddruk [druk] in arterieel vaatstelsel"
+* item[=].item[=].item[=].code = $loinc#8480-6 "Systolic blood pressure"
 * item[=].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension.valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 
@@ -70,14 +69,14 @@ Usage: #example
 * item[=].item[=].item[=].text = "Bloeddruk diastolisch:"
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].code = $loinc#8462-4 "Intravasculaire diastolische bloeddruk [druk] in arterieel vaatstelsel"
+* item[=].item[=].item[=].code = $loinc#8462-4 "Diastolic blood pressure"
 * item[=].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension.valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 
 * item[=].item[=].item[+].linkId = "B5_Zuurstofsaturatie"
 * item[=].item[=].item[=].text = "Zuurstofsaturatie (enkel uitvoeren bij hoest en kortademigheid)"
 * item[=].item[=].item[=].type = #decimal
-* item[=].item[=].item[=].code = $loinc#2708-6 "Zuurstofverzadiging [massafractie] in arterieel bloed"
+* item[=].item[=].item[=].code = $loinc#2708-6 "Oxygen saturation in Arterial blood"
 * item[=].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension.valueCoding = $unitsofmeasure#% "%"
 

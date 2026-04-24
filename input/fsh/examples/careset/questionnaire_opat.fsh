@@ -9,7 +9,6 @@ Description: "Questionnaire containing the necessary information for the home ho
 Usage: #example
 * url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/OPATContinuInfuusV1"
 * name = "OPATContinuInfuusV1"
-* language = #nl
 * title = "OPAT - continu infuus"
 * status = #active
 
@@ -107,7 +106,7 @@ Usage: #example
 * item[0].item[=].item[0].text = "Lichaamstemperatuur:"
 * item[0].item[=].item[0].type = #decimal
 * item[0].item[=].item[0].required = true
-* item[0].item[=].item[0].code = $loinc#8310-5 "Lichaamstemperatuur [temperatuur]"
+* item[0].item[=].item[0].code = $loinc#8310-5 "Body temperature"
 * item[0].item[=].item[0].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[0].item[=].item[0].extension.valueCoding = $unitsofmeasure#Cel "Cel"
 
@@ -121,14 +120,14 @@ Usage: #example
 * item[0].item[=].item[+].linkId = "D3_BloeddrukSystolisch"
 * item[0].item[=].item[=].text = "Bloeddruk - systolisch"
 * item[0].item[=].item[=].type = #decimal
-* item[0].item[=].item[=].code = $loinc#8480-6 "Intravasculaire systolische bloeddruk [druk] in arterieel vaatstelsel"
+* item[0].item[=].item[=].code = $loinc#8480-6 "Systolic blood pressure"
 * item[0].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[0].item[=].item[=].extension.valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 
 * item[0].item[=].item[+].linkId = "D4_BloeddrukDiastolisch"
 * item[0].item[=].item[=].text = "Bloeddruk - diastolisch"
 * item[0].item[=].item[=].type = #decimal
-* item[0].item[=].item[=].code = $loinc#8462-4 "Intravasculaire diastolische bloeddruk [druk] in arterieel vaatstelsel"
+* item[0].item[=].item[=].code = $loinc#8462-4 "Diastolic blood pressure"
 * item[0].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[0].item[=].item[=].extension.valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 
