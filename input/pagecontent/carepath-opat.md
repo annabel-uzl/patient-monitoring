@@ -4,7 +4,9 @@ This FHIR implementation content is currently under development and may be subje
 
 **DRAFT: 2025-07-09**
 
-### Care Pathway Overview
+### Carepath Overview
+
+*Note: This page focuses on the **Carepath** for OPAT, which details how individual data points and symptoms are exchanged between patient monitoring providers and consumers. For the structured report defining how this data, along with encounters and questionnaires, is shared between EPDs/care-teams (e.g., between the hospital OPAT team and home nursing organizations), please see the [OPAT Careset](./home-hospitalization-opat.html).*
 
 Certain infections, such as those affecting bones, joints, heart valves, or the prostate, require long-term intravenous (IV) antibiotics.
 The OPAT (Outpatient Parenteral Antimicrobial Therapy) care pathway involves the continuation of intravenous antibiotic therapy initiated in the hospital, in the outpatient setting.
