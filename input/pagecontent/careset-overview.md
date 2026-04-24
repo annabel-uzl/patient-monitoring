@@ -7,7 +7,7 @@ This FHIR implementation content is currently under development and may be subje
 In the context of this Implementation Guide, the **Careset** definitions describe how clinical data is collected in a
 structured report that can be securely shared between Electronic Patient Dossiers (EPDs) or other healthcare systems.
 
-While **[Carepaths](./carepathoverview.html)** focus on how individual data points are exchanged between telemonitoring
+While **[Carepaths](./carepath-overview.html)** focus on how individual data points are exchanged between telemonitoring
 providers and consumers, Careset reports provide a more holistic clinical picture. These reports may include data
 imported from the Carepath definitions (such as vital signs and symptoms), but can also contain additional, extensive
 information including:

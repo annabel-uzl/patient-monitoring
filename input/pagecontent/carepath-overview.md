@@ -8,4 +8,4 @@ In the context of this Implementation Guide, the **Carepath** concepts describe 
 
 A **Carepath** focuses on the specific data points, vital signs, and symptoms that need to be collected from the patient as part of their standardized remote or home pathway. It defines the required SNOMED and LOINC codes to ensure accurate interoperability between standard measurement devices and receiving hospital systems.
 
-**Note:** The Carepath is distinct from the **[Careset](./careset_overview.html)**. While Carepaths detail the individual data components (e.g., monitoring variables), Caresets define how this data is collected into reports that can be shared between Electronic Patient Dossiers (EPDs) and healthcare actors.
+**Note:** The Carepath is distinct from the **[Careset](./careset-overview.html)**. While Carepaths detail the individual data components (e.g., monitoring variables), Caresets define how this data is collected into reports that can be shared between Electronic Patient Dossiers (EPDs) and healthcare actors.
