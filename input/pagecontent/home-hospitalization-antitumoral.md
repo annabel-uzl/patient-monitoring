@@ -302,7 +302,7 @@ resources (e.g., for populating a patient's Observation timeline or triggering C
 mechanism allows individual resources to be derived automatically from a QuestionnaireResponse. Each question item can
 be annotated with a definition extension that maps it to a target resource and element path. This means a single
 QuestionnaireResponse can be both the source of truth and the input to an automated extraction pipeline that produces
-discrete Observations, Conditions, or other resources — without requiring the sending system to produce all of them
+discrete Observations, Conditions, or other resources - without requiring the sending system to produce all of them
 independently. The questionnaire is therefore not a barrier to interoperability; it is the entry point.
 
 **It enforces structural completeness.** A Questionnaire defines exactly which items are required, which are conditional (
@@ -340,20 +340,22 @@ not be communicated back to the hospital.
 </div>
 <br>
 
-Possible **reasonCodes** for the FHIR Encounter resource (with link to **tarfac**) are the following:
-* 82078001 \|Collection of blood specimen for laboratory (procedure)\| >> Bloedname (niet terugbetaalbare zorg)
-* 705995006 \|Needleless valve-connector (physical object)\| >> Vervangen naaldloze connector (niet terugbetaalbare zorg)
-* 448439004 \|Catheter stabilization device (physical object)\| >> Vervangen statlock (niet terugbetaalbare zorg)
-* 103715008 \|Removal of catheter (procedure)\| >> Permanent verwijderen centrale katheter (idem perfusieforfait)
-* 18949003 \|Change of dressing (procedure)\| >> Vervangen katheterverband 424336
-* 302358004 \|Vascular cannula adjustment (procedure)\| >> Vervangen grippernaald 423113
-* 233553003 \|Vascular cannula removal (procedure)\| >> Verwijderen grippernaald 421072
+Possible **reasonCodes** for the FHIR Encounter resource (with link to the billing code **Tarfac/RIZIV**) are the following:
+
+* 82078001 \|Collection of blood specimen for laboratory (procedure)\| >> Bloedname (N/A, Non-reimbursable care)
+* 705995006 \|Needleless valve-connector (physical object)\| >> Vervangen naaldloze connector (N/A, Non-reimbursable care)
+* 448439004 \|Catheter stabilization device (physical object)\| >> Vervangen statlock (N/A, Non-reimbursable care)
+* 103715008 \|Removal of catheter (procedure)\| >> Permanent verwijderen centrale katheter (421072 or 425375 ?)
+* 18949003 \|Change of dressing (procedure)\| >> Vervangen katheterverband (424336, Specialized Nursing Care)
+* 302358004 \|Vascular cannula adjustment (procedure)\| >> Vervangen grippernaald (423113, Specialized Nursing Care)
+* 233553003 \|Vascular cannula removal (procedure)\| >> Verwijderen grippernaald (421072, Specialized Nursing Care)
 * 18629005 \|Administration of drug or medicament (procedure)\| (+ one of the following codes for extra information)
-   * 14152002 \|Intravenous infusion (procedure)\| >> Perfusie 425375
-   * 386358000 \|Administration of drug or medicament via intravenous route (procedure)\| >> Intraveneuze toediening 423054
-   * 76601001 \|Intramuscular injection (procedure)\| >> Intramusculaire toediening 423076
-   * 276844002 \|Injection to subcutaneous drug delivery port (procedure)\| >> Subcutane toediening 423076
-   * 243132000 \|Inhaled drug administration (procedure)\| >> Inhalatie
+    * 14152002 \|Intravenous infusion (procedure)\| >> Perfusie (425375, Infusion/Perfusion)
+    * 386358000 \|Administration of drug or medicament via intravenous route (procedure)\| >> Intraveneuze toediening
+      (423054, Injection/Administration)
+    * 76601001 \|Intramuscular injection (procedure)\| >> Intramusculaire toediening (423076, Injection/Administration)
+    * 276844002 \|Injection to subcutaneous drug delivery port (procedure)\| >> Subcutane toediening (423076, Injection/Administration)
+    * 243132000 \|Inhaled drug administration (procedure)\| >> Inhalatie (? 425213)
 
 ### Examples
 
