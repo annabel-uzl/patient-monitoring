@@ -33,7 +33,8 @@ releaseLabel: STU1
 # will be translated into IG.contact values.
 publisher:
   name: HL7 Belgium
-  email: hl7belgium@gmail.com
+  url: http://example.com/committees
+  email: my-group@example.com
 
 # ContactDetail is required by the template.
 contact:
