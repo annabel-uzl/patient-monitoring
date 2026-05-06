@@ -11,11 +11,3 @@ Description: "Profile on Questionnaire for the OPAT continuous-infusion (elastom
 * subjectType = #Patient
 
 * item 1..* MS
-
-Mapping: HomehospOpatContinuousInfusionQuestionnaireToLogical
-Source: HomehospOpatContinuousInfusionQuestionnaire
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/opat-continuous-infusion-questionnaire"
-Id: opat-continuous-infusion-questionnaire-lm-mapping
-Title: "Mapping to OPATContinuousInfusionQuestionnaire Logical Model"
-* -> "OPATContinuousInfusionQuestionnaire"
-* item -> "OPATContinuousInfusionQuestionnaire.nursingAssessment"

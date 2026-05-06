@@ -11,11 +11,3 @@ Description: "Profile on Questionnaire for the ONCO Azacitidine (Vidaza®) nursi
 * subjectType = #Patient
 
 * item 1..* MS
-
-Mapping: HomehospOncoAzacitidineQuestionnaireToLogical
-Source: HomehospOncoAzacitidineQuestionnaire
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/onco-azacitidine-questionnaire"
-Id: onco-azacitidine-questionnaire-lm-mapping
-Title: "Mapping to ONCOAzacitidineQuestionnaire Logical Model"
-* -> "ONCOAzacitidineQuestionnaire"
-* item -> "ONCOAzacitidineQuestionnaire.nursingAssessment"

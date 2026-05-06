@@ -11,11 +11,3 @@ Description: "Profile on Questionnaire for the ONCO Fulvestrant (Faslodex®) nur
 * subjectType = #Patient
 
 * item 1..* MS
-
-Mapping: HomehospOncoFulvestrantQuestionnaireToLogical
-Source: HomehospOncoFulvestrantQuestionnaire
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/onco-fulvestrant-questionnaire"
-Id: onco-fulvestrant-questionnaire-lm-mapping
-Title: "Mapping to ONCOFulvestrantQuestionnaire Logical Model"
-* -> "ONCOFulvestrantQuestionnaire"
-* item -> "ONCOFulvestrantQuestionnaire.nursingAssessment"

@@ -11,11 +11,3 @@ Description: "Profile on Questionnaire for the OPAT short-duration IV administra
 * subjectType = #Patient
 
 * item 1..* MS
-
-Mapping: HomehospOpatShortIVQuestionnaireToLogical
-Source: HomehospOpatShortIVQuestionnaire
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/opat-short-iv-questionnaire"
-Id: opat-short-iv-questionnaire-lm-mapping
-Title: "Mapping to OPATShortIVQuestionnaire Logical Model"
-* -> "OPATShortIVQuestionnaire"
-* item -> "OPATShortIVQuestionnaire.nursingAssessment"

@@ -20,19 +20,3 @@ Description: "Profile on QuestionnaireResponse for OPAT and ONCO home hospitaliz
 * author only Reference(BePractitioner or BePractitionerRole)
 
 * item 1..* MS
-
-Mapping: HomehospQRToLogical
-Source: HomehospQuestionnaireResponse
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/homehosp-questionnaire-response-lm"
-Id: homehosp-qr-lm-mapping
-Title: "Mapping to CarestQuestionnaireResponse Logical Model"
-* -> "CarestQuestionnaireResponse"
-* questionnaire -> "CarestQuestionnaireResponse.questionnaire"
-* status -> "CarestQuestionnaireResponse.status"
-* subject -> "CarestQuestionnaireResponse.subject"
-* encounter -> "CarestQuestionnaireResponse.encounter"
-* authored -> "CarestQuestionnaireResponse.authored"
-* author -> "CarestQuestionnaireResponse.author"
-* item -> "CarestQuestionnaireResponse.item"
-* item.linkId -> "CarestQuestionnaireResponse.item.linkId"
-* item.answer -> "CarestQuestionnaireResponse.item.answer"

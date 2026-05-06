@@ -22,20 +22,3 @@ Description: "Profile on the FHIR Encounter resource for use in OPAT and ONCO ho
 
 * serviceProvider MS
 * serviceProvider only Reference(BeOrganization)
-
-Mapping: HomehospEncounterToLogical
-Source: HomehospEncounter
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/homehosp-encounter-lm"
-Id: homehosp-encounter-lm-mapping
-Title: "Mapping to CarestEncounter Logical Model"
-* -> "CarestEncounter"
-* class -> "CarestEncounter.class"
-* status -> "CarestEncounter.status"
-* period -> "CarestEncounter.period"
-* period.start -> "CarestEncounter.period.start"
-* period.end -> "CarestEncounter.period.end"
-* participant -> "CarestEncounter.participant"
-* participant.type -> "CarestEncounter.participant.type"
-* participant.individual -> "CarestEncounter.participant.individual"
-* reasonCode -> "CarestEncounter.reasonCode"
-* serviceProvider -> "CarestEncounter.serviceProvider"

@@ -11,11 +11,3 @@ Description: "Profile on Questionnaire for the ONCO Daratumumab (Darzalex®) nur
 * subjectType = #Patient
 
 * item 1..* MS
-
-Mapping: HomehospOncoDaratumumabQuestionnaireToLogical
-Source: HomehospOncoDaratumumabQuestionnaire
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/onco-daratumumab-questionnaire"
-Id: onco-daratumumab-questionnaire-lm-mapping
-Title: "Mapping to ONCODaratumumabQuestionnaire Logical Model"
-* -> "ONCODaratumumabQuestionnaire"
-* item -> "ONCODaratumumabQuestionnaire.nursingAssessment"

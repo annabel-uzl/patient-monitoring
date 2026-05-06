@@ -11,11 +11,3 @@ Description: "Profile on Questionnaire for the ONCO Trastuzumab (Herceptin®) nu
 * subjectType = #Patient
 
 * item 1..* MS
-
-Mapping: HomehospOncoTrastuzumabQuestionnaireToLogical
-Source: HomehospOncoTrastuzumabQuestionnaire
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/onco-trastuzumab-questionnaire"
-Id: onco-trastuzumab-questionnaire-lm-mapping
-Title: "Mapping to ONCOTrastuzumabQuestionnaire Logical Model"
-* -> "ONCOTrastuzumabQuestionnaire"
-* item -> "ONCOTrastuzumabQuestionnaire.nursingAssessment"

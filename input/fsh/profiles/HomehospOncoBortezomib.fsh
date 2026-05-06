@@ -11,11 +11,3 @@ Description: "Profile on Questionnaire for the ONCO Bortezomib (Velcade®) nursi
 * subjectType = #Patient
 
 * item 1..* MS
-
-Mapping: HomehospOncoBortezomibQuestionnaireToLogical
-Source: HomehospOncoBortezomibQuestionnaire
-Target: "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/onco-bortezomib-questionnaire"
-Id: onco-bortezomib-questionnaire-lm-mapping
-Title: "Mapping to ONCOBortezomibQuestionnaire Logical Model"
-* -> "ONCOBortezomibQuestionnaire"
-* item -> "ONCOBortezomibQuestionnaire.nursingAssessment"
