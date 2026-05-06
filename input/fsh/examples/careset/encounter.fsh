@@ -8,7 +8,7 @@ Description: "First line encounter"
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#HH "home health"
 
 // Participant (The primary performer)
-* participant[0].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PRF "performer"
+* participant[0].type = http://terminology.hl7.org/CodeSystem/v3-ParticipationType#PPRF "primary performer"
 * participant[0].individual.display = "John Doe rizivnr"
 
 // Timing

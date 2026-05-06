@@ -2,16 +2,20 @@ Alias: $sct = http://snomed.info/sct
 Alias: $loinc = http://loinc.org
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 
-Instance: AzacitidineV1
-InstanceOf: Questionnaire
-Title: "Azacitidine questionnaire home hospitalization"
-Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Azacitidine."
+Instance: DaratumumabV1
+InstanceOf: HomehospOncoDaratumumabQuestionnaire
+Title: "Daratumumab questionnaire home hospitalization"
+Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Daratumumab (Darzalex®)."
 Usage: #example
-* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/AzacitidineV1"
-* name = "AzacitidineV1"
-* title = "Azacitidine"
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/DaratumumabV1"
+* name = "DaratumumabV1"
+* title = "Daratumumab"
 * status = #active
+* subjectType = #Patient
 
+// ==========================================
+// GROUP 0: Verpleegkundig assessment
+// ==========================================
 * item[0].linkId = "Verpleegkundigassessment"
 * item[=].text = "Verpleegkundig assessment"
 * item[=].type = #group
@@ -73,14 +77,20 @@ Usage: #example
 * item[=].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension.valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 
-* item[=].item[=].item[+].linkId = "B5_Zuurstofsaturatie"
-* item[=].item[=].item[=].text = "Zuurstofsaturatie (enkel uitvoeren bij hoest en kortademigheid)"
-* item[=].item[=].item[=].type = #decimal
-* item[=].item[=].item[=].code = $loinc#2708-6 "Oxygen saturation in Arterial blood"
-* item[=].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-* item[=].item[=].item[=].extension.valueCoding = $unitsofmeasure#% "%"
+// --- Subgroup 2: Premedicatie-inname ---
+* item[=].item[+].linkId = "Premedicatieinname"
+* item[=].item[=].text = "Premedicatie-inname"
+* item[=].item[=].type = #group
 
-// --- Subgroup 2: Tegenindicaties ---
+* item[=].item[=].item[0].linkId = "B5_PremedicatieCorrect"
+* item[=].item[=].item[=].text = "Werd de premedicatie correct ingenomen (dexamethason, H1-antihistaminicum, paracetamol voor toediening)?"
+* item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].required = true
+* item[=].item[=].item[=].code = $sct#182833002 "Medication given"
+* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
+* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+
+// --- Subgroup 3: Tegenindicaties ---
 * item[=].item[+].linkId = "Tegenindicaties"
 * item[=].item[=].text = "Tegenindicaties"
 * item[=].item[=].type = #group
@@ -101,66 +111,29 @@ Usage: #example
 * item[=].item[=].item[=].enableWhen[0].answerCoding = $sct#373066001 "Yes"
 
 * item[=].item[=].item[+].linkId = "C3_KoortsRillingen"
-* item[=].item[=].item[=].text = "Koorts , koude rillingen, zich ziek voelen"
+* item[=].item[=].item[=].text = "Koorts, koude rillingen, zich ziek voelen"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#39104002 "Illness"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
 
-* item[=].item[=].item[+].linkId = "C4_OraleIntake"
-* item[=].item[=].item[=].text = "Geen orale intake (tgv verminderde eetlust of smaakverandering)"
+* item[=].item[=].item[+].linkId = "C4_PremedicatieNietGenomen"
+* item[=].item[=].item[=].text = "Premedicatie niet genomen"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].code = $sct#247318005 "Abnormal taste in mouth"
+* item[=].item[=].item[=].code = $sct#371900001 "Medication not administered"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
 
-* item[=].item[=].item[+].linkId = "C5_MisselijkheidErnstig"
-* item[=].item[=].item[=].text = "Ernstige misselijkheid (dwz misselijkheid met onvoldoende orale intake)"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].code = $sct#73335002 "Increased nausea and vomiting"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
-
-* item[=].item[=].item[+].linkId = "C6_KortademigheidErnstig"
-* item[=].item[=].item[=].text = "Toegenomen kortademigheid en/of ernstige kortademigheid (dwz kortademigheid in rust/zonder inspanning en/of kortademigheid die hindert bij de dagelijkse activiteiten) (Trastuzumab, Azacitidine)"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].code = $sct#297216006 "Increasing breathlessness"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
-
-* item[=].item[=].item[+].linkId = "C7_HoestDyspnoe"
-* item[=].item[=].item[=].text = "Nieuwe of toegenomen productieve of droge hoest, met of zonder dyspnoe"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].code = $sct#11833005 "Dry cough"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
-
-* item[=].item[=].item[+].linkId = "C8_Achteruitgang"
-* item[=].item[=].item[=].text = "Algemene achteruitgang"
-* item[=].item[=].item[=].type = #choice
-* item[=].item[=].item[=].required = true
-* item[=].item[=].item[=].code = $sct#154091000119106 "Decline in functional status"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
-
-* item[=].item[=].item[+].linkId = "C9_Andere"
-* item[=].item[=].item[=].text = "Andere: (indien van toepassing)"
-* item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].code = $sct#438833006 "Administration of drug or medicament contraindicated"
-
-* item[=].item[=].item[+].linkId = "C10_ContactZorgteam"
+* item[=].item[=].item[+].linkId = "C5_ContactZorgteam"
 * item[=].item[=].item[=].text = "> Indien tegenindicatie(s): gelieve contact op te nemen met het zorgteam in het ziekenhuis"
 * item[=].item[=].item[=].type = #display
 * item[=].item[=].item[=].enableWhen[0].question = "C1_Tegenindicatie"
 * item[=].item[=].item[=].enableWhen[0].operator = #=
 * item[=].item[=].item[=].enableWhen[0].answerCoding = $sct#373066001 "Yes"
 
-* item[=].item[=].item[+].linkId = "C11_Beslissing"
+* item[=].item[=].item[+].linkId = "C6_Beslissing"
 * item[=].item[=].item[=].text = "Beslissing na overleg ziekenhuis"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#182836005 "Medication review"
@@ -168,15 +141,15 @@ Usage: #example
 * item[=].item[=].item[=].answerOption[+].valueString = "geen toediening"
 * item[=].item[=].item[=].answerOption[+].valueString = "andere"
 
-* item[=].item[=].item[+].linkId = "C12_BeslissingSpecifieer"
+* item[=].item[=].item[+].linkId = "C7_BeslissingSpecifieer"
 * item[=].item[=].item[=].text = "> Indien andere: specifieer"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].code = $sct#1156698007 "Review of current supply of medication"
-* item[=].item[=].item[=].enableWhen[0].question = "C11_Beslissing"
+* item[=].item[=].item[=].enableWhen[0].question = "C6_Beslissing"
 * item[=].item[=].item[=].enableWhen[0].operator = #=
 * item[=].item[=].item[=].enableWhen[0].answerString = "andere"
 
-// --- Subgroup 3: Symptoomlast ---
+// --- Subgroup 4: Symptoomlast ---
 * item[=].item[+].linkId = "Symptoomlast"
 * item[=].item[=].text = "Symptoomlast"
 * item[=].item[=].type = #group
@@ -280,7 +253,16 @@ Usage: #example
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
 
-* item[=].item[=].item[+].linkId = "D12_AndereObservaties"
+* item[=].item[=].item[+].linkId = "D12_SpierEnGewrichtspijn"
+* item[=].item[=].item[=].text = "Spier- en gewrichtspijn"
+* item[=].item[=].item[=].type = #choice
+* item[=].item[=].item[=].code = $sct#57676002 "Joint pain"
+* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
+* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
+* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
+* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+
+* item[=].item[=].item[+].linkId = "D13_AndereObservaties"
 * item[=].item[=].item[=].text = "Andere nevenwerkingen of relevante klinische en psychosociale observaties\n(gelieve bij klinische bezorgdheid contact te nemen met het ziekenhuis voor bespreking)"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].code = $sct#365275006 "General well-being finding"

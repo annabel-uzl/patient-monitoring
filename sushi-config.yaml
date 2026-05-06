@@ -53,7 +53,8 @@ jurisdiction: urn:iso:std:iso:3166#BE "Belgium"
 # package id and the value is the version (or dev/current). For advanced
 # use cases, the value can be an object with keys for `uri` and `version`.
 dependencies:
-  hl7.fhir.be.core: 2.0.1
+  hl7.fhir.be.core: 2.1.2
+  hl7.fhir.uv.sdc: 4.0.0
 #  hl7.fhir.us.mcode:
 #    id: mcode
 #    uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
@@ -84,12 +85,15 @@ dependencies:
 #     better option (see below).
 # The following are simple examples to demonstrate what this might
 # look like:
-#resources:
-#  Patient/my-example-patient:
-#    name: My Example Patient
-#    description: An example Patient
-#    exampleBoolean: true
-#  Patient/bad-example: omit
+resources:
+  Questionnaire/homehosp-q-opat-definitions:
+    name: "OPAT SDC Questionnaire with Extraction Definitions"
+    description: "The OPAT continuous infusion Questionnaire enriched with SDC item.definition fields, enabling definition-based extraction of a QuestionnaireResponse into discrete FHIR Observations."
+    exampleBoolean: true
+  Questionnaire/homehosp-q-onco-definitions:
+    name: "ONCO SDC Questionnaire with Extraction Definitions (Trastuzumab)"
+    description: "The ONCO Trastuzumab Questionnaire enriched with SDC item.definition fields, enabling definition-based extraction of a QuestionnaireResponse into discrete FHIR Observations."
+    exampleBoolean: true
 
 # Groups can control certain aspects of the IG generation.  The IG
 # documentation recommends that authors use the default groups that
@@ -206,7 +210,12 @@ menu:
     Home hosp - OPAT: home-hospitalization-opat.html
     Home hosp - Antitumoral Therapy: home-hospitalization-antitumoral.html
     Home hosp - Mappingtables: home-hospitalization-mappingtable.html
-  Artifact Index: artifacts.html
+  Artifacts:
+    All Artifacts: artifacts.html
+    Logical Models: artifacts.html#1
+    Profiles: artifacts.html#2
+    Value Sets: artifacts.html#3
+    Examples: artifacts.html#4
   History: changes.html
   Support:
     FHIR Spec: https://hl7.org/fhir/R4/
@@ -224,7 +233,7 @@ parameters:
   #  excludettl: true
   #  show-inherited-invariants: false
   auto-oid-root: 2.16.840.1.113883.4.642.40.54
-#  validation: [allow-any-extensions, no-broken-links]
+  validation: [allow-any-extensions]
 
 # The FSHOnly flag indicates if only FSH resources should be exported.
 # If set to true, no IG related content will be generated.
