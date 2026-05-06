@@ -39,36 +39,36 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#422413002 "Ability to store medications (observable entity)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#710977001 "Safe storage and management of medication"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#424363005 "Improper storage of medication"
 
 * item[=].item[=].item[+].linkId = "A2_MedicationStorageSpecify"
 * item[=].item[=].item[=].text = "> If there are comments or concerns: specify"
 * item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.note.text"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.note.text"
 * item[=].item[=].item[=].enableWhen[0].question = "A1_MedicationStorage"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerCoding = $sct#424363005 "Improper storage of medication"
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/StructureDefinition/Observation"
+* item[=].item[=].extension[=].extension[=].valueCanonical = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.status"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCode = #final
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.category"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #survey
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].display = "Survey"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.subject"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.subject"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueReference.reference = "#patient-placeholder"
 
@@ -81,7 +81,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "The medication was fully dissolved into a clear solution without visible particles"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#396076000 "Medication prefill preparation assessment (procedure)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -97,24 +97,24 @@ Usage: #example
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#1381257004 "Measured weight of elastomeric continuous infusion pump with medication before infusion (observable entity)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.value"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension[=].valueCoding = $unitsofmeasure#g "g"
 * item[=].item[=].item[=].extension[+].url = "http://fhir.wgk.com/StructureDefinition/wgk-ext-helptext"
 * item[=].item[=].item[=].extension[=].valueString = "Only to be filled in for continuous infusion"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.system"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://unitsofmeasure.org"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.code"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueCode = #g
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.unit"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueString = "g"
 
@@ -123,24 +123,24 @@ Usage: #example
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#1381260006 "Measured weight of elastomeric continuous infusion pump after infusion (observable entity)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.value"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension[=].valueCoding = $unitsofmeasure#g "g"
 * item[=].item[=].item[=].extension[+].url = "http://fhir.wgk.com/StructureDefinition/wgk-ext-helptext"
 * item[=].item[=].item[=].extension[=].valueString = "Only to be filled in for continuous infusion"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.system"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://unitsofmeasure.org"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.code"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueCode = #g
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.unit"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueString = "g"
 
@@ -148,26 +148,26 @@ Usage: #example
 * item[=].item[=].item[=].text = "Additional observation: (if applicable)"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].code = $sct#396078004 "Medication prefill preparation management (procedure)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.note.text"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.note.text"
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/StructureDefinition/Observation"
+* item[=].item[=].extension[=].extension[=].valueCanonical = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.status"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCode = #final
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.category"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #survey
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].display = "Survey"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.subject"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.subject"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueReference.reference = "#patient-placeholder"
 
@@ -181,36 +181,36 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#373149000 "Medication administered following procedure (situation)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
 * item[=].item[=].item[+].linkId = "C2_SpecifyNo"
 * item[=].item[=].item[=].text = "> If no: specify"
 * item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.note.text"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.note.text"
 * item[=].item[=].item[=].enableWhen[0].question = "C1_AdministrationCorrect"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerCoding = $sct#373067005 "No (qualifier value)"
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/StructureDefinition/Observation"
+* item[=].item[=].extension[=].extension[=].valueCanonical = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.status"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCode = #final
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.category"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #survey
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].display = "Survey"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.subject"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.subject"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueReference.reference = "#patient-placeholder"
 
@@ -224,22 +224,22 @@ Usage: #example
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $loinc#8310-5 "Body temperature"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.value"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension[=].valueCoding = $unitsofmeasure#Cel "Cel"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.system"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://unitsofmeasure.org"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.code"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueCode = #Cel
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.unit"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueString = "°C"
 
@@ -247,22 +247,22 @@ Usage: #example
 * item[=].item[=].item[=].text = "Heart rate:"
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].code = $sct#364075005 "Heart rate (observable entity)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.value"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension[=].valueCoding = $unitsofmeasure#{beats}/min "{beats}/min"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.system"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://unitsofmeasure.org"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.code"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueCode = #{beats}/min
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.unit"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueString = "bpm"
 
@@ -270,22 +270,22 @@ Usage: #example
 * item[=].item[=].item[=].text = "Blood pressure - systolic"
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].code = $loinc#8480-6 "Systolic blood pressure"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.value"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension[=].valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.system"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://unitsofmeasure.org"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.code"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueCode = #mm[Hg]
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.unit"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueString = "mmHg"
 
@@ -293,48 +293,48 @@ Usage: #example
 * item[=].item[=].item[=].text = "Blood pressure - diastolic"
 * item[=].item[=].item[=].type = #decimal
 * item[=].item[=].item[=].code = $loinc#8462-4 "Diastolic blood pressure"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.value"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.value"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
 * item[=].item[=].item[=].extension[=].valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.system"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.system"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://unitsofmeasure.org"
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.code"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.code"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueCode = #mm[Hg]
 * item[=].item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueQuantity.unit"
+* item[=].item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueQuantity.unit"
 * item[=].item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].item[=].extension[=].extension[=].valueString = "mmHg"
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/StructureDefinition/Observation"
+* item[=].item[=].extension[=].extension[=].valueCanonical = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.status"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCode = #final
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.category"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #vital-signs
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].display = "Vital Signs"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.subject"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.subject"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueReference.reference = "#patient-placeholder"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.code"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.code"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://loinc.org"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #8716-3
@@ -350,7 +350,7 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#364554009 "Wound observable (observable entity)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#17621005 "Normal (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#263654008 "Abnormal (qualifier value)"
 
@@ -365,7 +365,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Bloody"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#297968009 "Bleeding skin (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -373,7 +373,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Purulent"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#225550006 "Purulent discharge from wound (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -381,7 +381,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Loose"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#78799005 "Loose (qualifier value)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -389,7 +389,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Serous"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#447112000 "Serous discharge from wound (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -397,7 +397,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Moist"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#17461003 "Wet (qualifier value)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -405,26 +405,26 @@ Usage: #example
 * item[=].item[=].item[=].text = "Other: (if applicable)"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].code = $sct#1481000124102 "Wound dressing observable (observable entity)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.note.text"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.note.text"
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/StructureDefinition/Observation"
+* item[=].item[=].extension[=].extension[=].valueCanonical = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.status"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCode = #final
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.category"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #exam
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].display = "Exam"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.subject"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.subject"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueReference.reference = "#patient-placeholder"
 
@@ -438,7 +438,7 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#386141001 "Insertion site (morphologic abnormality)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#17621005 "Normal (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#263654008 "Abnormal (qualifier value)"
 
@@ -453,7 +453,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Blistering"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#339008 "Blister (morphologic abnormality)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -461,7 +461,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Redness"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#371240000 "Red color (qualifier value)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -469,7 +469,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Hematoma"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#35566002 "Hematoma (morphologic abnormality)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -477,7 +477,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Pus"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#367646009 "Pus (morphologic abnormality)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -485,7 +485,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Crusting"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#69640009 "Crust (morphologic abnormality)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -493,7 +493,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Swelling"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#65124004 "Swelling (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -501,7 +501,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Extravasation/infiltration"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#76676007 "Extravasation (morphologic abnormality)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
@@ -509,26 +509,26 @@ Usage: #example
 * item[=].item[=].item[=].text = "Other: (if applicable)"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].code = $sct#364554009 "Wound observable (observable entity)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.note.text"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.note.text"
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/StructureDefinition/Observation"
+* item[=].item[=].extension[=].extension[=].valueCanonical = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.status"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCode = #final
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.category"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #exam
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].display = "Exam"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.subject"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.subject"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueReference.reference = "#patient-placeholder"
 
@@ -542,7 +542,7 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#1156071007 "Catheter observable (observable entity)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#17621005 "Normal (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#263654008 "Abnormal (qualifier value)"
 
@@ -603,33 +603,33 @@ Usage: #example
 * item[=].item[=].item[=].text = "Damaged catheter"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#1156074004 "Device failure (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
 
 * item[=].item[=].item[+].linkId = "G6_Other"
 * item[=].item[=].item[=].text = "Other: (if applicable)"
 * item[=].item[=].item[=].type = #string
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.note.text"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.note.text"
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/StructureDefinition/Observation"
+* item[=].item[=].extension[=].extension[=].valueCanonical = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.status"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCode = #final
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.category"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #exam
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].display = "Exam"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.subject"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.subject"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueReference.reference = "#patient-placeholder"
 
@@ -642,7 +642,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Skin rash"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#271807003 "Eruption of skin (disorder)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -652,7 +652,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Itching"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#418290006 "Itching (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -662,7 +662,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Blisters/skin peeling"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#271767006 "Peeling of skin (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -672,7 +672,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Nausea"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#422587007 "Nausea (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -682,7 +682,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Vomiting"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#249497008 "Vomiting symptom (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -692,7 +692,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Diarrhea"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#62315008 "Diarrhea (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -702,7 +702,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Constipation"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#14760008 "Constipation (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -712,7 +712,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Decreased appetite"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#64379006 "Decrease in appetite (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -722,7 +722,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Pain during administration"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#698749006 "Pain on flushing of implanted venous access device (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -732,7 +732,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Pain (general)"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#112104007 "Localized pain (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -742,7 +742,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Fatigue"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#224960004 "Tired (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -752,7 +752,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Chills"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#43724002 "Chill (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -762,7 +762,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Candidiasis (fungal infection)"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#78048006 "Candidiasis (disorder)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -772,7 +772,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Joint pain"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#57676002 "Pain of joint (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -782,7 +782,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Respiratory problems"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#267036007 "Dyspnea (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -792,7 +792,7 @@ Usage: #example
 * item[=].item[=].item[=].text = "Facial/tongue swelling"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#278528006 "Facial swelling (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
 * item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
 * item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
@@ -802,26 +802,26 @@ Usage: #example
 * item[=].item[=].item[=].text = "Are there other symptoms or other relevant clinical and/or psychosocial observations?\n(please contact the care team at the hospital if there are clinical concerns)"
 * item[=].item[=].item[=].type = #string
 * item[=].item[=].item[=].code = $sct#365275006 "General well-being finding (finding)"
-* item[=].item[=].item[=].definition = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.note.text"
+* item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.note.text"
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueCanonical = "http://hl7.org/fhir/StructureDefinition/Observation"
+* item[=].item[=].extension[=].extension[=].valueCanonical = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.status"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.status"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCode = #final
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.category"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.category"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[+].system = "http://terminology.hl7.org/CodeSystem/observation-category"
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].code = #survey
 * item[=].item[=].extension[=].extension[=].valueCodeableConcept.coding[=].display = "Survey"
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtractValue"
 * item[=].item[=].extension[=].extension[+].url = "definition"
-* item[=].item[=].extension[=].extension[=].valueUri = "http://hl7.org/fhir/StructureDefinition/Observation#Observation.subject"
+* item[=].item[=].extension[=].extension[=].valueUri = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.subject"
 * item[=].item[=].extension[=].extension[+].url = "fixed-value"
 * item[=].item[=].extension[=].extension[=].valueReference.reference = "#patient-placeholder"
 
