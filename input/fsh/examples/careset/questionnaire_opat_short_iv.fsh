@@ -2,14 +2,14 @@ Alias: $sct = http://snomed.info/sct
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 Alias: $loinc = http://loinc.org
 
-Instance: OPATContinuInfuusV1
-InstanceOf: Questionnaire
-Title: "OPAT questionnaire home hospitalization"
-Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with a continuous infusion in the context of an OPAT treatment"
+Instance: OPATKortIVV1
+InstanceOf: HomehospOpatShortIVQuestionnaire
+Title: "OPAT short IV questionnaire home hospitalization"
+Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with a short-duration IV administration in the context of an OPAT treatment"
 Usage: #example
-* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/OPATContinuInfuusV1"
-* name = "OPATContinuInfuusV1"
-* title = "OPAT - continu infuus"
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/OPATKortIVV1"
+* name = "OPATKortIVV1"
+* title = "OPAT - kort IV"
 * status = #active
 
 // ==========================================
@@ -47,6 +47,7 @@ Usage: #example
 * item[0].item[=].item[0].linkId = "B1_MedicatieVolledigOpgelost"
 * item[0].item[=].item[0].text = "De medicatie werd volledig opgelost tot een heldere oplossing zonder zichtbare deeltjes"
 * item[0].item[=].item[0].type = #choice
+* item[0].item[=].item[0].required = true
 * item[0].item[=].item[0].code = $sct#396076000 "Medication prefill preparation assessment"
 * item[0].item[=].item[0].answerOption[0].valueCoding = $sct#373066001 "Yes"
 * item[0].item[=].item[0].answerOption[+].valueCoding = $sct#373067005 "No"
@@ -58,32 +59,13 @@ Usage: #example
 * item[0].item[=].item[=].enableWhen.operator = #=
 * item[0].item[=].item[=].enableWhen.answerCoding = $sct#373067005 "No"
 
-* item[0].item[=].item[+].linkId = "B3_GewichtVolleInfusor"
-* item[0].item[=].item[=].text = "Gewicht van volle Infusor net voor nieuwe toediening"
-* item[0].item[=].item[=].type = #decimal
-* item[0].item[=].item[=].required = true
-* item[0].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-* item[0].item[=].item[=].extension.valueCoding = $unitsofmeasure#g "g"
-
-* item[0].item[=].item[+].linkId = "B4_GewichtLegeInfusor"
-* item[0].item[=].item[=].text = "Gewicht bij afkoppelen van lege infusor"
-* item[0].item[=].item[=].type = #decimal
-* item[0].item[=].item[=].required = true
-* item[0].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-* item[0].item[=].item[=].extension.valueCoding = $unitsofmeasure#g "g"
-
-* item[0].item[=].item[+].linkId = "B5_BijkomendeObservatie"
-* item[0].item[=].item[=].text = "Bijkomende observatie:(indien van toepassing)"
-* item[0].item[=].item[=].type = #string
-* item[0].item[=].item[=].code = $sct#396078004 "Medication prefill preparation management"
-
 // --- Subgroup 2: Medicatietoediening ---
 * item[0].item[+].linkId = "Medicatietoediening"
 * item[0].item[=].text = "Medicatietoediening"
 * item[0].item[=].type = #group
 
 * item[0].item[=].item[0].linkId = "C1_ToedieningCorrect"
-* item[0].item[=].item[0].text = "Kon de medicatie exact volgens de procedure worden toegediend  (er waren geen afwijkingen)?"
+* item[0].item[=].item[0].text = "Kon de medicatie exact volgens de procedure worden toegediend (er waren geen afwijkingen)?"
 * item[0].item[=].item[0].type = #choice
 * item[0].item[=].item[0].required = true
 * item[0].item[=].item[0].code = $sct#373149000 "Medication administered following procedure"
@@ -285,7 +267,7 @@ Usage: #example
 * item[0].item[=].item[=].enableWhen[0].operator = #=
 * item[0].item[=].item[=].enableWhen[0].answerCoding = $sct#263654008 "Abnormal"
 
-* item[0].item[=].item[+].linkId = "catheter-type"
+* item[0].item[=].item[+].linkId = "G_KatheterType"
 * item[0].item[=].item[=].text = "Kies kathetertype"
 * item[0].item[=].item[=].type = #choice
 * item[0].item[=].item[=].code = $sct#246138005 "Type of catheter"
@@ -299,7 +281,7 @@ Usage: #example
 * item[0].item[=].item[=].answerOption[+].valueCoding = $sct#1396489007 "Double lumen PICC"
 * item[0].item[=].item[=].answerOption[+].valueCoding = $sct#423954007 "Peripheral catheter"
 
-* item[0].item[=].item[+].linkId = "G20_Kleurlumen"
+* item[0].item[=].item[+].linkId = "G_KleurLumen"
 * item[0].item[=].item[=].text = "Kleur lumen"
 * item[0].item[=].item[=].type = #choice
 * item[0].item[=].item[=].code = $sct#1396483008 "Color of intravascular catheter lumen hub"
@@ -485,7 +467,7 @@ Usage: #example
 * item[0].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
 
 * item[0].item[=].item[+].linkId = "H17_AndereObservaties"
-* item[0].item[=].item[=].text = "Is er andere symptoomlast of zijn er andere relevante klinische en/of psychosociale observaties? \n(gelieve bij klinische bezorgdheid contact te nemen met het zorgteam in het ziekenhuis)"
+* item[0].item[=].item[=].text = "Is er andere symptoomlast of zijn er andere relevante klinische en/of psychosociale observaties?\n(gelieve bij klinische bezorgdheid contact te nemen met het zorgteam in het ziekenhuis)"
 * item[0].item[=].item[=].type = #string
 * item[0].item[=].item[=].code = $sct#365275006 "General well-being finding"
 

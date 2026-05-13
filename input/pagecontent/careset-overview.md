@@ -27,3 +27,36 @@ respective EHRs/systems.
 <div class="stu-note">
 <strong>Legal Distinction:</strong> While this IG currently focuses on home-hospitalization examples, the <code>Careset</code> framework applies to many types of transmural care. Note that not all transmural care qualifies as "home hospitalization" under the strict legal definition established by the <strong>Royal Decree of June 22, 2023</strong>. For the specific legal criteria, refer to the <a href="https://www.riziv.fgov.be/nl/thema-s/verzorging-kosten-en-terugbetaling/wat-het-ziekenfonds-terugbetaalt/thuishospitalisatie-voor-oncologie-en-antimicrobiele-behandeling#:~:text=Onder%20thuishospitalisatie%20verstaan,of%20een%20daghospitalisatie.">official RIZIV/INAMI definition</a>.
 </div>
+
+### Processing QuestionnaireResponses with SDC Extract
+
+Once a hospital receives a `QuestionnaireResponse` from the home nursing system, it typically needs to write the individual answers back into the patient's medical record as discrete clinical data (e.g., as `Observation` resources). Doing this manually — field by field — is error-prone and expensive to maintain.
+
+**[HL7 Structured Data Capture (SDC)](https://hl7.org/fhir/uv/sdc/)** defines a mechanism called **definition-based extraction** that solves this. Each question item in the `Questionnaire` carries a `definition` field pointing to a FHIR element path (e.g., `Observation#Observation.valueCodeableConcept`). An SDC-capable server can then automatically extract a complete set of `Observation` resources from a submitted `QuestionnaireResponse` — no custom mapping code needed.
+
+#### How It Works
+
+```
+QuestionnaireResponse (received from home nurse)
+        │
+        ▼  [SDC $extract operation]
+  Observation: body temperature
+  Observation: blood pressure
+  Observation: nausea severity
+  ...
+```
+
+Each `Questionnaire` item that carries a `definition` field like:
+```json
+"definition": "http://hl7.org/fhir/StructureDefinition/Observation#Observation.valueCodeableConcept"
+```
+tells the extraction engine how to map the answer into a structured FHIR resource.
+
+#### Examples
+
+The following Questionnaire instances include full SDC `item.definition` annotations and can be used directly with an SDC-capable server to test the `$extract` operation:
+
+- [OPAT SDC Questionnaire (Continuous Infusion)](Questionnaire-homehosp-q-opat-definitions.html) — based on the [OPAT careset](home-hospitalization-opat.html)
+- [ONCO SDC Questionnaire (Trastuzumab)](Questionnaire-homehosp-q-onco-definitions.html) — based on the [antitumoral careset](home-hospitalization-antitumoral.html)
+
+These examples cover the same questionnaire content as the base `Questionnaire` instances defined in this IG, with the addition of `definition` fields on every extractable item. Implementers can use these as a starting point for all other drug questionnaires defined in this IG.
