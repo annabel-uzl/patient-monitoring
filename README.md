@@ -75,26 +75,6 @@ Make sure the following tools are installed:
 
 The output will be generated at: `output/index.html`
 
-### Faster Local Development (Shortcuts)
-
-Running the full publisher on every change is slow. Depending on what you're editing, there are faster alternatives:
-
-| What you changed                          | Shortcut                                                                                      |
-|-------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Markdown pages (`input/pagecontent/*.md`) | Use **VS Code Markdown preview** (`Ctrl+Shift+V`) for a quick content check - no build needed |
-| FSH files only (`input/fsh/*.fsh`)        | Run `sushi .` to compile resources without a full publish                                     |
-| Anything needing HTML output              | Run `_genonce.bat -tx n/a` to skip terminology validation (significantly faster)              |
-| Active development session                | Run `_gencontinuous.bat` — watches for file changes and only rebuilds what's needed           |
-
-**Recommended workflow:**
-
-1. Edit `.md` files → preview in VS Code with `Ctrl+Shift+V`
-2. Edit `.fsh` files → run `sushi .` to validate resource generation
-3. Need final HTML → `_genonce.bat -tx n/a`
-4. Long editing session → keep `_gencontinuous.bat` running in the background
-
----
-
 ## Adding a New Carepath or Careset
 
 To propose a new **carepath** or **careset** for inclusion in this Implementation Guide:
