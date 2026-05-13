@@ -53,12 +53,8 @@ jurisdiction: urn:iso:std:iso:3166#BE "Belgium"
 # package id and the value is the version (or dev/current). For advanced
 # use cases, the value can be an object with keys for `uri` and `version`.
 dependencies:
-  hl7.fhir.be.core:
-    uri: https://www.ehealth.fgov.be/standards/fhir/core/ImplementationGuide/hl7.fhir.be.core
-    version: 2.1.2
-  hl7.fhir.be.core-clinical:
-    uri: https://www.ehealth.fgov.be/standards/fhir/core-clinical/ImplementationGuide/hl7.fhir.be.core-clinical
-    version: 1.1.0
+  hl7.fhir.be.core: 2.1.2
+  hl7.fhir.be.core-clinical: 1.1.0
   hl7.fhir.uv.sdc: 4.0.0
 #  hl7.fhir.us.mcode:
 #    id: mcode
