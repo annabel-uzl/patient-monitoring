@@ -1,13 +1,17 @@
 Profile: HomehospOncoAzacitidineQuestionnaire
-Parent: Questionnaire
+Parent: HomehospOncoBaseQuestionnaire
 Id: homehosp-onco-azacitidine
 Title: "ONCO Azacitidine Nursing Questionnaire"
 Description: "Profile on Questionnaire for the ONCO Azacitidine (Vidaza®) nursing observation form. Captures vital signs (including conditional SpO2), medication dissolution check, GI/pulmonary contraindications and side-effect monitoring. See logical model: [ONCOAzacitidineQuestionnaire](StructureDefinition-onco-azacitidine-questionnaire.html)"
 
-* status 1..1 MS
-* status = #active
+* item[verpleegkundigAssessment].item contains
+    symptoomlast 1..1 MS
 
-* subjectType 1..1 MS
-* subjectType = #Patient
+* item[verpleegkundigAssessment].item[symptoomlast].linkId = "Symptoomlast"
+* item[verpleegkundigAssessment].item[symptoomlast].type = #group
 
-* item 1..* MS
+* item[opdracht].item contains
+    voorbereidingMedicatie 1..1 MS
+
+* item[opdracht].item[voorbereidingMedicatie].linkId = "Voorbereidingmedicatietoediening"
+* item[opdracht].item[voorbereidingMedicatie].type = #group
