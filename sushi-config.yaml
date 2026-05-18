@@ -235,6 +235,7 @@ parameters:
   #  show-inherited-invariants: false
   auto-oid-root: 2.16.840.1.113883.4.642.40.54
   validation: [allow-any-extensions]
+  pin-canonicals: pin-multiples
 
 # The FSHOnly flag indicates if only FSH resources should be exported.
 # If set to true, no IG related content will be generated.

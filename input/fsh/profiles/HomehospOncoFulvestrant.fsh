@@ -16,6 +16,7 @@ Description: "Profile on Questionnaire for the ONCO Fulvestrant (Faslodex®) nur
 * item[nursingAssessment].item[contraindications].item[feverChills].linkId = "C3_FeverChills"
 * item[nursingAssessment].item[contraindications].item[feverChills].type = #choice
 * item[nursingAssessment].item[contraindications].item[feverChills].required = true
+* item[nursingAssessment].item[contraindications].item[feverChills].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[contactCareTeam].linkId = "C4_ContactCareTeam"
 * item[nursingAssessment].item[contraindications].item[contactCareTeam].type = #display
@@ -55,36 +56,47 @@ Description: "Profile on Questionnaire for the ONCO Fulvestrant (Faslodex®) nur
 
 * item[nursingAssessment].item[sideEffects].item[nausea].linkId = "D1_Nausea"
 * item[nursingAssessment].item[sideEffects].item[nausea].type = #choice
+* item[nursingAssessment].item[sideEffects].item[nausea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[vomiting].linkId = "D2_Vomiting"
 * item[nursingAssessment].item[sideEffects].item[vomiting].type = #choice
+* item[nursingAssessment].item[sideEffects].item[vomiting].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[decreasedAppetite].linkId = "D3_DecreasedAppetite"
 * item[nursingAssessment].item[sideEffects].item[decreasedAppetite].type = #choice
+* item[nursingAssessment].item[sideEffects].item[decreasedAppetite].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[diarrhea].linkId = "D4_Diarrhea"
 * item[nursingAssessment].item[sideEffects].item[diarrhea].type = #choice
+* item[nursingAssessment].item[sideEffects].item[diarrhea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[constipation].linkId = "D5_Constipation"
 * item[nursingAssessment].item[sideEffects].item[constipation].type = #choice
+* item[nursingAssessment].item[sideEffects].item[constipation].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[fatigue].linkId = "D6_Fatigue"
 * item[nursingAssessment].item[sideEffects].item[fatigue].type = #choice
+* item[nursingAssessment].item[sideEffects].item[fatigue].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[pain].linkId = "D7_Pain"
 * item[nursingAssessment].item[sideEffects].item[pain].type = #choice
+* item[nursingAssessment].item[sideEffects].item[pain].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[skinRash].linkId = "D8_SkinRash"
 * item[nursingAssessment].item[sideEffects].item[skinRash].type = #choice
+* item[nursingAssessment].item[sideEffects].item[skinRash].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[psychosocialBurden].linkId = "D9_PsychosocialBurden"
 * item[nursingAssessment].item[sideEffects].item[psychosocialBurden].type = #choice
+* item[nursingAssessment].item[sideEffects].item[psychosocialBurden].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[dyspnea].linkId = "D10_Dyspnea"
 * item[nursingAssessment].item[sideEffects].item[dyspnea].type = #choice
+* item[nursingAssessment].item[sideEffects].item[dyspnea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[muscleAndJointPain].linkId = "D11_MuscleAndJointPain"
 * item[nursingAssessment].item[sideEffects].item[muscleAndJointPain].type = #choice
+* item[nursingAssessment].item[sideEffects].item[muscleAndJointPain].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[sideEffects].item[otherObservations].linkId = "D12_OtherObservations"
 * item[nursingAssessment].item[sideEffects].item[otherObservations].type = #string
@@ -104,6 +116,7 @@ Description: "Profile on Questionnaire for the ONCO Fulvestrant (Faslodex®) nur
 * item[assignment].item[medicationAdministration].item[administrationCorrect].linkId = "E1_AdministrationCorrect"
 * item[assignment].item[medicationAdministration].item[administrationCorrect].type = #choice
 * item[assignment].item[medicationAdministration].item[administrationCorrect].required = true
+* item[assignment].item[medicationAdministration].item[administrationCorrect].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[medicationAdministration].item[specifyNo].linkId = "E2_SpecifyNo"
 * item[assignment].item[medicationAdministration].item[specifyNo].type = #string

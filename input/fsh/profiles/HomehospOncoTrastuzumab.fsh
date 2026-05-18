@@ -31,26 +31,32 @@ Description: "Profile on Questionnaire for the ONCO Trastuzumab (Herceptin®) nu
 * item[nursingAssessment].item[contraindications].item[feverChills].linkId = "C3_FeverChills"
 * item[nursingAssessment].item[contraindications].item[feverChills].type = #choice
 * item[nursingAssessment].item[contraindications].item[feverChills].required = true
+* item[nursingAssessment].item[contraindications].item[feverChills].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[lowBloodPressure].linkId = "C4_LowBloodPressure"
 * item[nursingAssessment].item[contraindications].item[lowBloodPressure].type = #choice
 * item[nursingAssessment].item[contraindications].item[lowBloodPressure].required = true
+* item[nursingAssessment].item[contraindications].item[lowBloodPressure].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[elevatedOrIrregularHeartRate].linkId = "C5_ElevatedOrIrregularHeartRate"
 * item[nursingAssessment].item[contraindications].item[elevatedOrIrregularHeartRate].type = #choice
 * item[nursingAssessment].item[contraindications].item[elevatedOrIrregularHeartRate].required = true
+* item[nursingAssessment].item[contraindications].item[elevatedOrIrregularHeartRate].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[weightGain].linkId = "C6_WeightGain"
 * item[nursingAssessment].item[contraindications].item[weightGain].type = #choice
 * item[nursingAssessment].item[contraindications].item[weightGain].required = true
+* item[nursingAssessment].item[contraindications].item[weightGain].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[edemaHandsFeet].linkId = "C7_EdemaHandsFeet"
 * item[nursingAssessment].item[contraindications].item[edemaHandsFeet].type = #choice
 * item[nursingAssessment].item[contraindications].item[edemaHandsFeet].required = true
+* item[nursingAssessment].item[contraindications].item[edemaHandsFeet].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[dyspnea].linkId = "C8_Dyspnea"
 * item[nursingAssessment].item[contraindications].item[dyspnea].type = #choice
 * item[nursingAssessment].item[contraindications].item[dyspnea].required = true
+* item[nursingAssessment].item[contraindications].item[dyspnea].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[contactCareTeam].linkId = "C9_ContactCareTeam"
 * item[nursingAssessment].item[contraindications].item[contactCareTeam].type = #display
@@ -90,36 +96,47 @@ Description: "Profile on Questionnaire for the ONCO Trastuzumab (Herceptin®) nu
 
 * item[nursingAssessment].item[symptomBurden].item[nausea].linkId = "D1_Nausea"
 * item[nursingAssessment].item[symptomBurden].item[nausea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[nausea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[vomiting].linkId = "D2_Vomiting"
 * item[nursingAssessment].item[symptomBurden].item[vomiting].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[vomiting].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].linkId = "D3_DecreasedAppetite"
 * item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[diarrhea].linkId = "D4_Diarrhea"
 * item[nursingAssessment].item[symptomBurden].item[diarrhea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[diarrhea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[constipation].linkId = "D5_Constipation"
 * item[nursingAssessment].item[symptomBurden].item[constipation].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[constipation].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[fatigue].linkId = "D6_Fatigue"
 * item[nursingAssessment].item[symptomBurden].item[fatigue].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[fatigue].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[pain].linkId = "D7_Pain"
 * item[nursingAssessment].item[symptomBurden].item[pain].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[pain].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[skinRash].linkId = "D8_SkinRash"
 * item[nursingAssessment].item[symptomBurden].item[skinRash].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[skinRash].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].linkId = "D9_PsychosocialBurden"
 * item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[dyspnea].linkId = "D10_Dyspnea"
 * item[nursingAssessment].item[symptomBurden].item[dyspnea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[dyspnea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[edema].linkId = "D11_Edema"
 * item[nursingAssessment].item[symptomBurden].item[edema].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[edema].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[otherObservations].linkId = "D12_OtherObservations"
 * item[nursingAssessment].item[symptomBurden].item[otherObservations].type = #string
@@ -145,6 +162,7 @@ Description: "Profile on Questionnaire for the ONCO Trastuzumab (Herceptin®) nu
 * item[assignment].item[medicationPreparation].item[preparationCorrect].linkId = "E1_PreparationCorrect"
 * item[assignment].item[medicationPreparation].item[preparationCorrect].type = #choice
 * item[assignment].item[medicationPreparation].item[preparationCorrect].required = true
+* item[assignment].item[medicationPreparation].item[preparationCorrect].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[medicationPreparation].item[contactCareTeamNoPrep].linkId = "E2_ContactCareTeam"
 * item[assignment].item[medicationPreparation].item[contactCareTeamNoPrep].type = #display
@@ -164,6 +182,7 @@ Description: "Profile on Questionnaire for the ONCO Trastuzumab (Herceptin®) nu
 * item[assignment].item[medicationAdministration].item[administrationCorrect].linkId = "E3_AdministrationCorrect"
 * item[assignment].item[medicationAdministration].item[administrationCorrect].type = #choice
 * item[assignment].item[medicationAdministration].item[administrationCorrect].required = true
+* item[assignment].item[medicationAdministration].item[administrationCorrect].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[medicationAdministration].item[specifyNo].linkId = "E4_SpecifyNo"
 * item[assignment].item[medicationAdministration].item[specifyNo].type = #string
@@ -191,22 +210,28 @@ Description: "Profile on Questionnaire for the ONCO Trastuzumab (Herceptin®) nu
 * item[assignment].item[aftercare].item[reactionDuringHomeObservation].linkId = "G1_ReactionDuringHomeObservation"
 * item[assignment].item[aftercare].item[reactionDuringHomeObservation].type = #choice
 * item[assignment].item[aftercare].item[reactionDuringHomeObservation].required = true
+* item[assignment].item[aftercare].item[reactionDuringHomeObservation].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[aftercare].item[specifyReaction].linkId = "G2_SpecifyReaction"
 * item[assignment].item[aftercare].item[specifyReaction].type = #display
 
 * item[assignment].item[aftercare].item[fever].linkId = "G3_Fever"
 * item[assignment].item[aftercare].item[fever].type = #choice
+* item[assignment].item[aftercare].item[fever].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[aftercare].item[nausea].linkId = "G4_Nausea"
 * item[assignment].item[aftercare].item[nausea].type = #choice
+* item[assignment].item[aftercare].item[nausea].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[aftercare].item[dyspnea].linkId = "G5_Dyspnea"
 * item[assignment].item[aftercare].item[dyspnea].type = #choice
+* item[assignment].item[aftercare].item[dyspnea].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[aftercare].item[shivering].linkId = "G6_Shivering"
 * item[assignment].item[aftercare].item[shivering].type = #choice
+* item[assignment].item[aftercare].item[shivering].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[aftercare].item[fluLikeSymptoms].linkId = "G7_FluLikeSymptoms"
 * item[assignment].item[aftercare].item[fluLikeSymptoms].type = #choice
+* item[assignment].item[aftercare].item[fluLikeSymptoms].answerValueSet = Canonical(YesNoVS)
 

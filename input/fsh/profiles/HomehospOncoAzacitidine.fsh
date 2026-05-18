@@ -31,26 +31,32 @@ Description: "Profile on Questionnaire for the ONCO Azacitidine (Vidaza®) nursi
 * item[nursingAssessment].item[contraindications].item[feverChills].linkId = "C3_FeverChills"
 * item[nursingAssessment].item[contraindications].item[feverChills].type = #choice
 * item[nursingAssessment].item[contraindications].item[feverChills].required = true
+* item[nursingAssessment].item[contraindications].item[feverChills].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[oralIntake].linkId = "C4_OralIntake"
 * item[nursingAssessment].item[contraindications].item[oralIntake].type = #choice
 * item[nursingAssessment].item[contraindications].item[oralIntake].required = true
+* item[nursingAssessment].item[contraindications].item[oralIntake].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[severeNausea].linkId = "C5_SevereNausea"
 * item[nursingAssessment].item[contraindications].item[severeNausea].type = #choice
 * item[nursingAssessment].item[contraindications].item[severeNausea].required = true
+* item[nursingAssessment].item[contraindications].item[severeNausea].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[severeDyspnea].linkId = "C6_SevereDyspnea"
 * item[nursingAssessment].item[contraindications].item[severeDyspnea].type = #choice
 * item[nursingAssessment].item[contraindications].item[severeDyspnea].required = true
+* item[nursingAssessment].item[contraindications].item[severeDyspnea].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[newCoughDyspnea].linkId = "C7_NewCoughDyspnea"
 * item[nursingAssessment].item[contraindications].item[newCoughDyspnea].type = #choice
 * item[nursingAssessment].item[contraindications].item[newCoughDyspnea].required = true
+* item[nursingAssessment].item[contraindications].item[newCoughDyspnea].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[generalDecline].linkId = "C8_GeneralDecline"
 * item[nursingAssessment].item[contraindications].item[generalDecline].type = #choice
 * item[nursingAssessment].item[contraindications].item[generalDecline].required = true
+* item[nursingAssessment].item[contraindications].item[generalDecline].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[otherContraindication].linkId = "C9_Other"
 * item[nursingAssessment].item[contraindications].item[otherContraindication].type = #string
@@ -93,36 +99,47 @@ Description: "Profile on Questionnaire for the ONCO Azacitidine (Vidaza®) nursi
 
 * item[nursingAssessment].item[symptomBurden].item[nausea].linkId = "D1_Nausea"
 * item[nursingAssessment].item[symptomBurden].item[nausea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[nausea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[vomiting].linkId = "D2_Vomiting"
 * item[nursingAssessment].item[symptomBurden].item[vomiting].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[vomiting].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].linkId = "D3_DecreasedAppetite"
 * item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[diarrhea].linkId = "D4_Diarrhea"
 * item[nursingAssessment].item[symptomBurden].item[diarrhea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[diarrhea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[constipation].linkId = "D5_Constipation"
 * item[nursingAssessment].item[symptomBurden].item[constipation].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[constipation].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[fatigue].linkId = "D6_Fatigue"
 * item[nursingAssessment].item[symptomBurden].item[fatigue].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[fatigue].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[pain].linkId = "D7_Pain"
 * item[nursingAssessment].item[symptomBurden].item[pain].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[pain].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[skinRash].linkId = "D8_SkinRash"
 * item[nursingAssessment].item[symptomBurden].item[skinRash].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[skinRash].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].linkId = "D9_PsychosocialBurden"
 * item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[dyspnea].linkId = "D10_Dyspnea"
 * item[nursingAssessment].item[symptomBurden].item[dyspnea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[dyspnea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[cough].linkId = "D11_Cough"
 * item[nursingAssessment].item[symptomBurden].item[cough].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[cough].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[otherObservations].linkId = "D12_OtherObservations"
 * item[nursingAssessment].item[symptomBurden].item[otherObservations].type = #string
@@ -147,6 +164,7 @@ Description: "Profile on Questionnaire for the ONCO Azacitidine (Vidaza®) nursi
 * item[assignment].item[medicationPreparation].item[preparationCorrect].linkId = "E1_PreparationCorrect"
 * item[assignment].item[medicationPreparation].item[preparationCorrect].type = #choice
 * item[assignment].item[medicationPreparation].item[preparationCorrect].required = true
+* item[assignment].item[medicationPreparation].item[preparationCorrect].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[medicationPreparation].item[contactCareTeamNoPrep].linkId = "E2_ContactCareTeam"
 * item[assignment].item[medicationPreparation].item[contactCareTeamNoPrep].type = #display
@@ -166,6 +184,7 @@ Description: "Profile on Questionnaire for the ONCO Azacitidine (Vidaza®) nursi
 * item[assignment].item[medicationAdministration].item[administrationCorrect].linkId = "E3_AdministrationCorrect"
 * item[assignment].item[medicationAdministration].item[administrationCorrect].type = #choice
 * item[assignment].item[medicationAdministration].item[administrationCorrect].required = true
+* item[assignment].item[medicationAdministration].item[administrationCorrect].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[medicationAdministration].item[specifyNo].linkId = "E4_SpecifyNo"
 * item[assignment].item[medicationAdministration].item[specifyNo].type = #string

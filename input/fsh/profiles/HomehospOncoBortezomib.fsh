@@ -20,22 +20,27 @@ Description: "Profile on Questionnaire for the ONCO Bortezomib (Velcade®) nursi
 * item[nursingAssessment].item[contraindications].item[feverChills].linkId = "C3_FeverChills"
 * item[nursingAssessment].item[contraindications].item[feverChills].type = #choice
 * item[nursingAssessment].item[contraindications].item[feverChills].required = true
+* item[nursingAssessment].item[contraindications].item[feverChills].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[lowBloodPressure].linkId = "C4_LowBloodPressure"
 * item[nursingAssessment].item[contraindications].item[lowBloodPressure].type = #choice
 * item[nursingAssessment].item[contraindications].item[lowBloodPressure].required = true
+* item[nursingAssessment].item[contraindications].item[lowBloodPressure].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[elevatedOrIrregularHeartRate].linkId = "C5_ElevatedOrIrregularHeartRate"
 * item[nursingAssessment].item[contraindications].item[elevatedOrIrregularHeartRate].type = #choice
 * item[nursingAssessment].item[contraindications].item[elevatedOrIrregularHeartRate].required = true
+* item[nursingAssessment].item[contraindications].item[elevatedOrIrregularHeartRate].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[severeSensoryNeuropathy].linkId = "C6_SevereSensoryNeuropathy"
 * item[nursingAssessment].item[contraindications].item[severeSensoryNeuropathy].type = #choice
 * item[nursingAssessment].item[contraindications].item[severeSensoryNeuropathy].required = true
+* item[nursingAssessment].item[contraindications].item[severeSensoryNeuropathy].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[severeMotorNeuropathy].linkId = "C7_SevereMotorNeuropathy"
 * item[nursingAssessment].item[contraindications].item[severeMotorNeuropathy].type = #choice
 * item[nursingAssessment].item[contraindications].item[severeMotorNeuropathy].required = true
+* item[nursingAssessment].item[contraindications].item[severeMotorNeuropathy].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[contactCareTeam].linkId = "C8_ContactCareTeam"
 * item[nursingAssessment].item[contraindications].item[contactCareTeam].type = #display
@@ -77,42 +82,55 @@ Description: "Profile on Questionnaire for the ONCO Bortezomib (Velcade®) nursi
 
 * item[nursingAssessment].item[symptomBurden].item[nausea].linkId = "D1_Nausea"
 * item[nursingAssessment].item[symptomBurden].item[nausea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[nausea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[vomiting].linkId = "D2_Vomiting"
 * item[nursingAssessment].item[symptomBurden].item[vomiting].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[vomiting].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].linkId = "D3_DecreasedAppetite"
 * item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[decreasedAppetite].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[diarrhea].linkId = "D4_Diarrhea"
 * item[nursingAssessment].item[symptomBurden].item[diarrhea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[diarrhea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[constipation].linkId = "D5_Constipation"
 * item[nursingAssessment].item[symptomBurden].item[constipation].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[constipation].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[fatigue].linkId = "D6_Fatigue"
 * item[nursingAssessment].item[symptomBurden].item[fatigue].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[fatigue].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[pain].linkId = "D7_Pain"
 * item[nursingAssessment].item[symptomBurden].item[pain].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[pain].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[skinRash].linkId = "D8_SkinRash"
 * item[nursingAssessment].item[symptomBurden].item[skinRash].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[skinRash].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].linkId = "D9_PsychosocialBurden"
 * item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[psychosocialBurden].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[dyspnea].linkId = "D10_Dyspnea"
 * item[nursingAssessment].item[symptomBurden].item[dyspnea].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[dyspnea].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[paresthesia].linkId = "D11_Paresthesia"
 * item[nursingAssessment].item[symptomBurden].item[paresthesia].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[paresthesia].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[motorNeuropathy].linkId = "D12_MotorNeuropathy"
 * item[nursingAssessment].item[symptomBurden].item[motorNeuropathy].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[motorNeuropathy].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[cough].linkId = "D13_Cough"
 * item[nursingAssessment].item[symptomBurden].item[cough].type = #choice
+* item[nursingAssessment].item[symptomBurden].item[cough].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[symptomBurden].item[otherObservations].linkId = "D14_OtherObservations"
 * item[nursingAssessment].item[symptomBurden].item[otherObservations].type = #string
@@ -132,6 +150,7 @@ Description: "Profile on Questionnaire for the ONCO Bortezomib (Velcade®) nursi
 * item[assignment].item[medicationAdministration].item[administrationCorrect].linkId = "E1_AdministrationCorrect"
 * item[assignment].item[medicationAdministration].item[administrationCorrect].type = #choice
 * item[assignment].item[medicationAdministration].item[administrationCorrect].required = true
+* item[assignment].item[medicationAdministration].item[administrationCorrect].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[medicationAdministration].item[specifyNo].linkId = "E2_SpecifyNo"
 * item[assignment].item[medicationAdministration].item[specifyNo].type = #string

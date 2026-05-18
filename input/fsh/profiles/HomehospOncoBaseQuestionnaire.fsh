@@ -111,6 +111,7 @@ Description: "Base profile for all ONCO home hospitalization nursing questionnai
 * item[nursingAssessment].item[contraindications].item[contraindicationPresent].linkId = "C1_ContraindicationPresent"
 * item[nursingAssessment].item[contraindications].item[contraindicationPresent].type = #choice
 * item[nursingAssessment].item[contraindications].item[contraindicationPresent].required = true
+* item[nursingAssessment].item[contraindications].item[contraindicationPresent].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[contraindications].item[contraindicationSpecify].linkId = "C2_ContraindicationSpecify"
 * item[nursingAssessment].item[contraindications].item[contraindicationSpecify].type = #display

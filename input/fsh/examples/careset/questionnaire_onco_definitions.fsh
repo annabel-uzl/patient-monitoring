@@ -229,8 +229,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#395008009 "Medication stopped - contra-indication (situation)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "C2_ContraindicationSpecify"
 * item[=].item[=].item[=].text = "> If 'yes': specify"
@@ -245,8 +244,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#39104002 "Illness (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "C4_LowBloodPressure"
 * item[=].item[=].item[=].text = "Blood pressure repeatedly below 100/60 mmHg"
@@ -254,8 +252,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#12763006 "Decreased blood pressure"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "C5_ElevatedOrIrregularHeartRate"
 * item[=].item[=].item[=].text = "Heart rate above 100 bpm at rest or irregular heart rhythm, unless a chronically known problem."
@@ -263,8 +260,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#361137007 "Irregular heart beat (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "C6_WeightGain"
 * item[=].item[=].item[=].text = "A weight gain of 3 kg / 3 weeks or 5 kg / 6 weeks, especially in combination with increased edema."
@@ -272,8 +268,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#262286000 "Weight increased (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "C7_Edema"
 * item[=].item[=].item[=].text = "Increased edema of the hands and/or feet."
@@ -281,8 +276,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#267038008 "Edema (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "C8_SevereDyspnea"
 * item[=].item[=].item[=].text = "Increased breathlessness and/or severe breathlessness (i.e. breathlessness at rest/without exertion and/or breathlessness that interferes with daily activities) (Trastuzumab, Azacitidine)"
@@ -290,8 +284,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#297216006 "Increasing breathlessness (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "C9_Other"
 * item[=].item[=].item[=].text = "Other: (if applicable)"
@@ -355,110 +348,77 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#422587007 "Nausea (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D2_Vomiting"
 * item[=].item[=].item[=].text = "Vomiting"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#249497008 "Vomiting symptom (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D3_DecreasedAppetite"
 * item[=].item[=].item[=].text = "Decreased appetite or taste change"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#64379006 "Decrease in appetite (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D4_Diarrhea"
 * item[=].item[=].item[=].text = "Diarrhea"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#62315008 "Diarrhea (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D5_Constipation"
 * item[=].item[=].item[=].text = "Constipation"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#14760008 "Constipation (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D6_Fatigue"
 * item[=].item[=].item[=].text = "Fatigue/lethargy"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#224960004 "Tired (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D7_Pain"
 * item[=].item[=].item[=].text = "Pain"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#112104007 "Localized pain (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D8_SkinRash"
 * item[=].item[=].item[=].text = "Skin rash"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#271807003 "Eruption of skin (disorder)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D9_PsychosocialBurden"
 * item[=].item[=].item[=].text = "Psychosocial burden"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#384821006 "Mental state, behavior and/or psychosocial function finding (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D10_Dyspnea"
 * item[=].item[=].item[=].text = "Dyspnea"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#267036007 "Dyspnea (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D11_Edema"
 * item[=].item[=].item[=].text = "Edema"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#79654002 "Edema (morphologic abnormality)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3 (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3 (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[=].item[=].item[+].linkId = "D12_OtherObservations"
 * item[=].item[=].item[=].text = "Other side effects or relevant clinical and psychosocial observations\n(in case of clinical concerns, please contact the hospital for discussion)"
@@ -505,8 +465,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#385796006 "Medication prefill preparation (procedure)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E2_ContactCareTeam"
 * item[=].item[=].item[=].text = "> If 'no': please contact the hospital care team"
@@ -547,8 +506,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#373149000 "Medication administered following procedure (situation)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E4_SpecifyNo"
 * item[=].item[=].item[=].text = "> If 'no': specify"
@@ -590,8 +548,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#281647001 "Adverse reaction (disorder)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E6a_Fever"
 * item[=].item[=].item[=].text = "Fever"
@@ -601,8 +558,7 @@ Usage: #example
 * item[=].item[=].item[=].enableWhen[0].question = "E5_ReactionDuringHomeObservation"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E6b_Nausea"
 * item[=].item[=].item[=].text = "Nausea"
@@ -612,8 +568,7 @@ Usage: #example
 * item[=].item[=].item[=].enableWhen[0].question = "E5_ReactionDuringHomeObservation"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E6c_TightnessSensation"
 * item[=].item[=].item[=].text = "Tightness sensation"
@@ -623,8 +578,7 @@ Usage: #example
 * item[=].item[=].item[=].enableWhen[0].question = "E5_ReactionDuringHomeObservation"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E6d_Chills"
 * item[=].item[=].item[=].text = "Chills"
@@ -634,8 +588,7 @@ Usage: #example
 * item[=].item[=].item[=].enableWhen[0].question = "E5_ReactionDuringHomeObservation"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E6e_InfluenzaLikeSyndrome"
 * item[=].item[=].item[=].text = "Influenza-like syndromes"
@@ -645,8 +598,7 @@ Usage: #example
 * item[=].item[=].item[=].enableWhen[0].question = "E5_ReactionDuringHomeObservation"
 * item[=].item[=].item[=].enableWhen[=].operator = #=
 * item[=].item[=].item[=].enableWhen[=].answerCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].extension[+].url = "http://hl7.org/fhir/uv/sdc/StructureDefinition/sdc-questionnaire-definitionExtract"
 * item[=].item[=].extension[=].extension[+].url = "definition"

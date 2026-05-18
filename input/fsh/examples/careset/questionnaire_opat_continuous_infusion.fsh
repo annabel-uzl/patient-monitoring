@@ -48,8 +48,7 @@ Usage: #example
 * item[nursingAssessment].item[=].item[0].text = "De medicatie werd volledig opgelost tot een heldere oplossing zonder zichtbare deeltjes"
 * item[nursingAssessment].item[=].item[0].type = #choice
 * item[nursingAssessment].item[=].item[0].code = $sct#396076000 "Medication prefill preparation assessment"
-* item[nursingAssessment].item[=].item[0].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[0].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[0].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "B2_ContactCareTeam"
 * item[nursingAssessment].item[=].item[=].text = "> Indien nee: gelieve contact op te nemen met het zorgteam in het ziekenhuis"
@@ -87,8 +86,7 @@ Usage: #example
 * item[nursingAssessment].item[=].item[0].type = #choice
 * item[nursingAssessment].item[=].item[0].required = true
 * item[nursingAssessment].item[=].item[0].code = $sct#373149000 "Medication administered following procedure"
-* item[nursingAssessment].item[=].item[0].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[0].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[0].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "C2_SpecifyNo"
 * item[nursingAssessment].item[=].item[=].text = "> Indien neen: specifieer"
@@ -141,8 +139,7 @@ Usage: #example
 * item[nursingAssessment].item[=].item[0].type = #choice
 * item[nursingAssessment].item[=].item[0].required = true
 * item[nursingAssessment].item[=].item[0].code = $sct#364554009 "Wound observable"
-* item[nursingAssessment].item[=].item[0].answerOption[0].valueCoding = $sct#17621005 "Normal"
-* item[nursingAssessment].item[=].item[0].answerOption[+].valueCoding = $sct#263654008 "Abnormal"
+* item[nursingAssessment].item[=].item[0].answerValueSet = Canonical(NormalAbnormalVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "E2_SpecifyIfAbnormal"
 * item[nursingAssessment].item[=].item[=].text = "> Indien 'afwijkend': specifieer"
@@ -155,36 +152,31 @@ Usage: #example
 * item[nursingAssessment].item[=].item[=].text = "Bloederig"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#297968009 "Bleeding skin"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "E4_Purulent"
 * item[nursingAssessment].item[=].item[=].text = "Etterig"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#225550006 "Purulent discharge from wound"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "E5_Loose"
 * item[nursingAssessment].item[=].item[=].text = "Los"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#78799005 "Loose"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "E6_Serous"
 * item[nursingAssessment].item[=].item[=].text = "Sereus"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#447112000 "Serous discharge from wound"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "E7_Moist"
 * item[nursingAssessment].item[=].item[=].text = "Vochtig"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#17461003 "Wet"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "E8_Other"
 * item[nursingAssessment].item[=].item[=].text = "Andere: (indien van toepassing)"
@@ -201,8 +193,7 @@ Usage: #example
 * item[nursingAssessment].item[=].item[0].type = #choice
 * item[nursingAssessment].item[=].item[0].required = true
 * item[nursingAssessment].item[=].item[0].code = $sct#386141001 "Insertion site"
-* item[nursingAssessment].item[=].item[0].answerOption[0].valueCoding = $sct#17621005 "Normal"
-* item[nursingAssessment].item[=].item[0].answerOption[+].valueCoding = $sct#263654008 "Abnormal"
+* item[nursingAssessment].item[=].item[0].answerValueSet = Canonical(NormalAbnormalVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "F2_SpecifyIfAbnormal"
 * item[nursingAssessment].item[=].item[=].text = "> Indien 'afwijkend': specifieer"
@@ -215,50 +206,43 @@ Usage: #example
 * item[nursingAssessment].item[=].item[=].text = "Blaarvorming"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#339008 "Blister"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "F4_Redness"
 * item[nursingAssessment].item[=].item[=].text = "Rood"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#371240000 "Red colour"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "F5_Hematoma"
 * item[nursingAssessment].item[=].item[=].text = "Haematoom"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#35566002 "Hematoma"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "F6_Pus"
 * item[nursingAssessment].item[=].item[=].text = "Etter"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#367646009 "Pus"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "F7_Crusting"
 * item[nursingAssessment].item[=].item[=].text = "Korstvorming"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#69640009 "Crust"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "F8_Swelling"
 * item[nursingAssessment].item[=].item[=].text = "Zwelling"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#65124004 "Swelling"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "F9_Extravasation"
 * item[nursingAssessment].item[=].item[=].text = "Extravasatie/infiltratie"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#76676007 "Extravasation"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "F10_Other"
 * item[nursingAssessment].item[=].item[=].text = "Andere: (indien van toepassing)"
@@ -275,8 +259,7 @@ Usage: #example
 * item[nursingAssessment].item[=].item[0].type = #choice
 * item[nursingAssessment].item[=].item[0].required = true
 * item[nursingAssessment].item[=].item[0].code = $sct#1156071007 "Catheter observable"
-* item[nursingAssessment].item[=].item[0].answerOption[0].valueCoding = $sct#17621005 "Normal"
-* item[nursingAssessment].item[=].item[0].answerOption[+].valueCoding = $sct#263654008 "Abnormal"
+* item[nursingAssessment].item[=].item[0].answerValueSet = Canonical(NormalAbnormalVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "G2_SpecifyIfAbnormal"
 * item[nursingAssessment].item[=].item[=].text = "> Indien 'afwijkend': specifieer"
@@ -312,24 +295,19 @@ Usage: #example
 * item[nursingAssessment].item[=].item[=].text = "Bloedaspiratie"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#25797006 "Blood aspiration"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#36203004 "Easy"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#52925006 "Difficult"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#385671000 "Unsuccessful"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(CatheterPatencyVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "G4_Infusion"
 * item[nursingAssessment].item[=].item[=].text = "Infusie"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#36576007 "Infusion"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#36203004 "Easy"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#52925006 "Difficult"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#385671000 "Unsuccessful"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(CatheterPatencyVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "G5_DamagedCatheter"
 * item[nursingAssessment].item[=].item[=].text = "Beschadigde katheter"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#1156074004 "Device failure"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "G6_Other"
 * item[nursingAssessment].item[=].item[=].text = "Andere: (indien van toepassing)"
@@ -344,145 +322,97 @@ Usage: #example
 * item[nursingAssessment].item[=].item[0].text = "Huiduitslag"
 * item[nursingAssessment].item[=].item[0].type = #choice
 * item[nursingAssessment].item[=].item[0].code = $sct#271807003 "Eruption"
-* item[nursingAssessment].item[=].item[0].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[0].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[0].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[0].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[0].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H2_Itching"
 * item[nursingAssessment].item[=].item[=].text = "Jeuk"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#418290006 "Itching"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H3_BlistersOrPeeling"
 * item[nursingAssessment].item[=].item[=].text = "Blaren/loslaten van de huid"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#271767006 "Peeling of skin"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H4_Nausea"
 * item[nursingAssessment].item[=].item[=].text = "Misselijkheid"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#422587007 "Nausea"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H5_Vomiting"
 * item[nursingAssessment].item[=].item[=].text = "Braken"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#249497008 "Vomiting symptom"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H6_Diarrhea"
 * item[nursingAssessment].item[=].item[=].text = "Diarree"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#62315008 "Diarrhea"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H7_Constipation"
 * item[nursingAssessment].item[=].item[=].text = "Obstipatie"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#14760008 "Constipation"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H8_DecreasedAppetite"
 * item[nursingAssessment].item[=].item[=].text = "Verminderde eetlust"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#64379006 "Decrease in appetite"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H9_PainDuringAdministration"
 * item[nursingAssessment].item[=].item[=].text = "Pijn bij toediening"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#698749006 "Pain on flushing of implanted venous access device"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H10_GeneralPain"
 * item[nursingAssessment].item[=].item[=].text = "Pijn (algemeen)"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#112104007 "Localized pain"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H11_Fatigue"
 * item[nursingAssessment].item[=].item[=].text = "Moe"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#224960004 "Tired"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H12_Chills"
 * item[nursingAssessment].item[=].item[=].text = "Rillingen"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#43724002 "Shivering"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H13_Candidiasis"
 * item[nursingAssessment].item[=].item[=].text = "Candidiase (schimmelinfectie)"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#78048006 "Candidiasis"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H14_JointPain"
 * item[nursingAssessment].item[=].item[=].text = "Gewrichtspijn"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#57676002 "Joint pain"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H15_RespiratoryProblems"
 * item[nursingAssessment].item[=].item[=].text = "Ademhalingsproblemen"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#267036007 "Dyspnea"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H16_FacialSwelling"
 * item[nursingAssessment].item[=].item[=].text = "Zwelling gezicht/tong"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#278528006 "Facial swelling"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Midgrade"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "H17_OtherObservations"
 * item[nursingAssessment].item[=].item[=].text = "Is er andere symptoomlast of zijn er andere relevante klinische en/of psychosociale observaties? \n(gelieve bij klinische bezorgdheid contact te nemen met het zorgteam in het ziekenhuis)"

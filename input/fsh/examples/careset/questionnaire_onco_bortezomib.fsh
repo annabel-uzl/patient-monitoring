@@ -50,32 +50,24 @@ Usage: #example
 * item[nursingAssessment].item[=].item[=].type = #decimal
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $loinc#8310-5 "Body temperature"
-* item[nursingAssessment].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-* item[nursingAssessment].item[=].item[=].extension.valueCoding = $unitsofmeasure#Cel "Cel"
 
 * item[nursingAssessment].item[=].item[+].linkId = "B2_HeartRate"
 * item[nursingAssessment].item[=].item[=].text = "Pols:"
 * item[nursingAssessment].item[=].item[=].type = #decimal
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $sct#364075005 "Heart rate"
-* item[nursingAssessment].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-* item[nursingAssessment].item[=].item[=].extension.valueCoding = $unitsofmeasure#{beats}/min "{beats}/min"
 
 * item[nursingAssessment].item[=].item[+].linkId = "B3_SystolicBloodPressure"
 * item[nursingAssessment].item[=].item[=].text = "Bloeddruk systolisch:"
 * item[nursingAssessment].item[=].item[=].type = #decimal
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $loinc#8480-6 "Systolic blood pressure"
-* item[nursingAssessment].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-* item[nursingAssessment].item[=].item[=].extension.valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 
 * item[nursingAssessment].item[=].item[+].linkId = "B4_DiastolicBloodPressure"
 * item[nursingAssessment].item[=].item[=].text = "Bloeddruk diastolisch:"
 * item[nursingAssessment].item[=].item[=].type = #decimal
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $loinc#8462-4 "Diastolic blood pressure"
-* item[nursingAssessment].item[=].item[=].extension.url = "http://hl7.org/fhir/StructureDefinition/questionnaire-unit"
-* item[nursingAssessment].item[=].item[=].extension.valueCoding = $unitsofmeasure#mm[Hg] "mm[Hg]"
 
 // --- Subgroup 2: Tegenindicaties ---
 * item[nursingAssessment].item[+].linkId = "Contraindications"
@@ -87,8 +79,7 @@ Usage: #example
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $sct#395008009 "Medication stopped - contra-indication"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "C2_ContraindicationSpecify"
 * item[nursingAssessment].item[=].item[=].text = "> Indien 'ja': specifieer"
@@ -102,40 +93,35 @@ Usage: #example
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $sct#39104002 "Illness"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "C4_LowBloodPressure"
 * item[nursingAssessment].item[=].item[=].text = "Herhaaldelijk bloeddruk lager dan 100/60 mmHg"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $sct#12763006 "Low blood pressure, not hypotension"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "C5_ElevatedOrIrregularHeartRate"
 * item[nursingAssessment].item[=].item[=].text = "Hartslag boven 100 slagen per minuut in rust of onregelmatig hartritme, tenzij chronisch gekend"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $sct#361137007 "Irregular heart beat"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "C6_SevereSensoryNeuropathy"
 * item[nursingAssessment].item[=].item[=].text = "Ernstige sensorische neuropathie (bv. gevoelloosheid, tintelingen, brandend of koud gevoel in handen/voeten met pijn en/of impact op dagelijkse activiteiten)"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $sct#95662005 "Sensory neuropathy"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "C7_SevereMotorNeuropathy"
 * item[nursingAssessment].item[=].item[=].text = "Ernstige motorische neuropathie (bv. ernstige spierzwakte, algemene zwakte of tremor met impact op activiteiten zoals stappen of schrijven)"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].required = true
 * item[nursingAssessment].item[=].item[=].code = $sct#299737009 "Lower motor neurone lesion"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "C8_ContactCareTeam"
 * item[nursingAssessment].item[=].item[=].text = "> Indien tegenindicatie(s): gelieve contact op te nemen met het zorgteam in het ziekenhuis"
@@ -169,118 +155,79 @@ Usage: #example
 * item[nursingAssessment].item[=].item[=].text = "Misselijkheid"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#422587007 "Nausea"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D2_Vomiting"
 * item[nursingAssessment].item[=].item[=].text = "Braken"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#249497008 "Vomiting symptom"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D3_DecreasedAppetite"
 * item[nursingAssessment].item[=].item[=].text = "Verminderde eetlust of smaakverandering"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#64379006 "Decrease in appetite"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D4_Diarrhea"
 * item[nursingAssessment].item[=].item[=].text = "Buikloop"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#62315008 "Diarrhea"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D5_Constipation"
 * item[nursingAssessment].item[=].item[=].text = "Verstopping"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#14760008 "Constipation"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D6_Fatigue"
 * item[nursingAssessment].item[=].item[=].text = "Vermoeidheid/futloosheid"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#224960004 "Tired"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D7_Pain"
 * item[nursingAssessment].item[=].item[=].text = "Pijn"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#112104007 "Localized pain"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D8_SkinRash"
 * item[nursingAssessment].item[=].item[=].text = "Huiduitslag"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#271807003 "Eruption"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D9_PsychosocialBurden"
 * item[nursingAssessment].item[=].item[=].text = "Psychosociale belasting"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#384821006 "Mental state, behaviour and/or psychosocial function finding"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D10_Dyspnea"
 * item[nursingAssessment].item[=].item[=].text = "Kortademigheid"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#267036007 "Dyspnea"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D11_Paresthesia"
 * item[nursingAssessment].item[=].item[=].text = "Tintelingen of gevoelloosheid in vingers of tenen"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#91019004 "Paresthesia"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D12_MotorNeuropathy"
 * item[nursingAssessment].item[=].item[=].text = "Motorische neuropathie (bv. spierzwakte of tremor)"
 * item[nursingAssessment].item[=].item[=].type = #choice
-* item[nursingAssessment].item[=].item[=].code = $sct#95663000 "Motor neuropathy"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].code = $sct#95663000 "Motor peripheral neuropathy"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D13_Cough"
 * item[nursingAssessment].item[=].item[=].text = "Hoest"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#49727002 "Cough"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#444431007 "Grade 0 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444456001 "Grade 1 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444457005 "Grade 2 on a scale of 0 to 3"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#444447009 "Grade 3 on a scale of 0 to 3"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(ONCOSymptomGradeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "D14_OtherObservations"
 * item[nursingAssessment].item[=].item[=].text = "Andere nevenwerkingen of relevante klinische en psychosociale observaties\n(gelieve bij klinische bezorgdheid contact te nemen met het ziekenhuis voor bespreking)"
@@ -304,8 +251,7 @@ Usage: #example
 * item[assignment].item[=].item[=].type = #choice
 * item[assignment].item[=].item[=].required = true
 * item[assignment].item[=].item[=].code = $sct#373149000 "Medication administered following procedure"
-* item[assignment].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes"
-* item[assignment].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No"
+* item[assignment].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[assignment].item[=].item[+].linkId = "E2_SpecifyNo"
 * item[assignment].item[=].item[=].text = "> Indien 'nee': specifieer"
