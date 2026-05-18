@@ -2,7 +2,7 @@ Profile: HomehospOpatBaseQuestionnaire
 Parent: Questionnaire
 Id: homehosp-opat-base
 Title: "OPAT Home Hospitalization Base Questionnaire"
-Description: "Base profile for all OPAT home hospitalization nursing questionnaires. Defines the mandatory top-level group structure (Verpleegkundigassessment, Kwaliteitsopvolging) and all eight sub-groups common to both OPAT questionnaires: Bewaring, Voorbereidingmedicatietoediening, Medicatietoediening, Vitaleparameters, Observatieverbandinsteekplaats, Observatieinsteekplaats, Observatiekatheter, and Nevenwerkingen."
+Description: "Base profile for all OPAT home hospitalization nursing questionnaires. Defines the mandatory top-level group structure (NursingAssessment, QualityMonitoring) and all eight sub-groups common to both OPAT questionnaires: MedicationStorage, MedicationPreparation, MedicationAdministration, VitalParameters, DressingInsertionSite, InsertionSite, Catheter, and SideEffects."
 
 * status 1..1 MS
 * status = #active
@@ -15,41 +15,58 @@ Description: "Base profile for all OPAT home hospitalization nursing questionnai
 * item ^slicing.rules = #open
 
 * item contains
-    verpleegkundigAssessment 1..1 MS and
-    kwaliteitsopvolging 1..1 MS
+    nursingAssessment 1..1 MS and
+    qualityMonitoring 1..1 MS
 
-* item[verpleegkundigAssessment].linkId = "Verpleegkundigassessment"
-* item[verpleegkundigAssessment].type = #group
-* item[kwaliteitsopvolging].linkId = "Kwaliteitsopvolging"
-* item[kwaliteitsopvolging].type = #group
+* item[nursingAssessment].linkId = "NursingAssessment"
+* item[nursingAssessment].type = #group
+* item[qualityMonitoring].linkId = "QualityMonitoring"
+* item[qualityMonitoring].type = #group
 
-* item[verpleegkundigAssessment].item ^slicing.discriminator.type = #value
-* item[verpleegkundigAssessment].item ^slicing.discriminator.path = "linkId"
-* item[verpleegkundigAssessment].item ^slicing.rules = #open
+* item[nursingAssessment].item ^slicing.discriminator.type = #value
+* item[nursingAssessment].item ^slicing.discriminator.path = "linkId"
+* item[nursingAssessment].item ^slicing.rules = #open
 
-* item[verpleegkundigAssessment].item contains
-    bewaring 1..1 MS and
-    voorbereidingMedicatie 1..1 MS and
-    medicatietoediening 1..1 MS and
-    vitaleParameters 1..1 MS and
-    verbandInsteekplaats 1..1 MS and
-    observatieInsteekplaats 1..1 MS and
-    observatieKatheter 1..1 MS and
-    nevenwerkingen 1..1 MS
+* item[nursingAssessment].item contains
+    medicationStorage 1..1 MS and
+    medicationPreparation 1..1 MS and
+    medicationAdministration 1..1 MS and
+    vitalParameters 1..1 MS and
+    dressingInsertionSite 1..1 MS and
+    insertionSite 1..1 MS and
+    catheter 1..1 MS and
+    sideEffects 1..1 MS
 
-* item[verpleegkundigAssessment].item[bewaring].linkId = "Bewaring"
-* item[verpleegkundigAssessment].item[bewaring].type = #group
-* item[verpleegkundigAssessment].item[voorbereidingMedicatie].linkId = "Voorbereidingmedicatietoediening"
-* item[verpleegkundigAssessment].item[voorbereidingMedicatie].type = #group
-* item[verpleegkundigAssessment].item[medicatietoediening].linkId = "Medicatietoediening"
-* item[verpleegkundigAssessment].item[medicatietoediening].type = #group
-* item[verpleegkundigAssessment].item[vitaleParameters].linkId = "Vitaleparameters"
-* item[verpleegkundigAssessment].item[vitaleParameters].type = #group
-* item[verpleegkundigAssessment].item[verbandInsteekplaats].linkId = "Observatieverbandinsteekplaats"
-* item[verpleegkundigAssessment].item[verbandInsteekplaats].type = #group
-* item[verpleegkundigAssessment].item[observatieInsteekplaats].linkId = "Observatieinsteekplaats"
-* item[verpleegkundigAssessment].item[observatieInsteekplaats].type = #group
-* item[verpleegkundigAssessment].item[observatieKatheter].linkId = "Observatiekatheter"
-* item[verpleegkundigAssessment].item[observatieKatheter].type = #group
-* item[verpleegkundigAssessment].item[nevenwerkingen].linkId = "Nevenwerkingen"
-* item[verpleegkundigAssessment].item[nevenwerkingen].type = #group
+* item[nursingAssessment].item[medicationStorage].linkId = "MedicationStorage"
+* item[nursingAssessment].item[medicationStorage].type = #group
+* item[nursingAssessment].item[medicationPreparation].linkId = "MedicationPreparation"
+* item[nursingAssessment].item[medicationPreparation].type = #group
+
+// Slicing setup for medicationPreparation sub-items (B1/B2 common; B3+ added by child profiles)
+* item[nursingAssessment].item[medicationPreparation].item ^slicing.discriminator.type = #value
+* item[nursingAssessment].item[medicationPreparation].item ^slicing.discriminator.path = "linkId"
+* item[nursingAssessment].item[medicationPreparation].item ^slicing.rules = #open
+
+* item[nursingAssessment].item[medicationPreparation].item contains
+    medicationFullyDissolved 1..1 MS and
+    contactCareTeam 0..1
+
+* item[nursingAssessment].item[medicationPreparation].item[medicationFullyDissolved].linkId = "B1_MedicationFullyDissolved"
+* item[nursingAssessment].item[medicationPreparation].item[medicationFullyDissolved].type = #choice
+* item[nursingAssessment].item[medicationPreparation].item[medicationFullyDissolved].required = true
+
+* item[nursingAssessment].item[medicationPreparation].item[contactCareTeam].linkId = "B2_ContactCareTeam"
+* item[nursingAssessment].item[medicationPreparation].item[contactCareTeam].type = #display
+
+* item[nursingAssessment].item[medicationAdministration].linkId = "MedicationAdministration"
+* item[nursingAssessment].item[medicationAdministration].type = #group
+* item[nursingAssessment].item[vitalParameters].linkId = "VitalParameters"
+* item[nursingAssessment].item[vitalParameters].type = #group
+* item[nursingAssessment].item[dressingInsertionSite].linkId = "DressingInsertionSite"
+* item[nursingAssessment].item[dressingInsertionSite].type = #group
+* item[nursingAssessment].item[insertionSite].linkId = "InsertionSite"
+* item[nursingAssessment].item[insertionSite].type = #group
+* item[nursingAssessment].item[catheter].linkId = "Catheter"
+* item[nursingAssessment].item[catheter].type = #group
+* item[nursingAssessment].item[sideEffects].linkId = "SideEffects"
+* item[nursingAssessment].item[sideEffects].type = #group
