@@ -1,11 +1,11 @@
 Alias: $sct = http://snomed.info/sct
 
-Instance: AzacitidineV1response
+Instance: HomehospAzacitidineQuestionnaireResponseExample
 InstanceOf: QuestionnaireResponse
 Title: "Azacitidine questionnairesponse home hospitalization"
 Description: "Response to questionnaire containing the necessary information for the home hospitalization of a patient treated with Azacitidine."
 Usage: #example
-* questionnaire = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/AzacitidineV1"
+* questionnaire = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-azacitidine"
 * status = #completed
 * subject = Reference(Patient/Patient-123)
 * authored = "2025-11-19T11:08:00.5813903+01:00"

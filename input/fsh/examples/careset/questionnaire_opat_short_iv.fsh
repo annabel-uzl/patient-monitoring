@@ -2,13 +2,14 @@ Alias: $sct = http://snomed.info/sct
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 Alias: $loinc = http://loinc.org
 
-Instance: OPATKortIVV1
+Instance: HomehospOpatShortIVQuestionnaireDefinition
 InstanceOf: HomehospOpatShortIVQuestionnaire
 Title: "OPAT short IV questionnaire home hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with a short-duration IV administration in the context of an OPAT treatment"
-Usage: #example
-* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/OPATKortIVV1"
-* name = "OPATKortIVV1"
+Usage: #definition
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-opat-short-iv"
+* id = "homehosp-opat-short-iv"
+* name = "HomehospOpatShortIVQuestionnaireDefinition"
 * title = "OPAT - kort IV"
 * status = #active
 
@@ -254,15 +255,7 @@ Usage: #example
 * item[nursingAssessment].item[=].item[=].text = "Kies kathetertype"
 * item[nursingAssessment].item[=].item[=].type = #choice
 * item[nursingAssessment].item[=].item[=].code = $sct#246138005 "Type of catheter"
-* item[nursingAssessment].item[=].item[=].answerOption[0].valueCoding = $sct#52124006 "Central venous catheter"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#1396546006 "Tunneled catheter with 1 lumen"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#1396570005 "Tunneled catheter with 2 lumen"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#1396538005 "Tunneled catheter with 3 lumen"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#1396531004 "Single lumen Midline"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#1396527005 "Double lumen Midline"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#1396526001 "Single lumen PICC"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#1396489007 "Double lumen PICC"
-* item[nursingAssessment].item[=].item[=].answerOption[+].valueCoding = $sct#423954007 "Peripheral catheter"
+* item[nursingAssessment].item[=].item[=].answerValueSet = Canonical(CatheterTypeVS)
 
 * item[nursingAssessment].item[=].item[+].linkId = "G_KleurLumen"
 * item[nursingAssessment].item[=].item[=].text = "Kleur lumen"

@@ -2,13 +2,14 @@ Alias: $sct = http://snomed.info/sct
 Alias: $loinc = http://loinc.org
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 
-Instance: FulvestrantV1
+Instance: HomehospFulvestrantQuestionnaireDefinition
 InstanceOf: HomehospOncoFulvestrantQuestionnaire
 Title: "Fulvestrant questionnaire home hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Fulvestrant (Faslodex®)."
-Usage: #example
-* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/FulvestrantV1"
-* name = "FulvestrantV1"
+Usage: #definition
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-fulvestrant"
+* id = "homehosp-fulvestrant"
+* name = "HomehospFulvestrantQuestionnaireDefinition"
 * title = "Fulvestrant"
 * status = #active
 * subjectType = #Patient

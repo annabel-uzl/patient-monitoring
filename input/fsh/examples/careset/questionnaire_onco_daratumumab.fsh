@@ -2,13 +2,14 @@ Alias: $sct = http://snomed.info/sct
 Alias: $loinc = http://loinc.org
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 
-Instance: DaratumumabV1
+Instance: HomehospDaratumumabQuestionnaireDefinition
 InstanceOf: HomehospOncoDaratumumabQuestionnaire
 Title: "Daratumumab questionnaire home hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Daratumumab (Darzalex®)."
-Usage: #example
-* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/DaratumumabV1"
-* name = "DaratumumabV1"
+Usage: #definition
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-daratumumab"
+* id = "homehosp-daratumumab"
+* name = "HomehospDaratumumabQuestionnaireDefinition"
 * title = "Daratumumab"
 * status = #active
 * subjectType = #Patient

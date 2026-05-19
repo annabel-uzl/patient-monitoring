@@ -2,13 +2,14 @@ Alias: $sct = http://snomed.info/sct
 Alias: $loinc = http://loinc.org
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 
-Instance: BortezomibV1
+Instance: HomehospBortezomibQuestionnaireDefinition
 InstanceOf: HomehospOncoBortezomibQuestionnaire
 Title: "Bortezomib questionnaire home hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Bortezomib (Velcade®)."
-Usage: #example
-* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/BortezomibV1"
-* name = "BortezomibV1"
+Usage: #definition
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-bortezomib"
+* id = "homehosp-bortezomib"
+* name = "HomehospBortezomibQuestionnaireDefinition"
 * title = "Bortezomib"
 * status = #active
 * subjectType = #Patient

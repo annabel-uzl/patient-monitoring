@@ -2,13 +2,14 @@ Alias: $sct = http://snomed.info/sct
 Alias: $loinc = http://loinc.org
 Alias: $unitsofmeasure = http://unitsofmeasure.org
 
-Instance: TrastuzumabV1
+Instance: HomehospTrastuzumabQuestionnaireDefinition
 InstanceOf: HomehospOncoTrastuzumabQuestionnaire
 Title: "Trastuzumab questionnaire home hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Trastuzumab (Herceptin®)."
-Usage: #example
-* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/TrastuzumabV1"
-* name = "TrastuzumabV1"
+Usage: #definition
+* url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-trastuzumab"
+* id = "homehosp-trastuzumab"
+* name = "HomehospTrastuzumabQuestionnaireDefinition"
 * title = "Trastuzumab"
 * status = #active
 * subjectType = #Patient
