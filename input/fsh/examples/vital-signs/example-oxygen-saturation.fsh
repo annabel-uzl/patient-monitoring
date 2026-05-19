@@ -1,7 +1,8 @@
 Instance: OxygenSaturationExample
 InstanceOf: http://hl7.org/fhir/StructureDefinition/oxygensat
 Usage: #example
-Description: "Oxygen saturation example" //TODO: Needs description
+Title: "Observation: Oxygen Saturation"
+Description: "Oxygen saturation vital sign observation with device"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code.coding[0].system = $loinc

@@ -1,7 +1,7 @@
 Instance: RednessPunctureWoundsExample	
 InstanceOf: Observation
 Usage: #example
-Title: "Redness puncture wounds example"
+Title: "Observation: Redness at Puncture Wounds"
 Description: "NO LOINC OR SNOMED CODE FOR SYMPTOM. Answer options to be determined."
 * status = #final
 * code = $loinc#72514-3 //TODO: Needs correct code

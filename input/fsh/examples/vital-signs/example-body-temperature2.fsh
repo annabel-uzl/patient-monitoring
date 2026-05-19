@@ -1,6 +1,7 @@
 Instance: BodyTemperatureExample2
 InstanceOf: http://hl7.org/fhir/StructureDefinition/bodytemp
 Usage: #example
+Title: "Observation: Body Temperature (Without Device)"
 Description: "Temperature example without device" 
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"

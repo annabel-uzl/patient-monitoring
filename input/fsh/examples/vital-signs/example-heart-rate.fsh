@@ -1,7 +1,8 @@
 Instance: HeartRateExample
 InstanceOf: http://hl7.org/fhir/StructureDefinition/heartrate
 Usage: #example
-Description: "Heart Rate example" //TODO: Needs description
+Title: "Observation: Heart Rate"
+Description: "Heart rate vital sign observation with device"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#8867-4 "Heart rate"

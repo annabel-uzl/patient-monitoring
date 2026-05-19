@@ -1,7 +1,7 @@
 Instance: PainDuringUrinationExample
 InstanceOf: Observation
 Usage: #example
-Title: "Pain during urination example"
+Title: "Observation: Pain During Urination"
 Description: "Possible answers are yes and no"
 * status = #final
 * code = $snomed#49650001 

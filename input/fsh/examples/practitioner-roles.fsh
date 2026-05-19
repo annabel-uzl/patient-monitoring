@@ -6,7 +6,7 @@ Usage: #inline
 
 Instance: PractitionerRole-16500
 InstanceOf: PractitionerRole
-Title: "General practitioner example"
+Title: "PractitionerRole: General Practitioner"
 Description: "Example general practitioner (huisarts) for the OPAT patient"
 Usage: #example
 * meta.profile = "https://www.ehealth.fgov.be/standards/fhir/core/StructureDefinition/be-practitionerrole"

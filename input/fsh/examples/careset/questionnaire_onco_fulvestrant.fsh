@@ -4,7 +4,7 @@ Alias: $unitsofmeasure = http://unitsofmeasure.org
 
 Instance: HomehospFulvestrantQuestionnaireDefinition
 InstanceOf: HomehospOncoFulvestrantQuestionnaire
-Title: "Fulvestrant questionnaire home hospitalization"
+Title: "Questionnaire: Fulvestrant Home Hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Fulvestrant (Faslodex®)."
 Usage: #definition
 * url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-fulvestrant"

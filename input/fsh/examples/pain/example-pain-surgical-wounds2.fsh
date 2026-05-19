@@ -1,7 +1,7 @@
 Instance: PainSurgicalWoundsExample2
 InstanceOf: Observation
 Usage: #example
-Title: "Pain surgical wounds example 2"
+Title: "Observation: Pain at Surgical Wounds (2)"
 Description: "Pain score related to the surgical wound"
 * status = #final
 * code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"

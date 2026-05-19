@@ -4,7 +4,7 @@ Alias: $loinc = http://loinc.org
 
 Instance: HomehospOpatContinuousInfusionQuestionnaireDefinition
 InstanceOf: HomehospOpatContinuousInfusionQuestionnaire
-Title: "OPAT questionnaire home hospitalization"
+Title: "Questionnaire: OPAT Continuous Infusion Home Hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with a continuous infusion in the context of an OPAT treatment"
 Usage: #definition
 * url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-opat-continuous-infusion"

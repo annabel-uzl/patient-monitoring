@@ -1,7 +1,7 @@
 Instance: OrthopneuExample
 InstanceOf: Observation
 Usage: #example
-Title: "Orthopneu example"
+Title: "Observation: Orthopnea"
 Description: "Possible answers are absent, mild, moderate, severe"
 * status = #final
 * code = $snomed#62744007

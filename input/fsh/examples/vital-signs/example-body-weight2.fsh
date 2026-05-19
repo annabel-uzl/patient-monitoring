@@ -1,7 +1,8 @@
 Instance: BodyWeightExample2
 InstanceOf: http://hl7.org/fhir/StructureDefinition/bodyweight
 Usage: #example
-Description: "Body Weight example registered by patient" //TODO: Needs description
+Title: "Observation: Body Weight (Registered by Patient)"
+Description: "Body weight vital sign observation registered by the patient"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#29463-7 "Body Weight"

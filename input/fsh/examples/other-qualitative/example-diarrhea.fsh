@@ -1,7 +1,7 @@
 Instance: DiarrheaExample
 InstanceOf: Observation
 Usage: #example
-Title: "Diarrhea example"
+Title: "Observation: Diarrhea"
 Description: "Possible answers are absent, mild, moderate, severe"
 * status = #final
 * code = $snomed#62315008

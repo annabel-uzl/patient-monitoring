@@ -3,7 +3,7 @@
 // ==========================================
 Instance: Patient-123
 InstanceOf: Patient
-Title: "OPAT patient example"
+Title: "Patient: OPAT Home Hospitalization"
 Description: "Example patient for the OPAT document"
 * active = true
 * identifier[0].use = #usual
@@ -79,7 +79,7 @@ Description: "Example patient for the OPAT document"
 // ==========================================
 Instance: OPAT-Document
 InstanceOf: Composition
-Title: "OPAT document example (composition)"
+Title: "Composition: OPAT Document"
 Description: "FHIR document containing necessary information for an OPAT treatment at home"
 Usage: #example
 * status = #final
@@ -90,54 +90,54 @@ Usage: #example
 * author = Reference(Organization-UZL)
 * custodian = Reference(Organization-UZL)
 
-// Section 0: Patientgegevens
-* section[0].title = "Patientgegevens"
+// Section 0: Patient data
+* section[0].title = "Patient data"
 * section[0].author = Reference(Organization-UZL)
 * section[0].entry[0] = Reference(Patient-123)
 
-// Section 1: Contactgegevens zorgteam
-* section[1].title = "Contactgegevens zorgteam"
+// Section 1: Care team contact details
+* section[1].title = "Care team contact details"
 * section[1].author = Reference(Organization-UZL)
 * section[1].entry[0] = Reference(CareTeam-F-7766077)
 
-// Section 2: Relevante voorgeschiedenis
-* section[2].title = "Relevante voorgeschiedenis"
+// Section 2: Relevant medical history
+* section[2].title = "Relevant medical history"
 * section[2].author = Reference(Organization-UZL)
 * section[2].entry[0] = Reference(ClinicalImpression-MED-medischeVG)
 
-// Section 3: Toekomstige ziekenhuisafspraken in UZL
-* section[3].title = "Toekomstige ziekenhuisafspraken in UZL"
+// Section 3: Upcoming hospital appointments at UZL
+* section[3].title = "Upcoming hospital appointments at UZL"
 * section[3].author = Reference(Organization-UZL)
 * section[3].entry[0] = Reference(Appointment-testapp)
 
-// Section 4: Bloeddruk (empty)
-* section[4].title = "Bloeddruk"
+// Section 4: Blood pressure (empty)
+* section[4].title = "Blood pressure"
 * section[4].author = Reference(Organization-UZL)
 * section[4].emptyReason = http://terminology.hl7.org/CodeSystem/list-empty-reason#nilknown "Nil Known"
 * section[4].text.status = #empty
-* section[4].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Geen gegevens beschikbaar</div>"
+* section[4].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No data available</div>"
 
-// Section 5: Hartslag (empty)
-* section[5].title = "Hartslag"
+// Section 5: Heart rate (empty)
+* section[5].title = "Heart rate"
 * section[5].author = Reference(Organization-UZL)
 * section[5].emptyReason = http://terminology.hl7.org/CodeSystem/list-empty-reason#nilknown "Nil Known"
 * section[5].text.status = #empty
-* section[5].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Geen gegevens beschikbaar</div>"
+* section[5].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No data available</div>"
 
-// Section 6: Temperatuur
-* section[6].title = "Temperatuur"
+// Section 6: Temperature
+* section[6].title = "Temperature"
 * section[6].author = Reference(Organization-UZL)
 * section[6].entry[0] = Reference(Observation-Temperatuur)
 
-// Section 7: Gewicht (empty)
-* section[7].title = "Gewicht"
+// Section 7: Weight (empty)
+* section[7].title = "Weight"
 * section[7].author = Reference(Organization-UZL)
 * section[7].emptyReason = http://terminology.hl7.org/CodeSystem/list-empty-reason#nilknown "Nil Known"
 * section[7].text.status = #empty
-* section[7].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">Geen gegevens beschikbaar</div>"
+* section[7].text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">No data available</div>"
 
-// Section 8: Nevenwerkingen/symptoomlast
-* section[8].title = "Nevenwerkingen/symptoomlast"
+// Section 8: Side effects / symptom burden
+* section[8].title = "Side effects / symptom burden"
 * section[8].author = Reference(Organization-UZL)
 * section[8].entry[0] = Reference(ClinicalImpression-OBS-Obstipatie)
 * section[8].entry[1] = Reference(ClinicalImpression-OBS-Gewrichtspijn)
@@ -157,8 +157,8 @@ Usage: #example
 * section[8].entry[15] = Reference(ClinicalImpression-OBS-Diarree)
 * section[8].entry[16] = Reference(ClinicalImpression-OBS-Candidiase)
 
-// Section 9: Kathetertype
-* section[9].title = "Kathetertype"
+// Section 9: Catheter type
+* section[9].title = "Catheter type"
 * section[9].author = Reference(Organization-UZL)
 * section[9].entry[0] = Reference(Observation-Katheter-7938866)
 
@@ -167,16 +167,16 @@ Usage: #example
 // ==========================================
 Instance: testloc
 InstanceOf: Location
-Title: "UZL consultation location example"
+Title: "Location: UZL Consultation"
 Description: "Example hospital consultation location at UZ Leuven for the OPAT appointment"
 * status = #active
-* name = "UZ Leuven - Raadpleging"
+* name = "UZ Leuven - Consultation"
 * mode = #instance
 * type[0] = http://terminology.hl7.org/CodeSystem/v3-RoleCode#HOSP "Hospital"
 
 Instance: Appointment-testapp
 InstanceOf: Appointment
-Title: "OPAT appointment example"
+Title: "Appointment: OPAT Hospital Follow-up"
 Description: "Future hospital appointment at UZL for the OPAT patient"
 * status = #fulfilled
 * identifier[0].use = #usual
@@ -196,10 +196,10 @@ Description: "Future hospital appointment at UZL for the OPAT patient"
 // ==========================================
 Instance: CareTeam-F-7766077
 InstanceOf: CareTeam
-Title: "Overarching CareTeam Home Hospitalization"
+Title: "CareTeam: Home Hospitalization"
 Description: "Containing OPAT team, catheter team and emergency reception as participants"
 * status = #active
-* name = "Zorgteam thuishospitalisatie"
+* name = "Home hospitalization care team"
 * category = http://loinc.org#LA27977-0 "Episode of care-focused care team"
 * subject = Reference(Patient-123)
 * managingOrganization = Reference(Organization-UZL)
@@ -209,7 +209,7 @@ Description: "Containing OPAT team, catheter team and emergency reception as par
 
 Instance: CareTeam-OPAT
 InstanceOf: CareTeam
-Title: "CareTeam OPAT"
+Title: "CareTeam: OPAT"
 Description: "OPAT team with contact details"
 * status = #active
 * name = "OPAT team"
@@ -222,20 +222,20 @@ Description: "OPAT team with contact details"
 
 Instance: CareTeam-Katheter
 InstanceOf: CareTeam
-Title: "CareTeam Katheter"
+Title: "CareTeam: Catheter"
 Description: "Catheter team with contact details"
 * status = #active
-* name = "Katheterteam"
+* name = "Catheter team"
 * telecom[0].system = #phone
 * telecom[0].value = "016/34 08 64"
 * telecom[0].rank = 10
 
 Instance: CareTeam-Spoed
 InstanceOf: CareTeam
-Title: "CareTeam Spoed"
+Title: "CareTeam: Emergency"
 Description: "Emergency reception with contact details"
 * status = #active
-* name = "Receptie spoed"
+* name = "Emergency reception"
 * telecom[0].system = #phone
 * telecom[0].value = "016/34 39 00"
 * telecom[0].rank = 11
@@ -247,7 +247,7 @@ Description: "Emergency reception with contact details"
 // Temperature observation (placeholder - referenced by Composition section "Temperatuur")
 Instance: Observation-Temperatuur
 InstanceOf: Observation
-Title: "Temperature observation for OPAT patient"
+Title: "Observation: Body Temperature (OPAT Document)"
 Description: "Temperature vital sign observation"
 * status = #final
 * category = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs "Vital Signs"
@@ -262,7 +262,7 @@ Description: "Temperature vital sign observation"
 // Catheter observation
 Instance: Observation-Katheter-7938866
 InstanceOf: Observation
-Title: "Catheter observation for OPAT patient"
+Title: "Observation: Catheter (OPAT Document)"
 Description: "Home hospitalization catheter observation example"
 * status = #final
 * code = http://snomed.info/sct#1156071007 "Catheter observable (observable entity)"
@@ -277,7 +277,7 @@ Description: "Home hospitalization catheter observation example"
 // ==========================================
 Instance: CT-259690079
 InstanceOf: Encounter
-Title: "OPAT consultation encounter example"
+Title: "Encounter: OPAT Consultation"
 Description: "Hospital consultation encounter for the OPAT patient at UZ Leuven"
 * status = #finished
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
@@ -290,203 +290,203 @@ Description: "Hospital consultation encounter for the OPAT patient at UZ Leuven"
 // ==========================================
 Instance: ClinicalImpression-MED-medischeVG
 InstanceOf: ClinicalImpression
-Title: "Relevante medische voorgeschiedenis"
+Title: "ClinicalImpression: Relevant Medical History"
 Description: "Relevant medical history (OPAT 3.0 template field MED_medischeVG)"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Relevant medical history recorded in the OPAT home hospitalization document"
 * summary = "TEST KWS"
 
 // ==========================================
 // 8. CLINICAL IMPRESSIONS - SYMPTOMS / SIDE EFFECTS
 // ==========================================
 
-// Obstipatie
+// Constipation
 Instance: ClinicalImpression-OBS-Obstipatie
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Obstipatie"
+Title: "ClinicalImpression: Symptom - Constipation"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: constipation"
 * summary = "no"
 
-// Gewrichtspijn
+// Joint pain
 Instance: ClinicalImpression-OBS-Gewrichtspijn
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Gewrichtspijn"
+Title: "ClinicalImpression: Symptom - Joint Pain"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: joint pain"
 * summary = "no"
 
-// Rillingen
+// Chills
 Instance: ClinicalImpression-OBS-Rillingen
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Rillingen"
+Title: "ClinicalImpression: Symptom - Chills"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: chills"
 * summary = "no"
 
-// Verminderde eetlust
+// Reduced appetite
 Instance: ClinicalImpression-OBS-Verminderdeeetlust
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Verminderde eetlust"
+Title: "ClinicalImpression: Symptom - Reduced Appetite"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: reduced appetite"
 * summary = "no"
 
-// Pijn
+// Pain
 Instance: ClinicalImpression-OBS-Pijn
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Pijn"
+Title: "ClinicalImpression: Symptom - Pain"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: pain"
 * summary = "no"
 
-// Jeuk
+// Itching
 Instance: ClinicalImpression-OBS-Jeuk
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Jeuk"
+Title: "ClinicalImpression: Symptom - Itching"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: itching"
 * summary = "yes"
 
-// Andere
+// Other
 Instance: ClinicalImpression-OBS-Andere
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Andere"
+Title: "ClinicalImpression: Symptom - Other"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: other symptom"
 * summary = "no"
 
-// Observatie andere - specifieer (no summary in source)
+// Other observation - specify
 Instance: ClinicalImpression-OBS-Observatie-andere-specifieer
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Observatie andere - specifieer"
+Title: "ClinicalImpression: Symptom - Other (Specify)"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: other observation (free text)"
 
-// Huiduitslag
+// Rash
 Instance: ClinicalImpression-OBS-Huiduitslag
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Huiduitslag"
+Title: "ClinicalImpression: Symptom - Rash"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: rash"
 * summary = "no"
 
-// Moe
+// Fatigue
 Instance: ClinicalImpression-OBS-Moe
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Moe"
+Title: "ClinicalImpression: Symptom - Fatigue"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: fatigue"
 * summary = "no"
 
-// Ademhalingsproblemen
+// Respiratory problems
 Instance: ClinicalImpression-OBS-Ademhalingsproblemen
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Ademhalingsproblemen"
+Title: "ClinicalImpression: Symptom - Respiratory Problems"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: respiratory problems"
 * summary = "no"
 
-// Zwelling
+// Swelling
 Instance: ClinicalImpression-OBS-Zwelling
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Zwelling"
+Title: "ClinicalImpression: Symptom - Swelling"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: swelling"
 * summary = "no"
 
-// Braken
+// Vomiting
 Instance: ClinicalImpression-OBS-Braken
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Braken"
+Title: "ClinicalImpression: Symptom - Vomiting"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: vomiting"
 * summary = "no"
 
-// Misselijkheid
+// Nausea
 Instance: ClinicalImpression-OBS-Misselijkheid
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Misselijkheid"
+Title: "ClinicalImpression: Symptom - Nausea"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: nausea"
 * summary = "no"
 
-// Blaren
+// Blisters
 Instance: ClinicalImpression-OBS-Blaren
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Blaren"
+Title: "ClinicalImpression: Symptom - Blisters"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: blisters"
 * summary = "no"
 
-// Diarree
+// Diarrhea
 Instance: ClinicalImpression-OBS-Diarree
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Diarree"
+Title: "ClinicalImpression: Symptom - Diarrhea"
 * status = #completed
 * subject = Reference(Patient/Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: diarrhea"
 * summary = "no"
 
-// Candidiase
+// Candidiasis
 Instance: ClinicalImpression-OBS-Candidiase
 InstanceOf: ClinicalImpression
-Title: "Symptoom: Candidiase"
+Title: "ClinicalImpression: Symptom - Candidiasis"
 * status = #completed
 * subject = Reference(Patient-123)
 * encounter = Reference(Encounter/CT-259690079)
 * date = "2025-07-11T13:09:50+02:00"
-* description = "OPAT 3.0"
+* description = "Side effect assessment during OPAT home hospitalization: candidiasis"
 * summary = "no"
 
 // ==========================================
@@ -494,6 +494,6 @@ Title: "Symptoom: Candidiase"
 // ==========================================
 Instance: Organization-UZL
 InstanceOf: Organization
-Title: "Organization example for OPAT document"
+Title: "Organization: UZ Leuven"
 Description: "UZ Leuven - authoring and custodian organization"
 * name = "UZ Leuven"

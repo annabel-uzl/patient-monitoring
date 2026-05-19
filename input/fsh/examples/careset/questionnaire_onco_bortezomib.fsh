@@ -4,7 +4,7 @@ Alias: $unitsofmeasure = http://unitsofmeasure.org
 
 Instance: HomehospBortezomibQuestionnaireDefinition
 InstanceOf: HomehospOncoBortezomibQuestionnaire
-Title: "Bortezomib questionnaire home hospitalization"
+Title: "Questionnaire: Bortezomib Home Hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Bortezomib (Velcade®)."
 Usage: #definition
 * url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-bortezomib"

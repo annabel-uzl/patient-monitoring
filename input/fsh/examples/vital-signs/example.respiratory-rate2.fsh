@@ -1,6 +1,7 @@
 Instance: RespiratoryRateExample2
 InstanceOf: http://hl7.org/fhir/StructureDefinition/resprate
 Usage: #example
+Title: "Observation: Respiratory Rate (Registered by Patient)"
 Description: "Respiration example registered by patient"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"

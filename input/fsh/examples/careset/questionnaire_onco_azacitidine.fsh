@@ -4,7 +4,7 @@ Alias: $unitsofmeasure = http://unitsofmeasure.org
 
 Instance: HomehospAzacitidineQuestionnaireDefinition
 InstanceOf: HomehospOncoAzacitidineQuestionnaire
-Title: "Azacitidine questionnaire home hospitalization"
+Title: "Questionnaire: Azacitidine Home Hospitalization"
 Description: "Questionnaire containing the necessary information for the home hospitalization of a patient treated with Azacitidine."
 Usage: #definition
 * url = "http://hl7belgium.org/fhir/patient-monitoring/Questionnaire/homehosp-azacitidine"

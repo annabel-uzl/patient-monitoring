@@ -1,6 +1,7 @@
 Instance: OxygenSaturationExample2
 InstanceOf: http://hl7.org/fhir/StructureDefinition/oxygensat
 Usage: #example
+Title: "Observation: Oxygen Saturation (Registered by Patient)"
 Description: "Oxygen saturation example registered by patient"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"

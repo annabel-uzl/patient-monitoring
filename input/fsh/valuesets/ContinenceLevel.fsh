@@ -1,6 +1,6 @@
 ValueSet: ContinenceLevel
 Id: continence-level
-Title: "Continence level"
+Title: "Continence Level"
 Description: "LOINC codes to represent the level of continence reported"
 * ^status = #active
 * ^experimental = false
