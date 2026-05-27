@@ -1,7 +1,7 @@
 Logical: ONCODaratumumabQuestionnaire
 Id: onco-daratumumab-questionnaire
 Title: "ONCO Daratumumab Questionnaire Logical Model"
-Description: "Logical model representing the nursing assessment questionnaire for home hospitalization patients receiving Daratumumab. This questionnaire is filled in by the home nurse during each visit and exchanged as a FHIR QuestionnaireResponse with the hospital. Specific features: includes pre-medication intake verification (dexamethasone, H1-antihistamine, paracetamol) and aftercare reaction monitoring."
+Description: "Logical model representing the nursing assessment questionnaire for home hospitalization patients receiving Daratumumab. This questionnaire is filled in by the home nurse during each visit and exchanged as a FHIR QuestionnaireResponse with the hospital. Specific features: includes pre-medication intake verification and aftercare reaction monitoring."
 Parent: Base
 * ^type = "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/ONCODaratumumabQuestionnaire"
 

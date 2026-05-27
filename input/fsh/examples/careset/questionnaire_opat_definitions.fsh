@@ -15,7 +15,7 @@ Alias: $unitsofmeasure = http://unitsofmeasure.org
 
 Instance: OpatContinuousInfusionDefinitions
 InstanceOf: Questionnaire
-Title: "OPAT Questionnaire - SDC Definition-based Extraction (Continuous Infusion)"
+Title: "Questionnaire: OPAT SDC Extraction (Continuous Infusion)"
 Description: "Questionnaire for home hospitalization OPAT (continuous infusion) with SDC definition-based extraction mappings."
 Usage: #example
 * id = "homehosp-q-opat-definitions"
@@ -82,8 +82,7 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#396076000 "Medication prefill preparation assessment (procedure)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "B2_IfNoContact"
 * item[=].item[=].item[=].text = "> If no: please contact the care team at the hospital"
@@ -182,8 +181,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#373149000 "Medication administered following procedure (situation)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "C2_SpecifyNo"
 * item[=].item[=].item[=].text = "> If no: specify"
@@ -351,8 +349,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#364554009 "Wound observable (observable entity)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#17621005 "Normal (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#263654008 "Abnormal (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(NormalAbnormalVS)
 
 * item[=].item[=].item[+].linkId = "E2_IfAbnormalSpecify"
 * item[=].item[=].item[=].text = "> If 'abnormal': specify"
@@ -366,40 +363,35 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#297968009 "Bleeding skin (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E4_Purulent"
 * item[=].item[=].item[=].text = "Purulent"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#225550006 "Purulent discharge from wound (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E5_Loose"
 * item[=].item[=].item[=].text = "Loose"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#78799005 "Loose (qualifier value)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E6_Serous"
 * item[=].item[=].item[=].text = "Serous"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#447112000 "Serous discharge from wound (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E7_Moist"
 * item[=].item[=].item[=].text = "Moist"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#17461003 "Wet (qualifier value)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "E8_Other"
 * item[=].item[=].item[=].text = "Other: (if applicable)"
@@ -439,8 +431,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#386141001 "Insertion site (morphologic abnormality)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#17621005 "Normal (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#263654008 "Abnormal (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(NormalAbnormalVS)
 
 * item[=].item[=].item[+].linkId = "F2_IfAbnormalSpecify"
 * item[=].item[=].item[=].text = "> If 'abnormal': specify"
@@ -454,56 +445,49 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#339008 "Blister (morphologic abnormality)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "F4_Redness"
 * item[=].item[=].item[=].text = "Redness"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#371240000 "Red color (qualifier value)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "F5_Hematoma"
 * item[=].item[=].item[=].text = "Hematoma"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#35566002 "Hematoma (morphologic abnormality)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "F6_Pus"
 * item[=].item[=].item[=].text = "Pus"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#367646009 "Pus (morphologic abnormality)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "F7_Crusting"
 * item[=].item[=].item[=].text = "Crusting"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#69640009 "Crust (morphologic abnormality)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "F8_Swelling"
 * item[=].item[=].item[=].text = "Swelling"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#65124004 "Swelling (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "F9_Extravasation"
 * item[=].item[=].item[=].text = "Extravasation/infiltration"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#76676007 "Extravasation (morphologic abnormality)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "F10_Other"
 * item[=].item[=].item[=].text = "Other: (if applicable)"
@@ -543,8 +527,7 @@ Usage: #example
 * item[=].item[=].item[=].required = true
 * item[=].item[=].item[=].code = $sct#1156071007 "Catheter observable (observable entity)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#17621005 "Normal (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#263654008 "Abnormal (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(NormalAbnormalVS)
 
 * item[=].item[=].item[+].linkId = "G2_IfAbnormalSpecify"
 * item[=].item[=].item[=].text = "> If 'abnormal': specify"
@@ -587,25 +570,20 @@ Usage: #example
 * item[=].item[=].item[=].item[=].text = "Blood aspiration"
 * item[=].item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].item[=].code = $sct#25797006 "Pulmonary aspiration of blood (finding)"
-* item[=].item[=].item[=].item[=].answerOption[0].valueCoding = $sct#36203004 "Easy"
-* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $sct#52925006 "Difficult"
-* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $sct#385671000 "Unsuccessful"
+* item[=].item[=].item[=].item[=].answerValueSet = Canonical(CatheterPatencyVS)
 
 * item[=].item[=].item[=].item[+].linkId = "G4_Infusion"
 * item[=].item[=].item[=].item[=].text = "Infusion"
 * item[=].item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].item[=].code = $sct#36576007 "Infusion (procedure)"
-* item[=].item[=].item[=].item[=].answerOption[0].valueCoding = $sct#36203004 "Easy"
-* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $sct#52925006 "Difficult"
-* item[=].item[=].item[=].item[=].answerOption[+].valueCoding = $sct#385671000 "Unsuccessful"
+* item[=].item[=].item[=].item[=].answerValueSet = Canonical(CatheterPatencyVS)
 
 * item[=].item[=].item[+].linkId = "G5_DamagedCatheter"
 * item[=].item[=].item[=].text = "Damaged catheter"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#1156074004 "Device failure (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#373066001 "Yes (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#373067005 "No (qualifier value)"
+* item[=].item[=].item[=].answerValueSet = Canonical(YesNoVS)
 
 * item[=].item[=].item[+].linkId = "G6_Other"
 * item[=].item[=].item[=].text = "Other: (if applicable)"
@@ -643,160 +621,112 @@ Usage: #example
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#271807003 "Eruption of skin (disorder)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H2_Itching"
 * item[=].item[=].item[=].text = "Itching"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#418290006 "Itching (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H3_BlistersOrSkinPeeling"
 * item[=].item[=].item[=].text = "Blisters/skin peeling"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#271767006 "Peeling of skin (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H4_Nausea"
 * item[=].item[=].item[=].text = "Nausea"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#422587007 "Nausea (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H5_Vomiting"
 * item[=].item[=].item[=].text = "Vomiting"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#249497008 "Vomiting symptom (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H6_Diarrhea"
 * item[=].item[=].item[=].text = "Diarrhea"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#62315008 "Diarrhea (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H7_Constipation"
 * item[=].item[=].item[=].text = "Constipation"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#14760008 "Constipation (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H8_DecreasedAppetite"
 * item[=].item[=].item[=].text = "Decreased appetite"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#64379006 "Decrease in appetite (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H9_PainDuringAdministration"
 * item[=].item[=].item[=].text = "Pain during administration"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#698749006 "Pain on flushing of implanted venous access device (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H10_GeneralPain"
 * item[=].item[=].item[=].text = "Pain (general)"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#112104007 "Localized pain (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H11_Fatigue"
 * item[=].item[=].item[=].text = "Fatigue"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#224960004 "Tired (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H12_Chills"
 * item[=].item[=].item[=].text = "Chills"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#43724002 "Chill (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H13_Candidiasis"
 * item[=].item[=].item[=].text = "Candidiasis (fungal infection)"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#78048006 "Candidiasis (disorder)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H14_JointPain"
 * item[=].item[=].item[=].text = "Joint pain"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#57676002 "Pain of joint (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H15_RespiratoryProblems"
 * item[=].item[=].item[=].text = "Respiratory problems"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#267036007 "Dyspnea (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H16_FacialTongueSwell"
 * item[=].item[=].item[=].text = "Facial/tongue swelling"
 * item[=].item[=].item[=].type = #choice
 * item[=].item[=].item[=].code = $sct#278528006 "Facial swelling (finding)"
 * item[=].item[=].item[=].definition = "https://www.ehealth.fgov.be/standards/fhir/core-clinical/StructureDefinition/be-observation#Observation.valueCodeableConcept"
-* item[=].item[=].item[=].answerOption[0].valueCoding = $sct#2667000 "Absent (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#255604002 "Mild (qualifier value)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#6736007 "Moderate (severity modifier)"
-* item[=].item[=].item[=].answerOption[+].valueCoding = $sct#24484000 "Severe"
+* item[=].item[=].item[=].answerValueSet = Canonical(HomehospSideEffectSeverityVS)
 
 * item[=].item[=].item[+].linkId = "H17_OtherObservations"
 * item[=].item[=].item[=].text = "Are there other symptoms or other relevant clinical and/or psychosocial observations?\n(please contact the care team at the hospital if there are clinical concerns)"

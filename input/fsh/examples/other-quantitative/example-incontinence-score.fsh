@@ -1,7 +1,7 @@
 Instance: IncontinenceScoreExample
 InstanceOf: Observation
 Usage: #example
-Title: "incontinence assessment using the wexner/CCIS score"
+Title: "Observation: Wexner/CCIS Incontinence Score"
 Description: "Score from 0 to 20"
 * status = #final
 * code.text = "Wexner Continence Score"

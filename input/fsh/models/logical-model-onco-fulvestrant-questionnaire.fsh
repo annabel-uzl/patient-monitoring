@@ -1,7 +1,7 @@
 Logical: ONCOFulvestrantQuestionnaire
 Id: onco-fulvestrant-questionnaire
 Title: "ONCO Fulvestrant Questionnaire Logical Model"
-Description: "Logical model representing the nursing assessment questionnaire for home hospitalization patients receiving Fulvestrant. This questionnaire is filled in by the home nurse during each visit and exchanged as a FHIR QuestionnaireResponse with the hospital. Specific features: simplified contraindications checklist (fever/chills/unwell only), and includes muscle/joint pain in side effects. No preparation check required."
+Description: "Logical model representing the nursing assessment questionnaire for home hospitalization patients receiving Fulvestrant. This questionnaire is filled in by the home nurse during each visit and exchanged as a FHIR QuestionnaireResponse with the hospital. Specific features: simplified contraindications checklist (fever/chills/unwell only), and includes muscle/joint pain in side effects."
 Parent: Base
 * ^type = "http://hl7belgium.org/fhir/patient-monitoring/StructureDefinition/ONCOFulvestrantQuestionnaire"
 

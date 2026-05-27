@@ -1,7 +1,7 @@
 Instance: PainKillerExample
 InstanceOf: Observation
 Usage: #example
-Title: "Usage of pain killers"
+Title: "Observation: Painkiller Usage"
 Description: "Did the patient take any painkillers (Yes/No)"
 * status = #final
 * code = $snomed#52685006 "Administration of analgesic"

@@ -1,7 +1,7 @@
 Instance: NauseaExample	
 InstanceOf: Observation
 Usage: #example
-Title: "Nausea example"
+Title: "Observation: Nausea"
 Description: "Answer options are none, mild, moderate, severe."
 * status = #final
 * code = $snomed#60728008 

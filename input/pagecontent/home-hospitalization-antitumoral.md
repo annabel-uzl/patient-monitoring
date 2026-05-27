@@ -361,7 +361,7 @@ Possible **reasonCodes** for the FHIR Encounter resource (with link to the billi
 
 - [FHIR Document with patient information from hospital](./Composition-OPAT-Document.html)
 - [FHIR Encounter](./Encounter-Encounter-3441.html)
-- [FHIR Questionnaire Azacitidine](./Questionnaire-AzacitidineV1.html)
-- [FHIR QuestionnaireResponse Azacitidine](./QuestionnaireResponse-AzacitidineV1response.html)
+- [FHIR Questionnaire Azacitidine](./Questionnaire-homehosp-azacitidine.html)
+- [FHIR QuestionnaireResponse Azacitidine](./QuestionnaireResponse-HomehospAzacitidineQuestionnaireResponseExample.html)
 
 

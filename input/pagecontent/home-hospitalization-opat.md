@@ -294,7 +294,7 @@ Possible **reasonCodes** for the FHIR Encounter resource (with link to the billi
 
 - [FHIR Document with patient information from hospital](./Composition-OPAT-Document.html)
 - [FHIR Encounter](./Encounter-Encounter-3441.html)
-- [FHIR Questionnaire continuous infusion](./Questionnaire-OPATContinuInfuusV1.html)
-- [FHIR QuestionnaireResponse continuous infusion](./QuestionnaireResponse-OPATContinuInfuusV1response.html)
+- [FHIR Questionnaire continuous infusion](./Questionnaire-homehosp-opat-continuous-infusion.html)
+- [FHIR QuestionnaireResponse continuous infusion](./QuestionnaireResponse-HomehospOpatContinuousInfusionQuestionnaireResponseExample.html)
 
 

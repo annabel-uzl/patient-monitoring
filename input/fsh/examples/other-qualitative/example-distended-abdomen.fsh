@@ -1,7 +1,7 @@
 Instance: DistendedAbdomenExample	
 InstanceOf: Observation
 Usage: #example
-Title: "Distended abdomen example"
+Title: "Observation: Distended Abdomen"
 Description: "Answer options are none, mild, moderate, severe."
 * status = #final
 * code = $snomed#60728008 

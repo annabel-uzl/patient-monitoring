@@ -1,7 +1,8 @@
 Instance: BloodPressureExample
 InstanceOf: http://hl7.org/fhir/StructureDefinition/bp
 Usage: #example
-Description: "Blood Pressure example" //TODO: Needs description
+Title: "Observation: Blood Pressure"
+Description: "Blood pressure vital sign observation with device"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#85354-9 "Blood pressure panel with all children optional"

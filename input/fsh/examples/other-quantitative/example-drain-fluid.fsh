@@ -1,7 +1,7 @@
 Instance: DrainFluidExample
 InstanceOf: Observation
 Usage: #example
-Title: "Drain fluid output example"
+Title: "Observation: Drain Fluid Output"
 Description: "Drain fluid volume measured in mL per day"
 * status = #final
 * code.coding[0].system = $snomed

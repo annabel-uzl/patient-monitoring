@@ -6,7 +6,7 @@ Expression: "value.ofType(integer).exists() implies (value.ofType(integer) >= 1 
 Profile: WexnerCCISScoreObservation
 Parent: Observation
 Id: wexner-ccis-score-observation
-Title: "Wexner/CCIS score Observation"
+Title: "Wexner/CCIS Score Observation"
 Description: "Wexner/CCIS score observation"
 * code = $snomed#782487009 "Assessment score"
 * value[x] only integer

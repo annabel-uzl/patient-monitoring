@@ -1,7 +1,7 @@
 Instance: NationalEarlyWarningScoreExample
 InstanceOf: Observation
 Usage: #example
-Title: "National Early Warning Score example"
+Title: "Observation: National Early Warning Score (NEWS)"
 Description: "National Early Warning Score (NEWS)"
 * status = #final
 * code = $snomed#1287358002 

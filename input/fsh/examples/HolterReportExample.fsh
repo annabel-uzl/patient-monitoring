@@ -1,6 +1,6 @@
 Instance: example-holter-diagnosticreport
 InstanceOf: HolterDiagnosticReport
-Title: "Holter DiagnosticReport Example"
+Title: "DiagnosticReport: Holter"
 Description: "This diagnostic report summarizes Holter rhythm findings including AFib and a supraventricular episode."
 Usage: #example
 * status = #final
@@ -16,7 +16,7 @@ Usage: #example
 
 Instance: example-holter-afib
 InstanceOf: HolterObservation
-Title: "Holter AFib Episode"
+Title: "Observation: Holter AFib Episode"
 Description: "Detected AFib event"
 Usage: #example
 * status = #final
@@ -31,7 +31,7 @@ Usage: #example
 
 Instance: example-holter-sv
 InstanceOf: HolterObservation
-Title: "Holter Supraventricular Event"
+Title: "Observation: Holter Supraventricular Event"
 Description: "Supraventricular arrhythmia"
 Usage: #example
 * status = #final

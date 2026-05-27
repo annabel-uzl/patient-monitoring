@@ -1,7 +1,7 @@
 Instance: PainSurgicalWoundsExample	
 InstanceOf: Observation
 Usage: #example
-Title: "Pain surgical wounds example"
+Title: "Observation: Pain at Surgical Wounds"
 Description: "NO LOINC OR SNOMED CODE FOR SYMPTOM. Pain scale is used as answer."
 * status = #final
 * code = $loinc#72514-3 //TODO: Needs correct code

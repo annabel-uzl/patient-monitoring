@@ -1,7 +1,7 @@
 Instance: LevelOfResponsivenessExample
 InstanceOf: Observation
 Usage: #example
-Title: "Level of responsiveness example"
+Title: "Observation: Level of Responsiveness"
 Description: "Level of responsiveness (ACVPU scale)"
 * status = #final
 * code = $loinc#67775-7 

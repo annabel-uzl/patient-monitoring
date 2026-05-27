@@ -1,7 +1,7 @@
 Instance: AppetiteExample
 InstanceOf: Observation
 Usage: #example
-Title: "Appetite example"
+Title: "Observation: Appetite"
 Description: "Answer scaled 0 to 10 with steps of 0.5. 0 being being very poor, 10 being very well."
 * status = #final
 * code.coding[0].system = $snomed

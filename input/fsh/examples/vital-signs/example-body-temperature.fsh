@@ -1,7 +1,8 @@
 Instance: BodyTemperatureExample
 InstanceOf: http://hl7.org/fhir/StructureDefinition/bodytemp
 Usage: #example
-Description: "Temperature example" //TODO: Needs description
+Title: "Observation: Body Temperature"
+Description: "Body temperature vital sign observation with device"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#8310-5 "Body Temperature"

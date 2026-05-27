@@ -1,15 +1,13 @@
 == Suppressed Messages ==
 
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# (And include comments like this justifying why)
+# que-7 is an invariant on Questionnaire.item.enableWhen defined in the FHIR R4 base spec.
+# The IG Publisher inherits it into every Questionnaire profile's snapshot and then warns
+# that the FHIRPath expression 'operator = exists' / 'answer is Boolean' may behave
+# unexpectedly when evaluated against a collection. This is a static-analysis artefact
+# of the base-spec constraint, not a problem in this IG's content, and cannot be removed
+# from FSH because the constraint is owned by the FHIR core spec.
+WARNING: que-7
 
-# This is inherited from the base resource
-WARNING: StructureDefinition/myObservation: StructureDefinition.snapshot.element[15].mapping[3].map: value should not start or finish with whitespace
-
-# We're expecting these to not match the slice - we're showing how you can use slicing to define the one repetition you want even when many repetitions might be present
-INFORMATION: Patient/example: Patient.name[0]: This element does not match any known slice defined in the profile http://somewhere.org/fhir/uv/myig/StructureDefinition/mypatient
-INFORMATION: Patient/example: Patient.name[1]: This element does not match any known slice defined in the profile http://somewhere.org/fhir/uv/myig/StructureDefinition/mypatient
-
-# If this was a real IG, there should be examples for these profiles too.  But it's not, and I'm lazy...
-WARNING: http://somewhere.org/fhir/uv/myig/StructureDefinition/myObservation: The Implementation Guide contains no examples for this profile
-WARNING: http://somewhere.org/fhir/uv/myig/StructureDefinition/mypractitioner: The Implementation Guide contains no examples for this profile
+# Abstract base profiles (homehosp-onco-base, homehosp-opat-base) intentionally have no
+# direct examples; all examples are on the concrete child profiles.
+WARNING: The Implementation Guide contains no examples for this profile

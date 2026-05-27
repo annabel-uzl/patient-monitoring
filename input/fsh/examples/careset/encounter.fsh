@@ -1,6 +1,6 @@
 Instance: Encounter-3441
 InstanceOf: Encounter
-Title: "Home hospitalization encounter for subcutaneous injection"
+Title: "Encounter: Home Hospitalization (Subcutaneous Injection)"
 Usage: #example
 Description: "First line encounter"
 
