@@ -287,7 +287,7 @@ Possible **reasonCodes** for the FHIR Encounter resource (with link to the billi
     * 386358000 \|Administration of drug or medicament via intravenous route (procedure)\| >> Intraveneuze toediening
       (423054, Injection/Administration)
     * 76601001 \|Intramuscular injection (procedure)\| >> Intramusculaire toediening (423076, Injection/Administration)
-    * 276844002 \|Injection to subcutaneous drug delivery port (procedure)\| >> Subcutane toediening (423076, Injection/Administration)
+    * 1285265006 \|Injection into subcutaneous tissue (procedure)\|  >> Subcutane toediening (423076, Injection/Administration)
     * 243132000 \|Inhaled drug administration (procedure)\| >> Inhalatie (? 425213)
 
 ### Examples
