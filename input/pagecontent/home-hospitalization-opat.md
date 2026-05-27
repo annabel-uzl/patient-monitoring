@@ -290,11 +290,40 @@ Possible **reasonCodes** for the FHIR Encounter resource (with link to the billi
     * 1285265006 \|Injection into subcutaneous tissue (procedure)\|  >> Subcutane toediening (423076, Injection/Administration)
     * 243132000 \|Inhaled drug administration (procedure)\| >> Inhalatie (? 425213)
 
-### Examples
+### FHIR Resources
+
+#### Profiles
+
+- [Home Hospitalization Careset Encounter](./StructureDefinition-homehosp-encounter.html)
+- [Home Hospitalization Careset Questionnaire Response](./StructureDefinition-homehosp-questionnaire-response.html)
+- [OPAT Home Hospitalization Base Questionnaire](./StructureDefinition-homehosp-opat-base.html)
+- [OPAT Continuous Infusion Nursing Questionnaire](./StructureDefinition-homehosp-opat-continuous-infusion.html)
+- [OPAT Short-Duration IV Nursing Questionnaire](./StructureDefinition-homehosp-opat-short-iv.html)
+
+#### Logical Models
+
+- [Home Hospitalization Encounter Logical Model](./StructureDefinition-homehosp-encounter-lm.html)
+- [Home Hospitalization QuestionnaireResponse Logical Model](./StructureDefinition-homehosp-questionnaire-response-lm.html)
+- [OPAT Continuous Infusion Questionnaire Logical Model](./StructureDefinition-opat-continuous-infusion-questionnaire.html)
+- [OPAT Short IV Questionnaire Logical Model](./StructureDefinition-opat-short-iv-questionnaire.html)
+
+#### ValueSets
+
+- [Medication Storage Status](./ValueSet-medication-storage.html)
+- [True / False Value Set](./ValueSet-true-false.html)
+- [Yes / No Value Set](./ValueSet-YesNoVS.html)
+- [Normal / Abnormal Finding](./ValueSet-normal-abnormal.html)
+- [Catheter Type](./ValueSet-catheter-type.html)
+- [Catheter Lumen Color](./ValueSet-lumen-color.html)
+- [Catheter Patency Scale](./ValueSet-catheter-patency.html)
+- [Home Hospitalization Side Effect Severity Scale](./ValueSet-homehosp-side-effect-severity.html)
+
+#### Examples
 
 - [FHIR Document with patient information from hospital](./Composition-OPAT-Document.html)
 - [FHIR Encounter](./Encounter-Encounter-3441.html)
 - [FHIR Questionnaire continuous infusion](./Questionnaire-homehosp-opat-continuous-infusion.html)
+- [FHIR Questionnaire short IV](./Questionnaire-homehosp-opat-short-iv.html)
 - [FHIR QuestionnaireResponse continuous infusion](./QuestionnaireResponse-HomehospOpatContinuousInfusionQuestionnaireResponseExample.html)
 
 

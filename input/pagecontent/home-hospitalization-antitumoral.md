@@ -357,11 +357,48 @@ Possible **reasonCodes** for the FHIR Encounter resource (with link to the billi
     * 1285265006 \|Injection into subcutaneous tissue (procedure)\|  >> Subcutane toediening (423076, Injection/Administration)
     * 243132000 \|Inhaled drug administration (procedure)\| >> Inhalatie (? 425213)
 
-### Examples
+### FHIR Resources
+
+#### Profiles
+
+- [Home Hospitalization Careset Encounter](./StructureDefinition-homehosp-encounter.html)
+- [Home Hospitalization Careset Questionnaire Response](./StructureDefinition-homehosp-questionnaire-response.html)
+- [ONCO Home Hospitalization Base Questionnaire](./StructureDefinition-homehosp-onco-base.html)
+- [ONCO Azacitidine Nursing Questionnaire](./StructureDefinition-homehosp-onco-azacitidine.html)
+- [ONCO Bortezomib Nursing Questionnaire](./StructureDefinition-homehosp-onco-bortezomib.html)
+- [ONCO Daratumumab Nursing Questionnaire](./StructureDefinition-homehosp-onco-daratumumab.html)
+- [ONCO Fulvestrant Nursing Questionnaire](./StructureDefinition-homehosp-onco-fulvestrant.html)
+- [ONCO Trastuzumab Nursing Questionnaire](./StructureDefinition-homehosp-onco-trastuzumab.html)
+
+#### Logical Models
+
+- [Home Hospitalization Encounter Logical Model](./StructureDefinition-homehosp-encounter-lm.html)
+- [Home Hospitalization QuestionnaireResponse Logical Model](./StructureDefinition-homehosp-questionnaire-response-lm.html)
+- [ONCO Azacitidine Questionnaire Logical Model](./StructureDefinition-onco-azacitidine-questionnaire.html)
+- [ONCO Bortezomib Questionnaire Logical Model](./StructureDefinition-onco-bortezomib-questionnaire.html)
+- [ONCO Daratumumab Questionnaire Logical Model](./StructureDefinition-onco-daratumumab-questionnaire.html)
+- [ONCO Fulvestrant Questionnaire Logical Model](./StructureDefinition-onco-fulvestrant-questionnaire.html)
+- [ONCO Trastuzumab Questionnaire Logical Model](./StructureDefinition-onco-trastuzumab-questionnaire.html)
+
+#### ValueSets
+
+- [Medication Storage Status](./ValueSet-medication-storage.html)
+- [True / False Value Set](./ValueSet-true-false.html)
+- [Yes / No Value Set](./ValueSet-YesNoVS.html)
+- [Normal / Abnormal Finding](./ValueSet-normal-abnormal.html)
+- [ONCO Symptom Grade Scale (CTCAE 0–3)](./ValueSet-onco-symptom-grade.html)
+- [Home Hospitalization Side Effect Severity Scale](./ValueSet-homehosp-side-effect-severity.html)
+- [Medication Administration Decision Codes](./ValueSet-decision-cs.html)
+
+#### Examples
 
 - [FHIR Document with patient information from hospital](./Composition-OPAT-Document.html)
 - [FHIR Encounter](./Encounter-Encounter-3441.html)
 - [FHIR Questionnaire Azacitidine](./Questionnaire-homehosp-azacitidine.html)
+- [FHIR Questionnaire Bortezomib](./Questionnaire-homehosp-bortezomib.html)
+- [FHIR Questionnaire Daratumumab](./Questionnaire-homehosp-daratumumab.html)
+- [FHIR Questionnaire Fulvestrant](./Questionnaire-homehosp-fulvestrant.html)
+- [FHIR Questionnaire Trastuzumab](./Questionnaire-homehosp-trastuzumab.html)
 - [FHIR QuestionnaireResponse Azacitidine](./QuestionnaireResponse-HomehospAzacitidineQuestionnaireResponseExample.html)
 
 

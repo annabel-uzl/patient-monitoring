@@ -218,3 +218,26 @@ In the background, this segment will look as follows:
   ]
 } 
 ```
+
+### FHIR Resources
+
+The following ValueSets define the coded answer options referenced in the mapping tables above:
+
+#### ValueSets (OPAT and ONCO)
+
+- [Medication Storage Status](./ValueSet-medication-storage.html)
+- [True / False Value Set](./ValueSet-true-false.html)
+- [Yes / No Value Set](./ValueSet-YesNoVS.html)
+- [Normal / Abnormal Finding](./ValueSet-normal-abnormal.html)
+- [Home Hospitalization Side Effect Severity Scale](./ValueSet-homehosp-side-effect-severity.html)
+- [Medication Administration Decision Codes](./ValueSet-decision-cs.html)
+
+#### ValueSets (OPAT only)
+
+- [Catheter Type](./ValueSet-catheter-type.html)
+- [Catheter Lumen Color](./ValueSet-lumen-color.html)
+- [Catheter Patency Scale](./ValueSet-catheter-patency.html)
+
+#### ValueSets (ONCO only)
+
+- [ONCO Symptom Grade Scale (CTCAE 0–3)](./ValueSet-onco-symptom-grade.html)
