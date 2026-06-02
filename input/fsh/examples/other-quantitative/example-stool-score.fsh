@@ -1,7 +1,7 @@
 Instance: StoolScoreExample
 InstanceOf: Observation
 Usage: #example
-Title: "Stool assessment using the bristol stool form score"
+Title: "Observation: Bristol Stool Form Score"
 Description: "Score from 1 to 7"
 * status = #final
 * code.coding[0].system = $snomed

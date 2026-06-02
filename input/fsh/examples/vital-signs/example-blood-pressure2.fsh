@@ -1,6 +1,7 @@
 Instance: BloodPressureExample2
 InstanceOf: http://hl7.org/fhir/StructureDefinition/bp
 Usage: #example
+Title: "Observation: Blood Pressure (Without Device)"
 Description: "Blood Pressure example without device and with bodysite" 
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"

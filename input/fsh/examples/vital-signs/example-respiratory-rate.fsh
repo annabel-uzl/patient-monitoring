@@ -1,7 +1,8 @@
 Instance: RespiratoryRateExample
 InstanceOf: http://hl7.org/fhir/StructureDefinition/resprate
 Usage: #example
-Description: "Respiration example" //TODO: Needs description
+Title: "Observation: Respiratory Rate"
+Description: "Respiratory rate vital sign observation with device"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code = $loinc#9279-1 "Respiratory rate"

@@ -1,7 +1,7 @@
 Instance: ShortnessOfBreathExample
 InstanceOf: Observation
 Usage: #example
-Title: "Shortness of breath example"
+Title: "Observation: Shortness of Breath"
 Description: "Possible answers are yes and no"
 * status = #final
 * code = $snomed#267036007 

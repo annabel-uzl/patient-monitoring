@@ -1,7 +1,7 @@
 Instance: LeakageCatheterExample	
 InstanceOf: Observation
 Usage: #example
-Title: "Leakage catheter example"
+Title: "Observation: Leakage Catheter"
 Description: "NO LOINC OR SNOMED CODE FOR SYMPTOM. Answer options to be determined."
 * status = #final
 * code = $loinc#72514-3 //TODO: Needs correct code

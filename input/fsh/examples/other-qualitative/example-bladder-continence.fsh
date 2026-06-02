@@ -1,7 +1,7 @@
 Instance: BladderContinenceExample
 InstanceOf: Observation
 Usage: #example
-Title: "Bladder Continence"
+Title: "Observation: Bladder Continence"
 Description: "Example observation of a patient's bladder continence level."
 * status = #final
 * code = $loinc#45619-4 "Bladder continence [Minimum Data Set]"

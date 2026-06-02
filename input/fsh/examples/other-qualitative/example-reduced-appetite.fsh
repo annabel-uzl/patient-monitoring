@@ -1,7 +1,7 @@
 Instance: ReducedAppetiteExample	
 InstanceOf: Observation
 Usage: #example
-Title: "Reduced appetite example"
+Title: "Observation: Reduced Appetite"
 Description: "Answer options are absent / mild / moderate / severe."
 * status = #final
 * code = $snomed#64379006  

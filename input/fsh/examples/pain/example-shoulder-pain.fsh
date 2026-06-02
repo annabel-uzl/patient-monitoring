@@ -1,7 +1,7 @@
 Instance: ShoulderPainExample
 InstanceOf: Observation
 Usage: #example
-Title: "Shoulder pain example"
+Title: "Observation: Shoulder Pain"
 Description: "Pain scale is used as answer."
 * status = #final
 * code = $snomed#45326000

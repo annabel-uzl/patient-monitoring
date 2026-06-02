@@ -1,6 +1,7 @@
 Instance: HeartRateExample2
 InstanceOf: http://hl7.org/fhir/StructureDefinition/heartrate
 Usage: #example
+Title: "Observation: Heart Rate (Registered by Patient)"
 Description: "Heart Rate example registered by patient"
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"

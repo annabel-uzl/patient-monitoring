@@ -1,7 +1,7 @@
 Instance: ClinicalNoteExample
 InstanceOf: Observation
 Usage: #example
-Title: "Clinical note"
+Title: "Observation: Clinical Note"
 Description: "Free text clinical note"
 * status = #final
 * code.coding[0].system = $loinc
