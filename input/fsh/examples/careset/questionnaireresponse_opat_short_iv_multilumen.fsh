@@ -2,7 +2,7 @@ Alias: $sct = http://snomed.info/sct
 
 Instance: HomehospOpatShortIVQRMultiLumenExample
 InstanceOf: QuestionnaireResponse
-Title: "OPAT short IV QR - 3-lumen tunneled catheter"
+Title: "QuestionnaireResponse: OPAT short IV QR - 3-lumen tunneled catheter"
 Description: "QuestionnaireResponse for OPAT home hospitalization (short IV) with a 3-lumen tunneled catheter, demonstrating per-lumen catheter observation. The red lumen (lumen 3) is completely obstructed — blood aspiration and infusion both impossible. Administration was completed via the gray lumen (lumen 1) after telephone consultation with the hospital team. Uses the homehosp-opat-short-iv questionnaire, which carries a repeating G_Lumen group."
 Usage: #example
 

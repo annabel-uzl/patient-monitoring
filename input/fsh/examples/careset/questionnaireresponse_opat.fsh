@@ -2,7 +2,7 @@ Alias: $sct = http://snomed.info/sct
 
 Instance: HomehospOpatContinuousInfusionQuestionnaireResponseExample
 InstanceOf: QuestionnaireResponse
-Title: "QuestionnaireResponse: OPAT Home Hospitalization"
+Title: "QuestionnaireResponse: OPAT Home Hospitalization - continuous infusion"
 Description: "Response to questionnaire containing the necessary information for the home hospitalization of a patient treated with a continuous infusion in the context of an OPAT treatment"
 Usage: #example
 
